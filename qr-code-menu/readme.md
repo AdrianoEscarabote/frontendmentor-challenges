@@ -1,0 +1,2 @@
+Este projeto é o resultado de um challenge do site Frontend Mentor. Um site ótimo para aprimorar os conhecimentos e aprimorar seu desenvolvimento com sites responsivos.
+Este projeto é responsivo sendo usado apenas html e css puro, e para ter responsividade usei um pouco de flex box.
