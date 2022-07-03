@@ -130,14 +130,18 @@ body {
 
     .container {
         width: 240px;
-        height: 480px;
+        height: 455px;
         margin: 60px auto;
     }
 
     .imgIlustration {
-        width: 242px;
+        width: 240px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
+    }
+
+    .namePlan {
+        font-size: 12px;
     }
 
     .plan {
@@ -162,7 +166,7 @@ body {
         text-align: center;
         font-size: 13px;
         font-family: 'Red Hat Display', sans-serif;
-        margin: 15px 20px 38px 38px;
+        margin: 15px 20px 38px 20px;
     }
 }
 
