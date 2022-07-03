@@ -62,6 +62,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: #e28525;
+    cursor: pointer;
 }
 
 .card2 {
@@ -101,6 +102,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: #016972;
+    cursor: pointer;
 }
 
 .card3 {
@@ -142,6 +144,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: #016972;
+    cursor: pointer;
 }
 
 @media (max-width: 1600px) and (min-width: 1070px){
