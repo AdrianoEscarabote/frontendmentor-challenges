@@ -25,8 +25,8 @@ Os usuários devem ser capazes de:
 
 ### Screenshot
 
-![](./screenshots/screenshotdesktop.png.jpg)
-![](./screenshots/screenshotmobile.png.jpg)
+![](./screenshots/screenshotdesktop.png)
+![](./screenshots/screenshotmobile.png)
  
 
 ## My process
