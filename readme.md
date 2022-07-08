@@ -8,24 +8,13 @@ Esta é uma solução para o [Testimonials grid section challenge on Frontend Me
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-- [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
-
-- Visualize o layout ideal para o site, dependendo do tamanho da tela do dispositivo.
-
-### Screenshot
-
-![](./screenshots/screenshotdesktop.png)
-![](./screenshots/screenshottablet.png)
-![](./screenshots/screenshotmobile.png)
 
 ## My process
 
@@ -42,3 +31,16 @@ Users should be able to:
 - Linkedin - [Adriano Escarabote](https://www.linkedin.com/in/adriano-escarabote-944b02233/)
 - Frontend Mentor - [@AdrianoEscarabote](https://www.frontendmentor.io/profile/AdrianoEscarabote)
 - Instagram - [@ogdrian](https://www.instagram.com/ogdrian/)
+
+### The challenge
+
+Users should be able to:
+
+- Visualize o layout ideal para o site, dependendo do tamanho da tela do dispositivo.
+
+
+### Screenshot
+
+![](./screenshots/screenshotdesktop.png)
+![](./screenshots/screenshottablet.png)
+![](./screenshots/screenshotmobile.png)
