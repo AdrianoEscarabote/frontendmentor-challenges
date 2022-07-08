@@ -24,6 +24,8 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshots/screenshotdesktop.png)
+![](./screenshots/screenshottablet.png)
+![](./screenshots/screenshotmobile.png)
 
 ## My process
 
