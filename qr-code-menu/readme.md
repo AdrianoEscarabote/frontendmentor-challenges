@@ -1,3 +1,5 @@
+- Site ativo - [Click here to see the website](https://qr-code-vercel.vercel.app/)
+
 # Frontend Mentor - QR code component solution
 
 Esta é uma solução para o [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação criando projetos realistas.
