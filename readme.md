@@ -39,5 +39,5 @@ Esta é uma solução para [Profile card component challenge on Frontend Mentor]
 ## Author
 
 - Linkedin - [AdrianoEscarabote](https://www.linkedin.com/in/adriano-escarabote-944b02233/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/AdrianoEscarabote)
+- Frontend Mentor - [@AdrianoEscarabote](https://www.frontendmentor.io/profile/AdrianoEscarabote)
 - Instagram - [@ogdrian](https://www.instagram.com/ogdrian/)
