@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #f2ebe3;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.img img {
+    width: 400px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.description {
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    gap: 25px;
+    padding: 40px;
+}
+
+.backgroundImageMobile {
+    display: none;
+}
+
+.category,
+.descriptionP,
+.price .normal {
+    font-size: 19px;
+    color: #0000008e;
+}
+
+.name {
+    font-family: 'Fraunces', serif;
+    color: #000000e1;
+    font-size: 42px;
+}
+
+.price {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.price .green {
+    font-size: 40px;
+    color: #3d8168;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+
+.button {
+    height: 55px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #3d8168;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #235845;
+    transition: 0.4s;
+}
+
+.iconCart {
+    width: 27px;
+    padding-right: 10px;
+}
+
+@media (max-width: 810px) {
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+    }
+    
+    .img img {
+        width: 320px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+    }
+    
+    .description {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 320px;
+        height: 440px;
+        gap: 15px;
+        padding: 30px;
+    }
+    
+    .backgroundImageDesktop {
+        display: none;
+    }
+    
+    .backgroundImageMobile {
+        display: block;
+    }
+    
+    .category,
+    .descriptionP,
+    .price .normal {
+        font-size: 17px;
+    }
+    
+    .name {
+        font-size: 32px;
+    }
+    
+    .price {
+        gap: 5px;
+    }
+    
+    .price .green {
+        font-size: 35px;
+        font-weight: 700;
+    }
+}
