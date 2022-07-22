@@ -9,11 +9,9 @@ Esta é uma solução para o [Fylo landing page with two column layout challenge
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -43,5 +41,5 @@ Users should be able to:
 ## Author
 
 - Linkedin - [AdrianoEscarabote](https://www.linkedin.com/in/adriano-escarabote-944b02233/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/AdrianoEscarabote)
+- Frontend Mentor - [@AdrianoEscarabote](https://www.frontendmentor.io/profile/AdrianoEscarabote)
 - Instagram - [@ogdrian](https://www.instagram.com/ogdrian/)
