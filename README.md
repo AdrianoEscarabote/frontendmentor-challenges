@@ -1,3 +1,5 @@
+- Site ativo - [Click here to see the website](https://adrianoescarabote.github.io/nft-preview-card-component-main/)
+
 # Frontend Mentor - NFT preview card component solution
 
 Esta é uma solução para o [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U). 
