@@ -173,7 +173,7 @@ main {
     color: black;
     display: flex;
     justify-content: center;
-    margin: 0 1rem;
+    padding: 0 1rem;
     font-size: 16px;
     padding-top: 20px;
 }
@@ -207,12 +207,13 @@ main {
     }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 640px) {
     .container {
         background-image: url(images/bg-pattern-top-mobile.svg),
             url(images/bg-pattern-bottom-mobile.svg);
         background-position: top, bottom;
         background-repeat: no-repeat;
+        background-size: 100%;
         padding: 4rem 0;
     }
 
