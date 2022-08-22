@@ -46,7 +46,6 @@ body {
     text-align: center;
     padding: 0 16px;
     font-size: 0.9rem;
-    transition: all ease-in-out .6s;
 }
 
 .container {
@@ -54,7 +53,6 @@ body {
     padding: 1rem;
     max-width: 320px;
     border-radius: 15px;
-    transition: all ease-in-out .6s;
 }
 
 .container:hover {
