@@ -2,7 +2,7 @@
 
 ### GIF
 
-here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/186437816-97542758-4a4e-430d-9f62-030758050f23.gif)
 
 # Frontend Mentor - NFT preview card component solution
 
