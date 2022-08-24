@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.2s;
+}
+
+:root {
+    --color-bg1: #fff;
+    --color-bg2: #bfaf51;
+    --color-card: #68562b;
+    --font-hover: #c0c0c0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    background: radial-gradient(circle, var(--color-bg1) 10%, var(--color-bg2) 100%);
+    color: #fff;
+}
+
+.container {
+    max-width: 350px;
+    background-color: var(--color-card);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 4px 10px 20px 15px #33331d36;
+}
+
+.container:hover {
+    filter: saturate(1.2);
+    transition: ease-in-out .6s;
+    transform: scale(.99)
+}
+
+.nftImage {
+    height: 300px;
+    width: 300px;
+    background: url("images/image-goldEquilibrium.png");
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid #ffffff71;
+}
+
+.eyeIcon {
+    opacity: 0;
+}
+
+.nftImage:hover>.eyeIcon {
+    opacity: 1;
+    transition: 0.2s;
+}
+
+.nftImage:hover {
+    box-shadow: 0 310px #ffffff75 inset;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+h1:hover {
+    color: var(--font-hover);
+}
+
+.description {
+    color: #b9b6b6;
+    padding-bottom: 4px;
+}
+
+.infos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.iconEth,
+.time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.iconEth:hover img {
+    animation: flip-diagonal 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+.iconEth p {
+    font-weight: 700;
+}
+
+.iconEth:hover {
+    color: #bfaf51;
+}
+
+.time:hover img {
+    transform: rotate(1080deg);
+    transition: 0.8s;
+}
+
+.owner {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff71;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.owner img {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 40px;
+}
+
+.owner p a {
+    text-decoration: none;
+    color: #bfaf51;
+}
+
+.owner p a:hover {
+    color: #ade454;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 15px;
+}
+.attribution {
+    color: #241e1e;
+}
+
+.attribution a {
+    color: #000;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    color: #5239c4;
+    transition: 0.6s;
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nftImage {
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .eyeIcon {
+        opacity: 0;
+        width: 100%;
+    }
+
+    .infos {
+        justify-content: center;
+        gap: 20%;
+    }
+
+    .nftImage:hover>.eyeIcon {
+        opacity: 0;
+    }
+
+    .nftImage:hover {
+        box-shadow: none;
+    }
+}
+
+@keyframes flip-diagonal {
+    0% {
+        -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+        transform: rotate3d(-1, 1, 0, 0deg);
+    }
+    50% {
+        -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+        transform: rotate3d(-1, 1, 0, 180deg);
+    }
+    100% {
+        -webkit-transform: rotate3d(-1, 1, 0, 360deg);
+        transform: rotate3d(-1, 1, 0, 360deg);
+    }
+}
