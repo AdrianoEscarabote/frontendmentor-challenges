@@ -2,7 +2,7 @@
 
 ### GIF
 
-here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/187788723-ee4ab809-859e-468c-93ff-39916e3da7ad.gif)
 
 # Frontend Mentor - Skilled e-learning landing page solution
 
