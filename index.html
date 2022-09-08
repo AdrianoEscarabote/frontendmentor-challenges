@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Chat App CSS Illustration master</title>
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="backgroundPurple"></div>
+        <!--backgroundpurple-->
+        <div class="changeTheme">
+            <button aria-label="activate light mode" onclick="changeTheme()" id="button">
+                <img src="images/sun.svg" id="icon">
+                <p id="description">Light theme</p>
+            </button>
+        </div>
+        <section class="phone">
+            <!--phone-->
+            <div class="app">
+                <header class="headerApp">
+                    <div class="content">
+                        <div class="white"></div>
+                        <div class="profileInfo">
+                            <img src="images/arrow.png" class="arrowHeaderTop">
+                            <img src="images/avatar.jpg" alt="profie image" class="imgAvatar">
+                            <div class="name">
+                                <h2>Samuel Green</h2>
+                                <p>Avaliable to work</p>
+                            </div>
+                        </div>
+                        <div class="moreInfomation">
+                            <div class="oval"></div>
+                            <div class="oval1"></div>
+                            <div class="oval2"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="chatApp">
+                    <div class="answers">
+                        <div class="answer">
+                            <p>That sounds great. I’d be happy with that.</p>
+                        </div>
+                        <div class="answer">
+                            <p>Could you send over some pictures of your dog, please?</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="questionContent">
+                            <div class="dogImg">
+                                <img src="images/dog-image-1.jpg" class="imgDog">
+                                <img src="images/dog-image-2.jpg" class="imgDog">
+                                <img src="images/dog-image-3.jpg" class="imgDog">
+                            </div>
+                            <div class="myQuestion1">
+                                <p>Here are a few pictures. She’s a happy girl!</p>
+                            </div>
+                            <div class="myQuestion2">
+                                <p>Can you make it?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="finalAnswers">
+                        <div class="finalContent">
+                            <div class="finalAnswer">
+                                <p>She looks so happy! The time we discussed works. How long shall I take her out for?
+                                </p>
+                            </div>
+                            <div class="inputradio1">
+                                <div class="left">
+                                    <div class="divRadio">
+                                        <input id="radio-1" type="radio" name="chooseWalk">
+                                        <label for="radio-1">30 minute walk</label>
+                                    </div>
+                                </div>
+                                <p class="price">$29</p>
+                            </div>
+                            <div class="inputradio2">
+                                <div class="left">
+                                    <div class="divRadio">
+                                        <input id="radio-2" type="radio" name="chooseWalk">
+                                        <label for="radio-2">1 hour walk</label>
+                                    </div>
+                                </div>
+                                <p class="price">$49</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="footerApp">
+                    <div class="footerContent">
+                        <input type="text" id="type" placeholder="Type a message...">
+                        <div class="img">
+                            <img src="images/footerArrow.png" class="footerArrow">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <div class="text">
+            <div class="contentText">
+                <h1>Simple booking</h1>
+                <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+                    discuss arrangements and make bookings. Once the walk has been completed you can rate
+                    your walker and book again all through the chat.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
