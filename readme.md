@@ -2,7 +2,7 @@
 
 ### GIF
 
-here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/189216469-1ed4b0f7-1636-4512-a030-3ae89d8f1486.gif)
 
 # Frontend Mentor - Chat app CSS illustration solution
 
