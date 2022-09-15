@@ -2,7 +2,7 @@
 
 ### GIF
 
-here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/190506195-f804af76-d383-4b53-8145-90f351ca91bd.gif)
 
 # Frontend Mentor - Art gallery website solution
 
