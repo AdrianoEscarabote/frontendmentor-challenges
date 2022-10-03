@@ -2,7 +2,7 @@
 
 # GIF
 
-// gif here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/193598052-d739f7b5-9f65-47fd-bc7e-ca0f0c3fbdae.gif)
 
 # Frontend Mentor - Article preview component solution
 
