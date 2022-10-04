@@ -1,0 +1,9 @@
+@import "variables/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+@import "./mixin.scss";
+
+@import "header.scss";
+@import "main.scss";
+@import "footer.scss";
+
+@import "mediaQuery/mediaquery.scss";
