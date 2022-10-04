@@ -2,7 +2,7 @@
 
 # GIF
 
-// gif here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/193825961-180dff56-bf6e-4588-84c9-6e2eb2e89143.gif)
 
 # Frontend Mentor - Fylo dark theme landing page solution
 
