@@ -2,7 +2,7 @@
 
 # GIF
 
-// gif here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/194080117-6dee8cc8-aa43-43bc-9894-84968b9ec4b5.gif)
 
 # Frontend Mentor - Ping coming soon page solution
 
