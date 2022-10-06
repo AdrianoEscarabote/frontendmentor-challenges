@@ -2,7 +2,7 @@
 
 # GIF
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/194330011-eb54c08e-f5b1-4026-a54e-a70520170d35.gif)
 
 # Frontend Mentor - Interactive rating component solution
 
