@@ -2,7 +2,7 @@
 
 # GIF
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/194572535-cead0088-8f50-4e90-a601-2f04ce48e38c.gif)
 
 # Frontend Mentor - FAQ accordion card solution
 
