@@ -2,7 +2,7 @@
 
 # GIF
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/194717040-ffd8a5c3-209b-43d7-9838-92bdbd8a1f5b.gif)
 
 # Frontend Mentor - Intro component with sign up form solution
 
