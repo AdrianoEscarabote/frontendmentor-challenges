@@ -2,7 +2,7 @@
 
 # GIF
 
-// gif here
+![gifzada](https://user-images.githubusercontent.com/101136987/194777234-28b06c36-1aef-4e50-a1df-39f22b96d6b1.gif)
 
 # Frontend Mentor - Intro section with dropdown navigation solution
 
