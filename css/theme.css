@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --bg-color: #070616;
+    --mediumGray: #696969;
+    --white: #fafafa;
+    --almostBlack: #141414;
+    --purple: #726cee;
+    --font: #fff;
+    --filter-logo: invert(100%);
+    --filterIcon: invert(92%) sepia(20%) saturate(1206%) hue-rotate(348deg) brightness(93%) contrast(100%);
+    --list: #150b30;
+    --borderBtn: white;
+    --whiteBtn: #fff;
+    --BlackBtn: #000;
+    --bodyHover: #000;
+    --bodyBefore: #03171f;
+    --btnBurguer: invert(100%);
+    --fontHover: #619cf5;
+    --filter-icon-hover: invert(50%) sepia(54%) saturate(612%) hue-rotate(136deg) brightness(95%) contrast(92%);
+}
+
+* {
+    color: var(--font) !important;
+}
+
+.light-theme {
+    --font: #000;
+    --bg-color: #fffdec;
+    --filter-logo: invert(0%);
+    --filterIcon: invert(34%) sepia(38%) saturate(1579%) hue-rotate(242deg) brightness(96%) contrast(85%);
+    --list: #fff;
+    --borderBtn: black;
+    --whiteBtn: #000;
+    --BlackBtn: #fff;
+    --bodyHover: #fff;
+    --bodyBefore: #242425;
+    --btnBurguer: invert(0%);
+    --fontHover: #505050;
+    --filter-icon-hover: invert(26%) sepia(55%) saturate(5241%) hue-rotate(254deg) brightness(99%) contrast(105%);
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--bg-color);
+}
+
+body {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-color);
+    transition: background 0.4s;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--bodyBefore));
+    z-index: -1;
+}
+
+body:hover {
+    background: var(--bodyHover);
+}
+
+#btn-mobile {
+    filter: var(--btnBurguer);
+}
+
+#button:hover span {
+    color: var(--fontHover) !important;
+}
+
+#button:hover > img {
+    transform: rotate(360deg);
+    filter: var(--filter-icon-hover);
+}
+
+.logo {
+    filter: var(--filter-logo);
+}
+
+#icon {
+    filter: var(--filterIcon);
+}
+
+.list,
+.list2 {
+    background-color: var(--list);
+}
+
+.list a:hover {
+    color: var(--fontHover) !important;
+}
+
+.list2 a:hover {
+    color: var(--fontHover) !important;
+}
+
+.dropdown button:hover,
+.dropdown2 button:hover {
+    color: var(--fontHover) !important;
+}
+
+.dropdown button:focus,
+.dropdown2 button:focus {
+    color: var(--fontHover) !important;
+}
+
+.carrer a:hover,
+.About a:hover {
+    color: var(--fontHover) !important;
+}
+
+.carrer a:focus,
+.About a:focus {
+    color: var(--almostBlack);
+}
+
+.register {
+    border-radius: 14px;
+}
+
+.register:hover {
+    color: var(--almostBlack);
+}
+
+.login:hover {
+    color: var(--purple) !important;
+}
+
+.list2 {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+}
+
+.btn,
+.register {
+    background-color: transparent;
+    color: var(--whiteBtn);
+    border: 1.5px solid var(--borderBtn) !important;
+}
+
+.btn:hover,
+.register:hover {
+    background-color: var(--whiteBtn) !important;
+    color: var(--BlackBtn) !important;
+}
+
+.list {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+}
