@@ -2,7 +2,7 @@
 
 # GIF
 
-// aui
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/197625498-dec5b5cf-84b1-473b-9392-1161e10a8364.gif)
 
 # Frontend Mentor - Tip calculator app solution
 
