@@ -2,7 +2,7 @@
 
 const iptNumber = document.getElementById("numberBill")
 const people = document.getElementById("numberPeople")
-const tipBtn = document.querySelectorAll("#tipBtn")
+const tipBtn = document.querySelectorAll(".tipBtn")
 const amount = document.getElementById("amount")
 const total = document.getElementById("total")
 const reset = document.getElementById("reset")
