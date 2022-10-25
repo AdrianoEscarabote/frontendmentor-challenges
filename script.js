@@ -73,13 +73,14 @@ function calcTotal(iptValue, tip, people) {
     let tipNumber = Number(tip)
     let input = Number(iptValue)
     let peopleNumber = Number(people)
-    let value = ((input * tipNumber) + input) / peopleNumber
-    total.innerText = `${value}$`
+    let valueAfterRounding = value.toFixed(2)
+    total.innerText = `${valueAfterRounding}$`
 }
 
 function calcAmount(iptValue, tip, people) {
     let value = (iptValue * tip) / people
-    amount.innerText = `${value}$`
+    let valueAfterRounding = value.toFixed(2)
+    amount.innerText = `${valueAfterRounding}$`
 }
 
 // reset button
