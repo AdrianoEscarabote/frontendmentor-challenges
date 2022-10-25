@@ -73,6 +73,7 @@ function calcTotal(iptValue, tip, people) {
     let tipNumber = Number(tip)
     let input = Number(iptValue)
     let peopleNumber = Number(people)
+    let value = ((input * tipNumber) + input) / peopleNumber
     let valueAfterRounding = value.toFixed(2)
     total.innerText = `${valueAfterRounding}$`
 }
