@@ -80,9 +80,11 @@ main {
             picture {
                 overflow: hidden;
 
-                img {
-                    &:hover {
-                        transform: scale(1.05);
+                @media (min-width: 48rem) {
+                    img {
+                        &:hover {
+                            transform: scale(1.05);
+                        }
                     }
                 }
             }
