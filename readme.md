@@ -2,7 +2,8 @@
 
 # GIF
 
--- gif here 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/101136987/198389129-505e566d-a35e-4282-833d-207341aa3ae8.gif)
+
 
 # Frontend Mentor - News homepage solution
 
