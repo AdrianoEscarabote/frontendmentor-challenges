@@ -50,38 +50,41 @@ body {
   flex-direction: column;
   font-size: 0.9375rem;
   font-family: "Inter", sans-serif;
-  max-width: 69.375rem;
-  margin: 0 auto;
   padding: 1.8rem 1.7rem;
   z-index: 1;
   transition: background 1s;
+  position: relative;
 }
-body header .headerContent {
+body main {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+body main header .headerContent {
   padding: 0;
 }
-body header .headerContent .logo:hover {
+body main header .headerContent .logo:hover {
   filter: invert(69%) sepia(79%) saturate(4643%) hue-rotate(327deg) brightness(95%) contrast(99%);
 }
-body header .headerContent ul {
+body main header .headerContent ul {
   align-items: center;
   gap: 2.5rem;
 }
-body header .headerContent ul li button {
+body main header .headerContent ul li button {
   margin-top: 0.5rem;
   background-color: transparent;
   border: none;
 }
-body header .headerContent ul li button img {
+body main header .headerContent ul li button img {
   width: 1.875rem;
   height: auto;
 }
-body header .headerContent ul li a {
+body main header .headerContent ul li a {
   font-size: 1rem;
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease-in-out;
 }
-body header .headerContent ul li a:before {
+body main header .headerContent ul li a:before {
   content: "";
   position: absolute;
   bottom: -0.1875rem;
@@ -89,74 +92,73 @@ body header .headerContent ul li a:before {
   width: 0;
   height: 0.125rem;
 }
-body header .headerContent ul li a:hover:before {
+body main header .headerContent ul li a:hover:before {
   width: 100%;
 }
-
-main {
+body .main {
   margin-bottom: 3.75rem;
   gap: 0 3.125rem;
 }
-main .mainContent .col-md-12 {
+body .main .mainContent .col-md-12 {
   padding: 0;
 }
-main .mainContent .col-md-12 picture {
+body .main .mainContent .col-md-12 picture {
   overflow: hidden;
 }
 @media (min-width: 48rem) {
-  main .mainContent .col-md-12 picture img:hover {
+  body .main .mainContent .col-md-12 picture img:hover {
     transform: scale(1.05);
   }
 }
-main .mainContent .col-md-6 {
+body .main .mainContent .col-md-6 {
   padding: 0;
 }
-main .mainContent .col-md-6 h1 {
+body .main .mainContent .col-md-6 h1 {
   font-weight: 900;
   font-size: 3.45rem;
   line-height: 1;
 }
-main .mainContent .col-md-6 {
+body .main .mainContent .col-md-6 {
   margin-top: 1.875rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5625rem;
 }
-main .mainContent .col-md-6 p {
+body .main .mainContent .col-md-6 p {
   font-size: 1rem;
 }
-main .mainContent .col-md-6 a {
+body .main .mainContent .col-md-6 a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3125rem;
   padding: 1rem 1.875rem;
   text-decoration: none;
 }
-main aside {
+body .main aside {
   padding: 1.5625rem;
 }
-main aside .col-md-12 h2 {
+body .main aside .col-md-12 h2 {
   font-size: 2rem;
   font-weight: 600;
 }
-main aside .col-md-12 .block, main aside .col-md-12 .block3, main aside .col-md-12 .block2 {
+body .main aside .col-md-12 .block, body .main aside .col-md-12 .block3, body .main aside .col-md-12 .block2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-main aside .col-md-12 .block a, main aside .col-md-12 .block3 a, main aside .col-md-12 .block2 a {
+body .main aside .col-md-12 .block a, body .main aside .col-md-12 .block3 a, body .main aside .col-md-12 .block2 a {
   text-decoration: none;
   font-size: 1.25rem;
   margin: 1.875rem 0 0.625rem 0 !important;
   font-weight: 700;
 }
-main aside .col-md-12 .block blockquote, main aside .col-md-12 .block3 blockquote, main aside .col-md-12 .block2 blockquote {
+body .main aside .col-md-12 .block blockquote, body .main aside .col-md-12 .block3 blockquote, body .main aside .col-md-12 .block2 blockquote {
   font-size: 1rem;
   line-height: 1.7;
   padding-bottom: 0.625rem;
 }
-main aside .col-md-12 .block3 {
+body .main aside .col-md-12 .block3 {
   border: none !important;
 }
 
@@ -195,44 +197,41 @@ footer section .col-md-4 .content span {
 }
 
 @media (max-width: 62rem) {
-  body {
-    position: relative;
-  }
-  main {
+  .main {
     flex-direction: column;
     margin-bottom: 3.75rem;
     margin: 0;
     gap: 0 1.25rem;
     padding: 0 !important;
   }
-  main .mainContent {
+  .main .mainContent {
     width: 100%;
     display: flex !important;
   }
-  main .mainContent .col-md-12 {
+  .main .mainContent .col-md-12 {
     width: 100%;
     padding: 0;
   }
-  main .mainContent .col-md-6 {
+  .main .mainContent .col-md-6 {
     width: 100%;
     padding: 0;
   }
-  main .mainContent .col-md-6 h1 {
+  .main .mainContent .col-md-6 h1 {
     font-size: 2.5rem;
   }
-  main .mainContent .col-md-6 {
+  .main .mainContent .col-md-6 {
     width: 100%;
     margin-bottom: 1.875rem;
     gap: 0.9375rem;
   }
-  main aside {
+  .main aside {
     padding: 0.9375rem;
     width: 100% !important;
   }
-  main aside .col-md-12 h2 {
+  .main aside .col-md-12 h2 {
     font-size: 2rem;
   }
-  main aside .col-md-12 .block, main aside .col-md-12 .block2, main aside .col-md-12 .block3 {
+  .main aside .col-md-12 .block, body .main aside .col-md-12 .block2, body .main aside .col-md-12 .block3 {
     width: 100%;
     display: flex;
     flex-direction: column;
