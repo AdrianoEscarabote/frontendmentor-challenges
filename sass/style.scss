@@ -2,11 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
 body {
+    display: flex;
+    flex-direction: column;
     font-size: 0.9375rem;
     font-family: 'Inter', sans-serif;
     max-width: 69.375rem;
     margin: 0 auto;
     padding: 1.8rem 1.7rem;
+    z-index: 1;
+    transition: background 1s;
+
+
 
     header {
         .headerContent {
@@ -204,6 +210,10 @@ footer {
 }
 
 @media (max-width: 62rem) {
+    body {
+        position: relative;
+    }
+
     main {
         flex-direction: column;
         margin-bottom: 3.75rem;
@@ -257,7 +267,9 @@ footer {
     }
 
     footer {
+        margin-top: 1.25rem !important;
         padding: 0 !important;
+
         section {
             display: flex;
             flex-direction: column;
