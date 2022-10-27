@@ -103,8 +103,10 @@ main .mainContent .col-md-12 {
 main .mainContent .col-md-12 picture {
   overflow: hidden;
 }
-main .mainContent .col-md-12 picture img:hover {
-  transform: scale(1.05);
+@media (min-width: 48rem) {
+  main .mainContent .col-md-12 picture img:hover {
+    transform: scale(1.05);
+  }
 }
 main .mainContent .col-md-6 {
   padding: 0;
