@@ -8,7 +8,7 @@
     --hover-a: #27C5FF;
     --filter-logo: invert(77%) sepia(52%) saturate(308%) hue-rotate(162deg) brightness(99%) contrast(97%);
     --filter-icon: invert(100%);
-    --blockquote: #0f1825;
+    --article-p: #0f1825;
     --h1: #fff;
     --numberFooter: #ffffff73;
     --body: rgb(47, 47, 54);
@@ -26,7 +26,7 @@
     --hover-a: #27C5FF;
     --filter-logo: invert(0%);
     --filter-icon: invert(0%);
-    --blockquote: #d6f2ff;
+    --article-p: #d6f2ff;
     --h1: #000;
     --numberFooter: #000000a6;
     --body: rgb(255, 255, 255);
@@ -108,8 +108,8 @@ aside a:hover {
     color: var(--Soft-orange);
 }
 
-aside blockquote {
-    color: var(--blockquote);
+article a {
+    color: var(--article-p);
 }
 
 h3 a {
