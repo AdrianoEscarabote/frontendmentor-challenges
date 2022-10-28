@@ -11,57 +11,54 @@ body {
     transition: background 1s;
     position: relative;
 
+    header {
+        .headerContent {
+            padding: 0;
+            max-width: 69.375rem;
+            margin: 0 auto;
 
-    main {
-        max-width: 69.375rem;
-        margin: 0 auto;
-        header {
-            .headerContent {
-                padding: 0;
+            .logo {
+                &:hover {
+                    filter: invert(69%) sepia(79%) saturate(4643%) hue-rotate(327deg) brightness(95%) contrast(99%);
+                }
+            }
 
-                .logo {
-                    &:hover {
-                        filter: invert(69%) sepia(79%) saturate(4643%) hue-rotate(327deg) brightness(95%) contrast(99%);
+            ul {
+                align-items: center;
+                gap: 2.5rem;
+
+                li {
+                    button {
+                        margin-top: 0.5rem;
+                        background-color: transparent;
+                        border: none;
+
+                        img {
+                            width: 1.875rem;
+                            height: auto;
+                        }
                     }
                 }
 
-                ul {
-                    align-items: center;
-                    gap: 2.5rem;
+                li {
+                    a {
+                        font-size: 1rem;
+                        text-decoration: none;
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
 
-                    li {
-                        button {
-                            margin-top: 0.5rem;
-                            background-color: transparent;
-                            border: none;
-
-                            img {
-                                width: 1.875rem;
-                                height: auto;
-                            }
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            bottom: -0.1875rem;
+                            left: 0;
+                            width: 0;
+                            height: 0.125rem;
                         }
-                    }
 
-                    li {
-                        a {
-                            font-size: 1rem;
-                            text-decoration: none;
-                            position: relative;
-                            transition: all 0.3s ease-in-out;
-
+                        &:hover {
                             &:before {
-                                content: '';
-                                position: absolute;
-                                bottom: -0.1875rem;
-                                left: 0;
-                                width: 0;
-                                height: 0.125rem;
-                            }
-
-                            &:hover {
-                                &:before {
-                                    width: 100%;
-                                }
+                                width: 100%;
                             }
                         }
                     }
@@ -70,96 +67,101 @@ body {
         }
     }
 
-    .main {
-        margin-bottom: 3.75rem;
-        gap: 0 3.125rem;
 
-        .mainContent {
-            .col-md-12 {
-                padding: 0;
+    main {
+        .main {
+            max-width: 69.375rem;
+            margin: 0 auto;
+            margin-bottom: 3.75rem;
+            gap: 0 3.125rem;
 
-                picture {
-                    overflow: hidden;
+            .mainContent {
+                .col-md-12 {
+                    padding: 0;
 
-                    @media (min-width: 48rem) {
-                        img {
-                            &:hover {
-                                transform: scale(1.05);
+                    picture {
+                        overflow: hidden;
+
+                        @media (min-width: 48rem) {
+                            img {
+                                &:hover {
+                                    transform: scale(1.05);
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            .col-md-6 {
-                padding: 0;
+                .col-md-6 {
+                    padding: 0;
 
-                h1 {
-                    font-weight: 900;
-                    font-size: 3.45rem;
-                    line-height: 1;
-                }
-            }
-
-            .col-md-6 {
-                margin-top: 1.875rem;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.5625rem;
-
-                p {
-                    font-size: 1rem;
+                    h1 {
+                        font-weight: 900;
+                        font-size: 3.45rem;
+                        line-height: 1;
+                    }
                 }
 
-                a {
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    letter-spacing: 0.3125rem;
-                    padding: 1rem 1.875rem;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        aside {
-            padding: 1.5625rem;
-
-            .col-md-12 {
-                h2 {
-                    font-size: 2rem;
-                    font-weight: 600;
-                }
-
-                .block {
+                .col-md-6 {
+                    margin-top: 1.875rem;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
+                    gap: 1.5625rem;
+
+                    p {
+                        font-size: 1rem;
+                    }
 
                     a {
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.3125rem;
+                        padding: 1rem 1.875rem;
                         text-decoration: none;
-                        font-size: 1.25rem;
-                        margin: 1.875rem 0 0.625rem 0 !important;
-                        font-weight: 700;
-
-                    }
-
-                    blockquote {
-                        font-size: 1rem;
-                        line-height: 1.7;
-                        padding-bottom: 0.625rem;
                     }
                 }
+            }
 
-                .block2 {
-                    @extend .block;
+            aside {
+                padding: 1.5625rem;
+
+                .col-md-12 {
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+
+                    .block {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 1.25rem;
+                            margin: 1.875rem 0 0.625rem 0 !important;
+                            font-weight: 700;
+
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            line-height: 1.7;
+                            padding-bottom: 0.625rem;
+                        }
+                    }
+
+                    .block2 {
+                        @extend .block;
+                    }
+
+                    .block3 {
+                        @extend .block;
+                        border: none !important;
+                    }
+
                 }
-
-                .block3 {
-                    @extend .block;
-                    border: none !important;
-                }
-
             }
         }
     }
@@ -168,6 +170,8 @@ body {
 
 footer {
     section {
+        max-width: 69.375rem;
+        margin: 0 auto !important;
         .col-md-4 {
             padding: 0 0 0 0.625rem;
             display: flex;
@@ -236,7 +240,7 @@ footer {
                 padding: 0;
 
                 h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.4rem !important;
                 }
             }
 
