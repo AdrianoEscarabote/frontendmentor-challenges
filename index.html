@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Calculator app</title>
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <main>
+        <div class="headerApp d-flex align-items-center justify-content-between">
+            <h1>calc</h1>
+            <p>THEME</p>
+            <div class="switch d-flex flex-column align-items-center">
+                <div class="label">
+                    <label for="one">1</label>
+                    <label for="two">2</label>
+                    <label for="three">3</label>
+                </div>
+                <div class="tri-state-toggle" aria-label="theme switcher">
+                    <input class="button" type="radio" name="toggle" id="one" data-theme="theme-1" />
+                    <input class="button" type="radio" name="toggle" id="two" data-theme="theme-2" />
+                    <input class="button" type="radio" name="toggle" id="three" data-theme="theme-3" />
+                </div>
+            </div>
+
+        </div>
+        <div class="input">
+            <label for="input"></label>
+            <input type="text" name="input" id="input" value="399,981">
+        </div>
+        <div class="keys">
+            <button class="btnKey" value="7">7</button>
+            <button class="btnKey" value="8">8</button>
+            <button class="btnKey" value="9">9</button>
+            <button class="btnKey" id="del">DEL</button>
+            <button class="btnKey" value="4">4</button>
+            <button class="btnKey" value="5">5</button>
+            <button class="btnKey" value="6">6</button>
+            <button class="btnKey">+</button>
+            <button class="btnKey" value="1">1</button>
+            <button class="btnKey" value="2">2</button>
+            <button class="btnKey" value="3">3</button>
+            <button class="btnKey">-</button>
+            <button class="btnKey">.</button>
+            <button class="btnKey" value="0">0</button>
+            <button class="btnKey">/</button>
+            <button class="btnKey">x</button>
+            <button class="btnKey" id="reset">RESET</button>
+            <button class="btnKey" id="equal">=</button>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

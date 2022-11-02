@@ -1,0 +1,91 @@
+:root {
+    --mainBackground: #3a4764;
+    --toggleBackgroundKeypadBackground: #232c43;
+    --screenBackground: #182034;
+    --keyBackground: #637097;
+    --keyShadow: #404e72;
+    --keyBackgroundToggle: #d03f2f;
+    --keyShadow2: #93261a;
+    --keyBackground2: #eae3dc;
+    --keyShadow3: #b4a597;
+    --grayish: #444b5a;
+    --text1: #ffffff --text2: #1b2428;
+    --text3: #ffffff;
+}
+
+.theme-2 {
+    --mainBackground: hsl(0, 0%, 90%);
+    --toggleBackgroundKeypadBackground: #d1cccc;
+    --screenBackground: hsl(0, 0%, 93%);
+    --keyBackground: hsl(185, 42%, 37%);
+    --keyShadow: hsl(185, 58%, 25%);
+    --keyBackgroundToggle: hsl(25, 98%, 40%);
+    --keyShadow2: hsl(25, 99%, 27%);
+    --keyBackground2: hsl(45, 7%, 89%);
+    --keyShadow3: hsl(35, 11%, 61%);
+    --grayish: hsl(60, 10%, 19%);
+    --text1: hsl(0, 0%, 100%);
+    --text2: #1b2428;
+    --text3: #1b2428;
+}
+
+.theme-3 {
+    --mainBackground: hsl(268, 75%, 9%);
+    --toggleBackgroundKeypadBackground: hsl(268, 71%, 12%);
+    --screenBackground: hsl(268, 71%, 12%);
+    --keyBackground: hsl(281, 89%, 26%);
+    --keyShadow: hsl(285, 91%, 52%);
+    --keyBackgroundToggle: hsl(176, 100%, 44%);
+    --keyShadow2: hsl(177, 92%, 70%);
+    --keyBackground2: hsl(268, 47%, 21%);
+    --keyShadow3: #871c9c;
+    --grayish: #35352c;
+    --text1: hsl(0, 0%, 100%);
+    --text2: #ffe53d;
+    --text3: #ffe53d;
+}
+
+body {
+    background-color: var(--mainBackground);
+}
+
+h1,
+label,
+p {
+color: var(--text3);
+}
+
+.input>input {
+    background-color: var(--screenBackground);
+    color: var(--text3);
+}
+
+.keys {
+    background-color: var(--toggleBackgroundKeypadBackground);
+    color: var(--text1);
+}
+
+.btnKey {
+    background-color: var(--keyBackground2);
+    color: var(--text2);
+}
+
+#del,
+#reset {
+    background-color: var(--keyBackground);
+    color: var(--text1);
+}
+
+#equal {
+    background-color: var(--keyBackgroundToggle);
+}
+
+.tri-state-toggle {
+    background-color: var(--toggleBackgroundKeypadBackground);
+}
+
+input[type='radio'] {
+    background-color: var(--keyBackgroundToggle);
+}
+
+label
