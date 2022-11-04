@@ -74,7 +74,7 @@ p {
     color: var(--text3);
 }
 
-.input>input {
+.calcResult {
     background-color: var(--screenBackground);
     color: var(--text3);
 }
@@ -83,13 +83,13 @@ p {
     background-color: var(--toggleBackgroundKeypadBackground);
 }
 
-.btnKey {
+button {
     background-color: var(--keyBackground2);
     color: var(--btnKey);
     border-bottom: 0.25rem solid var(--keyShadow3) !important;
 }
 
-.btnKey:hover {
+button:hover {
     background-color: var(--hoverKey);
     border-bottom: 0.25rem solid var(--hoverKeyBorder) !important;
 }
