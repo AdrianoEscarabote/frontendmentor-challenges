@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
 body {
     font-family: 'League Spartan', sans-serif;
     font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
 
     main {
         position: relative;
         max-width: 540px;
+        width: 100%;
 
         .headerApp {
-            h1 {
-                font-weight: 700;
-            }
 
             p {
                 position: absolute;
@@ -22,6 +23,7 @@ body {
             }
 
             .switch {
+                top: 0;
                 position: relative;
 
                 label {
@@ -41,9 +43,9 @@ body {
                 .tri-state-toggle {
                     display: flex;
                     justify-content: center;
-                    gap: 10px;
+                    gap: 5px;
                     padding: 4px;
-                    width: 90px;
+                    width: 75px;
                     border-radius: 50px;
 
                     #one {
@@ -51,10 +53,6 @@ body {
                     }
                 }
             }
-
-
-
-
         }
 
         .input {
@@ -67,27 +65,37 @@ body {
         }
 
         .keys {
-            padding: 20px;
+            padding: 32px 32px 43px 32px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
 
             .btnKey {
+                display: grid;
+                place-content: center;
                 border-radius: 6px;
                 border: none;
-                width: 101px;
+                max-width: 101px;
                 height: 60px;
             }
 
             #reset {
-                width: 100%;
+                max-width: 100%;
                 grid-column: 1 / 3;
             }
 
             #equal {
-                width: 100%;
+                max-width: 100%;
                 grid-column: 3 / 5;
             }
         }
+    }
+}
+
+@media (max-width: 560px) {
+    .keys {
+        padding: 12px 12px 32px 12px !important;
+        grid-template-columns: repeat(4, 100%);
+        gap: 12px !important;
     }
 }
