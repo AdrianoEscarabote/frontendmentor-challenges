@@ -1,6 +1,19 @@
+const buttonKey = document.querySelectorAll(".btnKey")
+const numberDisplay = document.getElementById("numberRes")
+const upNumber = document.getElementById("up")
+const del = document.getElementById("del")
+const reset = document.getElementById("reset")
+const equal = document.getElementById("equal")
+const addition = document.getElementById("addition")
+const subtraction = document.getElementById("subtraction")
+const division = document.getElementById("division")
+const multiplication = document.getElementById("multiplication")
+let num1 = ""
+let upNum = ""
+
 // input radio
-var buttons = document.getElementsByClassName("button");
-var arr = [...buttons];
+const buttons = document.getElementsByClassName("button");
+const arr = [...buttons];
 
 arr.forEach((element) => {
     element.addEventListener("click", () => {
@@ -15,6 +28,20 @@ arr.forEach((element) => {
             });
     });
 });
+
+// localStorage.setItem("themeUser", document.body.className)
+// document.body.dataset.theme = localStorage.getItem("themeUser")
+
+// document.getElementById("localBtn").addEventListener("click", () => {
+//     const input = document.getElementById("local")
+//     localStorage.setItem("info", input.value)
+//     input.value = ""
+//   })
+
+//   document.getElementById("readLocal").addEventListener("click", () => {
+//     const info = localStorage.getItem("info")
+//     alert("A informção guardadaa no local storage é: " + info)
+//   })
 
 // change theme
 arr.forEach((element) => {
@@ -36,20 +63,8 @@ arr.forEach((element) => {
 })
 
 // calc 
-const buttonKey = document.querySelectorAll(".btnKey")
-const numberDisplay = document.getElementById("numberRes")
-const upNumber = document.getElementById("up")
-const del = document.getElementById("del")
-const reset = document.getElementById("reset")
-const equal = document.getElementById("equal")
-const addition = document.getElementById("addition")
 
 const allowedKeys = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", " "]
-
-// deleting numbers
-del.addEventListener("click", () => {
-    numberDisplay.innerText = numberDisplay.textContent.slice(0, -1)
-})
 
 document.body.addEventListener("keydown", (ev) => {
     ev.preventDefault()
@@ -69,19 +84,93 @@ document.body.addEventListener("keydown", (ev) => {
     }
 })
 
-let numberForCalc = ""
+class getNum {
+    getKey1() {
+        buttonKey.forEach((element) => {
+            element.addEventListener("click", () => {
+                numberDisplay.innerText += element.value
+                num1 += numberDisplay.textContent
+                return num1
+            })
+        })
+    }
+    addition() {
+        addition.addEventListener("click", () => {
+            if (upNumber.textContent || numberDisplay.textContent) {
+                let result = Number(upNum) + Number(numberDisplay.textContent)
+                upNumber.innerText = `${result} + `
+                upNum = result
+                // localStorage.setItem("upNum", upNum)
+            } else {
+                upNum = num1
+                upNumber.innerText = `${upNum} + `
+            }
+            numberDisplay.innerText = ""
+        })
+    }
+    subtraction() {
+        subtraction.addEventListener("click", () => {
+            if (upNumber.textContent || numberDisplay.textContent) {
+                let result = Number(upNum) - Number(numberDisplay.textContent)
+                upNumber.innerText = `${result} - `
+                upNum = result
+            } else {
+                upNum = num1
+                upNumber.innerText = `${upNum} - `
+            }
+            numberDisplay.innerText = ""
+        })
+    }
+    division() {
+        division.addEventListener("click", () => {
+            if (upNumber.textContent || numberDisplay.textContent) {
+                let result = Number(upNum) / Number(numberDisplay.textContent)
+                upNumber.innerText = `${result} / `
+                upNum = result
+            } else {
+                upNum = num1
+                upNumber.innerText = `${upNum} / `
+            }
+            numberDisplay.innerText = ""
+        })
+    }
+    multiplication() {
+        multiplication.addEventListener("click", () => {
+            if (upNumber.textContent || numberDisplay.textContent) {
+                let result = Number(upNum) * Number(numberDisplay.textContent)
+                upNumber.innerText = `${result} * `
+                upNum = result
+            } else {
+                upNum = num1
+                upNumber.innerText = `${upNum} * `
+            }
+            numberDisplay.innerText = ""
+        })
+    }
+    reset() {
+        reset.addEventListener("click", () => {
+            numberDisplay.innerText = ""
+            upNumber.innerText = ""
+            num1 = ""
+            upNum = ""
+        })
+    }
+    del() {
+        del.addEventListener("click", () => {
+            numberDisplay.innerText = numberDisplay.textContent.slice(0, -1)
+        })
+    }
+}
 
-buttonKey.forEach((element) => {
-    element.addEventListener("click", () => {
-        numberDisplay.innerText += element.value
-        numberForCalc += element.value
-        console.log(numberForCalc)
-    })
-})
+const app = new getNum()
+const main = () => {
+    app.getKey1()
+    app.addition()
+    app.subtraction()
+    app.division()
+    app.multiplication()
+    app.reset()
+    app.del()
+}
 
-// reset button
-reset.addEventListener("click", () => {
-    numberDisplay.innerText = ""
-    upNumber.innerText = ""
-    numberForCalc = ""
-})
+main()
