@@ -87,11 +87,16 @@ button {
     background-color: var(--keyBackground2);
     color: var(--btnKey);
     border-bottom: 0.25rem solid var(--keyShadow3) !important;
+    transition: 0.00s;
 }
 
 button:hover {
     background-color: var(--hoverKey);
     border-bottom: 0.25rem solid var(--hoverKeyBorder) !important;
+}
+
+button:focus {
+    border: 2px solid var(--keyBackgroundToggle) !important;
 }
 
 #del,
