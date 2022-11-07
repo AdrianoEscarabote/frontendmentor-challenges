@@ -57,7 +57,7 @@ body main .calcResult {
 }
 body main .calcResult #up {
   height: 0.8125rem;
-  font-size: 0.875rem;
+  font-size: 1.475rem;
   padding: 1.25rem;
 }
 body main .calcResult #numberRes {
@@ -65,6 +65,7 @@ body main .calcResult #numberRes {
   height: 4.8125rem;
   text-align: right;
   padding: 1.25rem;
+  font-size: 38px !important;
 }
 body main .keys {
   padding: 2rem 2rem 2.6875rem 2rem;
