@@ -2,7 +2,7 @@
 
 # GIF
 
-// here
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/200404859-d53efb66-f72f-450c-9205-218068c223b4.gif)
 
 # Frontend Mentor - Calculator app solution
 
