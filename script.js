@@ -83,9 +83,9 @@ window.onload = () => {
 
 // calc 
 
-class getNum {
+class calculatorApp {
     keyboardNumbers() {
-        const allowedKeys = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0"]
+        const allowedKeys = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "."]
 
         document.body.addEventListener("keydown", (ev) => {
             ev.preventDefault()
@@ -100,6 +100,22 @@ class getNum {
                 case "Enter":
                     validateCalc()
                     equal.focus()
+                    break
+                case "+":
+                    additionFuncinality()
+                    addition.focus()
+                    break
+                case "-":
+                    subtractionFuncionality()
+                    subtraction.focus()
+                    break
+                case "*":
+                    multiplicationFuncinality()
+                    multiplication.focus()
+                    break
+                case "/":
+                    divisionFuncionality()
+                    division.focus()
                     break
                 default:
                     break
@@ -209,7 +225,7 @@ function validateCalc() {
     }
 }
 
-const app = new getNum()
+const app = new calculatorApp()
 const main = () => {
     app.keyboardNumbers()
     app.getKey1()
