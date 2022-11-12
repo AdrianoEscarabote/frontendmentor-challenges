@@ -2,7 +2,7 @@
 
 # GIF
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101136987/201479791-32898372-4818-484e-80e4-5be79e7d67ec.gif)
 
 # Frontend Mentor - Notifications page solution
 
