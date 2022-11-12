@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+body {
+  font-size: 0.9375rem;
+  background-color: #f7fafd;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.75rem 1.25rem;
+  color: #5e6778;
+}
+body main {
+  width: 100%;
+  max-width: 43.75rem;
+  background-color: #ffffff;
+  padding: 1.875rem;
+  border-radius: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+body main .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+body main .header h1 {
+  font-size: 1.25rem;
+  color: #1c202b;
+}
+body main .header h1 span {
+  margin-left: 0.625rem;
+  color: #ffffff;
+  padding: 0.1625rem 0.6875rem;
+  border-radius: 0.375rem;
+  background-color: #0a317b;
+}
+body main .header button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+body main .header button:hover {
+  color: #0a317b;
+}
+body main .notification {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.625rem;
+}
+body main .notification img {
+  margin: 0 0.625rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+body main .notification .content {
+  display: flex;
+  flex-direction: column;
+}
+body main .notification .content .title {
+  display: flex;
+  flex-direction: row-reverse;
+  color: #5e6778;
+}
+body main .notification .content .title h2 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+}
+body main .notification .content .title h2 a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #1c202b;
+}
+body main .notification .content .title h2 a:hover {
+  color: #0a317b;
+}
+
+.time {
+  color: #939dae;
+}
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: flex-start !important;
+  flex-direction: column;
+}
+.message .content {
+  display: flex;
+  flex-direction: row !important;
+}
+.message .boxMessage {
+  max-width: 100%;
+  margin: 0 0 0 3.3125rem;
+}
+.message .boxMessage p {
+  border: 0.0625rem solid #e5effa;
+  margin: 0.625rem 0;
+  padding: 0.9375rem 1.25rem;
+}
+.message .boxMessage p:hover {
+  background-color: #f7fafd;
+}
+
+.new {
+  background-color: #f7fafd;
+}
+.new h2::after {
+  position: absolute;
+  margin: 0.375rem 0 0 0.5625rem;
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  content: "";
+  background-color: #f65351;
+}
+
+.picture {
+  position: relative;
+  padding-right: 3.75rem !important;
+}
+.picture .picImage {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 27.5rem) {
+  h1,
+body,
+h2,
+span {
+    font-size: 0.8125rem !important;
+  }
+  main {
+    padding: 0.625rem 0.5rem !important;
+  }
+  .notification {
+    padding: 0rem !important;
+  }
+  .picture {
+    padding-right: 3.125rem !important;
+  }
+  .number {
+    margin-left: 0.0625rem !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
