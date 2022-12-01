@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap");
+body {
+  background-color: #1f2632;
+  font-size: 1.75rem;
+  font-family: "Manrope", sans-serif;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body main {
+  padding: 2.5rem 2.8125rem 4rem 2.8125rem;
+  position: relative;
+  max-width: 34rem;
+  height: auto;
+  border-radius: 0.9375rem;
+  background-color: #323a49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.2rem;
+  transition: 2s ease-in-out;
+}
+body main p {
+  letter-spacing: 0.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 0rem;
+  color: #52ffa8;
+  text-align: center;
+}
+body main h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #cee3e9;
+}
+body main button {
+  background-color: #52ffa8;
+  cursor: pointer;
+  padding: 1.25rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -1.875rem;
+}
+body main button:hover {
+  background-color: #78fdba;
+  box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+  -webkit-box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+  -moz-box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+}
+body main button:hover img {
+  transform: rotate(-180deg);
+}
+
+.animate {
+  transform: rotateY(1turn);
+}
+
+/*# sourceMappingURL=style.css.map */
