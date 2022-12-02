@@ -1,8 +1,8 @@
-- Active App [Click here to see the App]()
+- Active App [Click here to see the App](https://advice-generator-app-jade.vercel.app/)
 
 # GIF
 
-// gif
+![AdviceVideo](https://user-images.githubusercontent.com/101136987/205329174-4177a522-f956-4484-9350-0365bc24ef32.gif)
 
 # Frontend Mentor - Advice generator app solution
 
