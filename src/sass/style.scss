@@ -53,13 +53,13 @@ body {
       background-color: $green;
       cursor: pointer;
       padding: 1.25rem;
-      border: none;
-      outline: none;
+      border: 1px solid transparent;
       border-radius: 50%;
       position: absolute;
       bottom: -1.875rem;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $btnHover;
         box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
         -webkit-box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);

@@ -27,10 +27,14 @@ window.addEventListener("load", () => {
   button.addEventListener("click", () => {
     
     document.querySelector("main").classList.toggle("animate")
+    button.setAttribute("disabled", "")
     
     setTimeout(() => {
       loadAdvice()  
     }, 960)
+    setTimeout(() => {
+      button.removeAttribute("disabled")
+    }, 2000)
   })
   loadAdvice()
 })
