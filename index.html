@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/reset.css">
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-  <script src="src/js/handleMobileMenu.js"></script>
+  <script src="src/js/handleMobileMenu.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
           </li>
         </ul>
         <button id="menu" aria-label="open mobile menu">
-
+          <img src="images/menu-burger.svg" alt="" aria-hidden="true">
         </button>
       </nav>
     </div>
@@ -54,8 +54,25 @@
   <main>
     <div class="statistics-input">
       <div class="input">
+        <label for="text"></label>
         <input type="text" name="text" id="url" placeholder="Shorten a link here...">
         <button type="submit">Shorten It!</button>
+      </div>
+      <div class="shortLinks">
+        <div id="showLink">
+          <p class="oldLink">https://imacoolguy.com.br/home</p>
+          <div class="link">
+            <p class="res">https://irel.link/adkfsj</p>
+            <button id="copy">Copy</button>
+          </div>
+        </div>
+        <div id="showLink">
+          <p class="oldLink">https://imacoolguy.com.br/home</p>
+          <div class="link">
+            <p class="res">https://irel.link/adkfsj</p>
+            <button id="copy">Copy</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -105,19 +122,19 @@
       <img src="images/logo.svg" alt="" aria-hidden="true">
       <div class="grid-items">
         <div class="column1">
-          <a href="/" aria-label="Features" class="mainLink">Features</a>
+          <p>Features</p>
           <a href="/" aria-label="Link Shortening">Link Shortening</a>
           <a href="/" aria-label="Branded Links">Branded Links</a>
           <a href="/" aria-label="Analytics">Analytics</a>
         </div>
         <div class="column2">
-          <a href="/" aria-label="Resources" class="mainLink">Resources</a>
+          <p>Resources</p>
           <a href="/" aria-label="Blog">Blog</a>
           <a href="/" aria-label="Developers">Developers</a>
           <a href="/" aria-label="Support">Support</a>
         </div>
         <div class="column3">
-          <a href="/" aria-label="Company" class="mainLink">Company</a>
+          <p>Company</p>
           <a href="/" aria-label="About">About</a>
           <a href="/" aria-label="Our Team">Our Team</a>
           <a href="/" aria-label="Careers">Careers</a>
@@ -125,16 +142,20 @@
         </div>
         <ul class="column4">
           <li>
-            <a href="/" aria-label="Go to our Facebook"><img src="images/icon-facebook.svg" alt="" aria-hidden="true" class="socialIcon"></a>
+            <a href="/" aria-label="Go to our Facebook"><img src="images/icon-facebook.svg" alt="" aria-hidden="true"
+                class="socialIcon"></a>
           </li>
           <li>
-            <a href="/" aria-label="Go to our Twitter"><img src="images/icon-twitter.svg" alt="" aria-hidden="true" class="socialIcon"></a>
+            <a href="/" aria-label="Go to our Twitter"><img src="images/icon-twitter.svg" alt="" aria-hidden="true"
+                class="socialIcon"></a>
           </li>
           <li>
-            <a href="/" aria-label="Go to our Pinterest"><img src="images/icon-pinterest.svg" alt="" aria-hidden="true" class="socialIcon"></a>
+            <a href="/" aria-label="Go to our Pinterest"><img src="images/icon-pinterest.svg" alt="" aria-hidden="true"
+                class="socialIcon"></a>
           </li>
           <li>
-            <a href="/" aria-label="Go to our Instagram"><img src="images/icon-instagram.svg" alt="" aria-hidden="true" class="socialIcon"></a>
+            <a href="/" aria-label="Go to our Instagram"><img src="images/icon-instagram.svg" alt="" aria-hidden="true"
+                class="socialIcon"></a>
           </li>
         </ul>
       </div>
