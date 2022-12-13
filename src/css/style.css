@@ -524,6 +524,11 @@ body footer .container .grid-items .column4 .socialIcon:hover, body footer .cont
     gap: 40px;
   }
 }
+@media (min-width: 1300px) {
+  .shortLinks {
+    margin-top: 80px !important;
+  }
+}
 @media (max-width: 956px) {
   .statistics-input {
     padding: 68px 20px 80px 20px !important;
@@ -764,7 +769,15 @@ footer .container .grid-items .column3 {
     width: 100% !important;
   }
 }
+.relative {
+  position: relative;
+}
+
 .copied {
+  background-color: #3b3054 !important;
+}
+
+.disabled {
   background-color: #3b3054 !important;
 }
 

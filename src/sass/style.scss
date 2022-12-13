@@ -443,6 +443,7 @@ body {
   .shortLinks {
     margin-top: 60px !important;
   }
+
   header {
     padding: inherit 87.5px !important;
 
@@ -494,6 +495,12 @@ body {
     .container {
       gap: 40px;
     }
+  }
+}
+
+@media (min-width: 1300px) {
+  .shortLinks {
+    margin-top: 80px !important;
   }
 }
 
@@ -628,10 +635,12 @@ body {
   #showLink {
     word-break: break-all;
     width: 100%;
+
     .oldLink {
       word-break: break-all;
     }
   }
+
   .shortLinks {
     margin-top: 70px !important;
   }
@@ -714,13 +723,22 @@ body {
         @include font(700 !important, 18px !important, 27px !important, none !important, $White !important);
       }
     }
+
     .signUp {
       width: 100% !important;
     }
   }
 }
 
+.relative {
+  position: relative;
+}
+
 .copied {
+  background-color: $DarkViolet !important;
+}
+
+.disabled {
   background-color: $DarkViolet !important;
 }
 
