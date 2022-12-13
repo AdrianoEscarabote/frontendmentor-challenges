@@ -14,9 +14,7 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
   - [The challenge](#the-challenge)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -33,7 +31,6 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-
 ## My process
 
 ### Built with
@@ -48,22 +45,10 @@ Users should be able to:
 - Webpack5
 - Babel
 
-### What I learned
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
@@ -71,5 +56,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Frontend Mentor - [@AdrianoEscarabote](https://www.frontendmentor.io/profile/AdrianoEscarabote)
 - Instagram - [@ogdrian](https://www.instagram.com/ogdrian/)
 - Twitter - [@drianEscarabote](https://twitter.com/drianEscarabote)
-
-
