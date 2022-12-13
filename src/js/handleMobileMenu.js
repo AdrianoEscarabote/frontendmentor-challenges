@@ -1,5 +1,5 @@
-const button = document.getElementById("menu")
-
-button.addEventListener("click", () => {
-  document.querySelector(".nav-content").classList.toggle("")
-})
+export default function handleMobile(param) {
+  param.addEventListener("click", () => {
+    document.querySelector(".nav-content").classList.toggle("nav-mobile")
+  })
+}
