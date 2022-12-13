@@ -178,6 +178,17 @@ body main .statistics-input .input input {
   letter-spacing: 0.15px;
   color: #35323e;
 }
+body main .statistics-input .input #error {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.109091px;
+  color: #F46363;
+  position: absolute;
+  left: 7%;
+  bottom: 20px;
+  display: none;
+}
 body main .statistics-input .input button {
   border: 1px solid transparent;
   background-color: #2acfcf;
@@ -480,6 +491,9 @@ body footer .container .grid-items .column4 .socialIcon:hover, body footer .cont
 }
 
 @media (max-width: 1300px) {
+  #error {
+    bottom: 5px !important;
+  }
   .shortLinks {
     margin-top: 60px !important;
   }
@@ -530,6 +544,10 @@ body footer .container .grid-items .column4 .socialIcon:hover, body footer .cont
   }
 }
 @media (max-width: 956px) {
+  #error {
+    left: 27px !important;
+    bottom: 76px !important;
+  }
   .statistics-input {
     padding: 68px 20px 80px 20px !important;
   }
@@ -769,6 +787,17 @@ footer .container .grid-items .column3 {
     width: 100% !important;
   }
 }
+.error {
+  border: 3px solid #f46262 !important;
+}
+.error::placeholder {
+  color: #f46262 !important;
+}
+
+.errorTxt {
+  display: block !important;
+}
+
 .relative {
   position: relative;
 }

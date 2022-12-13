@@ -11,6 +11,8 @@ button.addEventListener("click", handleMobile(button))
 
 
 function generateNewLink() {
+  document.getElementById("url").classList.remove("error")
+  document.getElementById("error").classList.remove("errorTxt")
   document.querySelector(".shortLinks").classList.add("relative")
 
   const parentDivShowLink = document.createElement("div")
@@ -40,22 +42,27 @@ function generateNewLink() {
   divClassLink.append(pnew, newButton)
   parentDivShowLink.append(pOld, divClassLink)
 
+  const parentMaster = document.querySelector(".shortLinks")
+  parentMaster.appendChild(parentDivShowLink)
+
   async function loadLink(link) {
-    let linkObjectJson = await getShortApi(link)
-  
-    const newLink = new LinkObj(linkObjectJson)
-  
-    renderLink(newLink.full_short_link)
+    try {
+      let linkObjectJson = await getShortApi(link)
+
+      const newLink = new LinkObj(linkObjectJson)
+
+      renderLink(newLink.full_short_link)
+    } catch (e) {
+      renderLink("Please enter a valid link!")
+      pOld.innerText = "Error!"
+    }
   }
-  
+
   function renderLink(adviceLink) {
     pnew.innerText = adviceLink
     console.log(adviceLink)
   }
 
-  const parentMaster = document.querySelector(".shortLinks")
-  parentMaster.appendChild(parentDivShowLink)
-  
   buttonGenerate.setAttribute("disabled", "")
   buttonGenerate.classList.add("disabled")
   buttonGenerate.innerText = "Wait!"
@@ -67,6 +74,27 @@ function generateNewLink() {
   }, 2000)
 }
 
+function checkInputValue() {
+  const inputValue = document.getElementById("url")
+  const text = document.getElementById("error")
+  if (inputValue.value === "") {
+    inputValue.classList.add("error")
+    text.classList.add("errorTxt")
+  } else {
+    generateNewLink()
+    getParentElement(document.querySelectorAll("#showLink"))
+  }
+}
 
 let buttonGenerate = document.getElementById("generate")
-buttonGenerate.addEventListener("click", generateNewLink)
+buttonGenerate.addEventListener("click", checkInputValue)
+
+import { renderItems, getParentElement } from "./js/handleLocalStorage.js";
+
+window.addEventListener("load", () => {
+  if (localStorage.getItem("links") === null) {
+    return
+  } else {
+    renderItems(localStorage.getItem("links"))
+  }
+})
