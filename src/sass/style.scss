@@ -1,41 +1,25 @@
+@import "./colors.scss";
+@import "./mixin.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
-
-// ## Primary
-$Cyan: #2acfcf;
-$DarkViolet: #3b3054;
-
-// ### Secondary
-$Red: #f46262;
-
-// ### Neutral
-$White: #fff;
-$Gray: #bfbfbf;
-$GrayishViolet: #9e9aa7;
-$VeryDarkBlue: #35323e;
-$VeryDarkViolet: #232127;
-$mainBackground: #EFF1F7;
-$hoverButton: #9AE3E3;
-
-@mixin flex($display, $align-items, $justify-content, $flex-direction) {
-  display: $display;
-  align-items: $align-items;
-  justify-content: $justify-content;
-  flex-direction: $flex-direction;
-}
-
-@mixin font($font-weight, $font-size, $line-height, $letter-spacing, $color) {
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-  letter-spacing: $letter-spacing;
-  color: $color;
-}
 
 body {
   background-color: $White;
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
   @include flex(flex, center, center, column);
+
+  &::-webkit-scrollbar {
+    width: 12px;              
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $mainBackground;        
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient($DarkViolet 40%, $Cyan 90%);    
+    border-radius: 20px;    
+  }
 
   header {
     padding: 55px 165px;
@@ -453,11 +437,11 @@ body {
   }
 
   .shortLinks {
-    margin-top: 60px !important;
+    margin-top: 40px !important;
   }
 
   header {
-    padding: inherit 87.5px !important;
+    padding: 55px 87.5px !important;
 
     .content {
       gap: 12px !important;
@@ -511,7 +495,8 @@ body {
 }
 
 @media (min-width: 1300px) {
-  .shortLinks {
+  .relative {
+    position: relative;
     margin-top: 80px !important;
   }
 }
@@ -758,9 +743,7 @@ body {
   display: block !important;
 }
 
-.relative {
-  position: relative;
-}
+
 
 .copied {
   background-color: $DarkViolet !important;

@@ -5,10 +5,8 @@ import buttonCopy from "./js/buttonCopy.js";
 import getShortApi from "./js/getShortApi.js";
 import LinkObj from "./js/LinkObj.js";
 
-
 const button = document.getElementById("menu")
 button.addEventListener("click", handleMobile(button))
-
 
 function generateNewLink() {
   document.getElementById("url").classList.remove("error")
@@ -82,19 +80,17 @@ function checkInputValue() {
     text.classList.add("errorTxt")
   } else {
     generateNewLink()
-    getParentElement(document.querySelectorAll("#showLink"))
+    setTimeout(() => {
+      getParentElement( getOldLink(), getNewLink() )
+    }, 1500)
   }
 }
 
 let buttonGenerate = document.getElementById("generate")
 buttonGenerate.addEventListener("click", checkInputValue)
 
-import { renderItems, getParentElement } from "./js/handleLocalStorage.js";
+import { renderItems, getParentElement, createElement, getNewLink, getOldLink} from "./js/handleLocalStorage.js";
 
 window.addEventListener("load", () => {
-  if (localStorage.getItem("links") === null) {
-    return
-  } else {
-    renderItems(localStorage.getItem("links"))
-  }
+  renderItems()
 })
