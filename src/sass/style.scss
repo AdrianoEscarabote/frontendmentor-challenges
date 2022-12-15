@@ -162,7 +162,7 @@ body {
         max-width: 1110px;
         height: 168px;
         width: 100%;
-        background: url("../../dist/images/bg-shorten-desktop.svg") 100% $DarkViolet;
+        background: url("./images/bg-shorten-desktop.svg") 100% $DarkViolet;
         border-radius: 10px;
 
         input {
@@ -341,7 +341,7 @@ body {
     }
 
     .boost {
-      background: url('../../dist/images/bg-boost-desktop.svg') $DarkViolet repeat-x;
+      background: url('./images/bg-boost-desktop.svg') $DarkViolet repeat-x;
       background-size: cover;
       width: 100%;
       padding: 57px 24px;
@@ -511,7 +511,7 @@ body {
   }
 
   .input {
-    background: url('../../dist/images/bg-shorten-mobile.svg') #3b3054 no-repeat !important;
+    background: url('./images/bg-shorten-mobile.svg') #3b3054 no-repeat !important;
     background-size: cover !important;
     @include flex(flex, center, none !important, column !important);
 

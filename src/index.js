@@ -1,9 +1,10 @@
+import "./css/style.css"
+import "./css/reset.css"
 import handleMobile from "./js/handleMobileMenu.js";
-// import "./css/style.css"
-// import "./css/reset.css"
 import buttonCopy from "./js/buttonCopy.js";
 import getShortApi from "./js/getShortApi.js";
 import LinkObj from "./js/LinkObj.js";
+import { renderItems, getParentElement, createElement, getNewLink, getOldLink} from "./js/handleLocalStorage.js";
 
 const button = document.getElementById("menu")
 button.addEventListener("click", handleMobile(button))
@@ -58,7 +59,6 @@ function generateNewLink() {
 
   function renderLink(adviceLink) {
     pnew.innerText = adviceLink
-    console.log(adviceLink)
   }
 
   buttonGenerate.setAttribute("disabled", "")
@@ -88,8 +88,6 @@ function checkInputValue() {
 
 let buttonGenerate = document.getElementById("generate")
 buttonGenerate.addEventListener("click", checkInputValue)
-
-import { renderItems, getParentElement, createElement, getNewLink, getOldLink} from "./js/handleLocalStorage.js";
 
 window.addEventListener("load", () => {
   renderItems()

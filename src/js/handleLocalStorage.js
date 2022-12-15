@@ -53,24 +53,14 @@ export async function getParentElement(linkOld, newLink) {
 
 export function getOldLink() {
   const oldLink = document.querySelectorAll(".oldLink")
-
   const oldArr = [...oldLink]
-
   const lastElement = oldArr[oldArr.length - 1]
-
-  console.log(lastElement)
-
   return lastElement
 }
 
 export function getNewLink() {
   const newLink = document.querySelectorAll(".res")
-
   const newLinkArr = [...newLink]
-
   const lastElement = newLinkArr[newLinkArr.length - 1]
-
-  console.log(lastElement)
-
   return lastElement
 }
