@@ -1,5 +1,3 @@
-import "./css/style.css"
-import "./css/reset.css"
 import handleMobile from "./js/handleMobileMenu.js";
 import buttonCopy from "./js/buttonCopy.js";
 import getShortApi from "./js/getShortApi.js";
