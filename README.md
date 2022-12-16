@@ -1,8 +1,8 @@
-- Active Site [Click here to see the site](https://url-shortening-92eitkedv-adrianoescarabote.vercel.app/)
+- Active Site [Click here to see the site](https://url-shortening-api-livid.vercel.app/)
 
-# GIF
+# Video
 
-// gif here
+https://user-images.githubusercontent.com/101136987/208116311-1cdaa635-5a61-4c97-af75-b36ee1103d65.mp4
 
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
