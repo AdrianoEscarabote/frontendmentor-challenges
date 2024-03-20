@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    min-height: 100vh;
+    color: #000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contentNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.features a, .team a, .signIn a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+}
+
+.features a:hover, .team a:hover, .signIn a:hover {
+    color: rgb(61, 61, 61);
+}
+
+.headerContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    margin: 6rem 5rem 1rem 5rem;
+}
+
+.textAndForm h1 {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.textAndForm p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.imgIlustration {
+    width: 90%;
+    height: 75%;
+}
+
+input[name="emailHeader"] {
+    width: 280px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    border: 1px solid #000;
+    font-size: 16px;
+    text-align: left;
+}
+
+.buttonHeader {
+    background-color: #296af9;
+    overflow: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 130px;
+    height: 41px;
+}
+
+.buttonHeader:hover {
+    background-color: #5980d3;
+    transition: 0.4s;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    padding: 6rem 5rem;
+    background-color: #f9f8fe;
+}
+
+.backgroundImageDesktop {
+    display: block;
+    width: 100%;
+}
+
+.backgroundImageMobile {
+    display: none;
+}
+
+.mainContent h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.mainText .mainP,
+.mainText .secondP {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.reference a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+    gap: 14px;
+    width: 220px;
+    height: 30px;
+    color: #3da08f;
+    border-bottom: 1px solid#3da08f;
+    text-decoration: none;
+}
+
+.reference .referenceP {
+    font-size: 20px;
+}
+
+.user {
+    background-color: #fff;
+    width: 580px;
+    height: 255px;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.user .quotesImg {
+    width: 20px;
+}
+
+.user p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.userProfile img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.name .name {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.name .job {
+    font-size: 15px;
+}
+
+.footerContent .content1 {
+    background-color: #575989;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content1 .footerH1 {
+    color: #fff;
+}
+
+.content1 .footerP {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+input[name="emailFooter"] {
+    width: 360px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    border: 1px solid #000;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.buttonFooter {
+    background-color: #296af9;
+    overflow: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 180px;
+    height: 40px;
+}
+
+
+.buttonFooter:hover {
+    background-color: #5980d3;
+    transition: 0.4s;
+}
+
+.footerContent .content2 {
+    background-color: #07043b;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5rem;
+}
+
+.iconIlustration {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+.phone {
+    display: flex;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.pPhone {
+    color: #fff;
+}
+
+.email {
+    display: flex;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.pEmail {
+    color: #fff;
+}
+
+.column2,
+.column3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link {
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.socialMediaIcons {
+    display: flex;
+    gap: 15px;
+}
+
+.iconFacebook,
+.iconInstagram,
+.iconTwitter {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 40px;
+    padding: 8px;
+}
+
+.Author {
+    background-color: #07043b;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.Author a {
+    text-decoration: none;
+    color: aqua;
+}
+
+@media (max-width: 1000px) {
+    .contentNav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem;
+    }
+
+    .contentNav .img img {
+        width: 80px;
+    }
+
+    .links {
+        display: flex;
+        gap: 10px !important;
+        align-items: center;
+        margin: 0rem;
+    }
+
+    .links {
+        gap: 20px;
+    }
+
+    .features a,
+    .team a,
+    .signIn a {
+        font-size: 13px;
+    }
+
+    .headerContent {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 1rem 2rem 3rem 2rem;
+    }
+
+    .textAndForm h1 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .textAndForm p {
+        font-size: 1rem;
+    }
+
+    .imgIlustration {
+        width: 100%;
+    }
+
+    input[name="emailHeader"] {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .buttonHeader {
+        width: 100%;
+        height: 40px;
+    }
+
+    /* fazer o hover aqui*/
+
+    .mainContent {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        padding: 4rem 2rem;
+    }
+
+    .backgroundImageDesktop {
+        display: none;
+    }
+
+    .backgroundImageMobile {
+        display: block;
+        width: 100%;
+    }
+
+    .mainContent h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .mainText .mainP,
+    .mainText .secondP {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+
+    .reference {
+        width: 200px;
+    }
+
+    .reference a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        gap: 10px;
+        width: 100%;
+        height: 30px;
+    }
+
+    .reference .referenceP {
+        font-size: 17px;
+    }
+
+    .user {
+        background-color: #fff;
+        width: 220px;
+        height: 280px;
+        padding: 15px;
+        margin-top: 40px;
+    }
+
+    .user .quotesImg {
+        width: 16px;
+    }
+
+    .user p {
+        font-size: 17px;
+        margin: 10px 0;
+    }
+
+    .userProfile {
+        margin-top: 10px;
+    }
+
+    .userProfile img {
+        width: 50px;
+    }
+
+    .footerContent .content1 {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content1 .footerH1 {
+        font-size: 22px;
+    }
+
+    input[name="emailFooter"] {
+        margin: 10px auto;
+        width: 100%;
+        height: 40px;
+        padding-left: 10px;
+    }
+
+    .buttonFooter {
+        font-size: 12px;
+        width: 100%;
+        height: 40px;
+    }
+
+    .footerContent .content2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: 3rem 0 3rem 3rem;
+    }
+
+    .iconIlustration {
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+    }
+
+    .phone {
+        display: flex;
+        margin: 20px 0;
+        gap: 20px;
+    }
+
+    .pPhone {
+        color: #fff;
+    }
+
+    .email {
+        display: flex;
+        margin: 20px 0;
+        gap: 10px;
+    }
+
+    .pEmail {
+        color: #fff;
+    }
+
+    .column2,
+    .column3 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .link {
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .socialMediaIcons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .iconFacebook,
+    .iconInstagram,
+    .iconTwitter {
+        border-radius: 50%;
+        border: 1px solid #fff;
+        width: 40px;
+        padding: 8px;
+    }
+
+    .Author {
+        background-color: #07043b;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .Author a {
+        text-decoration: none;
+        color: aqua;
+    }
+}
