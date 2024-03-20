@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #edf2f8;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 240px;
+}
+
+.grid-items {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "item1 item1 item2 item5"
+        "item3 item4 item4 item5";
+}
+
+.grid-item1 {
+    grid-area: item1;
+    background-color: #733fc8;
+    padding: 30px;
+    border-radius: 10px;
+    width: 720px;
+    height: 390px;
+    height: 310px;
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 85% 0;
+}
+
+.grid-item1 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.grid-item1 .avatarImg {
+    border-radius: 50%;
+    border: 2px solid #a67fe4;
+    width: 45px;
+}
+
+
+.grid-item1 .nameGraduate .name {
+    color: #fff;
+    font-weight: 700;
+}
+
+.grid-item1 .nameGraduate .graduate {
+    color: #fff;
+    font-weight: 100;
+}
+
+.grid-item1 .description .pBold {
+    margin: 10px 0 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.grid-item1 .description .p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 200;
+}
+
+.grid-item2 {
+    grid-area: item2;
+    background-color: #49556b;
+    padding: 30px;
+    border-radius: 10px;
+    width: 340px;
+    height: 310px;
+}
+
+.grid-item2 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.grid-item2 .avatarImg {
+    border-radius: 50%;
+    border: 2px solid #7b8eb3;
+    width: 45px;
+}
+
+.grid-item2 .nameGraduate .name {
+    color: #fff;
+    font-weight: 700;
+}
+
+.grid-item2 .nameGraduate .graduate {
+    color: #fff;
+    font-weight: 100;
+}
+
+.grid-item2 .description .pBold {
+    margin: 20px 0;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.grid-item2 .description .p {
+    font-size: 16px;
+    margin-top: 30px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.grid-item3 {
+    grid-area: item3;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 330px;
+    height: 312px;
+}
+
+.grid-item3 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.grid-item3 .avatarImg {
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.grid-item3 .nameGraduate .name {
+    color: #3f3e3e;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.grid-item3 .nameGraduate .graduate {
+    color: #000;
+    font-weight: 100;
+}
+
+.grid-item3 .description .pBold {
+    margin: 26px 0 0 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #424446;
+}
+
+.grid-item3 .description .p {
+    font-size: 17px;
+    margin-top: 48px;
+    color: #49556b;
+    font-weight: 400;
+}
+
+.grid-item4 {
+    grid-area: item4;
+    background-color: #18202d;
+    padding: 30px;
+    border-radius: 10px;
+    width: 720px;
+    height: 310px;
+}
+
+.grid-item4 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.grid-item4 .avatarImg {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 45px;
+}
+
+.grid-item4 .nameGraduate .name {
+    color: #fff;
+    font-weight: 700;
+}
+
+.grid-item4 .nameGraduate .graduate {
+    color: #fff;
+    font-weight: 100;
+}
+
+.grid-item4 .description .pBold {
+    margin: 26px 0 0 0;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.grid-item4 .description .p {
+    font-size: 17px;
+    margin-top: 15px;
+    color: rgb(184, 184, 184);
+    font-weight: 300;
+}
+
+.grid-item5 {
+    grid-area: item5;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 350px;
+    height: 650px;
+}
+
+.grid-item5 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.grid-item5 .avatarImg {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 45px;
+}
+
+.grid-item5 .nameGraduate .name {
+    color: #000;
+    font-weight: 700;
+}
+
+.grid-item5 .nameGraduate .graduate {
+    color: #000;
+    font-weight: 100;
+}
+
+.grid-item5 .description .pBold {
+    margin: 20px 0;
+    font-size: 23px;
+    font-weight: 700;
+    color: #424446;
+}
+
+.grid-item5 .description .p {
+    font-size: 17px;
+    margin-top: 35px;
+    color: #49556b;
+    font-weight: 400;
+}
+
+@media (max-width: 1480px) {
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .grid-items {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 320px);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas:
+            "item1 item2 item3"
+            "item4 item4 item5";
+    }
+
+    .grid-item1 {
+        padding: 30px;
+        width: 320px;
+    }
+
+    .grid-item1 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item1 .nameGraduate .graduate {
+        font-size: 17px;
+    }
+
+    .grid-item1 .description .pBold {
+        margin: 8px 0 10px 0;
+        font-size: 16px;
+    }
+
+    .grid-item1 .description .p {
+        font-size: 12px;
+        color: #fff;
+        font-weight: 200;
+    }
+
+    .grid-item2 {
+        padding: 30px;
+        width: 320px;
+    }
+
+    .grid-item2 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item2 .nameGraduate .graduate {
+        font-size: 17px;
+    }
+
+    .grid-item2 .description .pBold {
+        margin: 16px 0 10px 0;
+        font-size: 20px;
+    }
+
+    .grid-item2 .description .p {
+        font-size: 16px;
+    }
+
+    .grid-item3 {
+        padding: 30px;
+        width: 320px;
+    }
+
+    .grid-item3 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item3 .nameGraduate .graduate {
+        font-size: 17px;
+    }
+
+    .grid-item3 .description .pBold {
+        margin: 16px 0 10px 0;
+        font-size: 20px;
+    }
+
+    .grid-item3 .description .p {
+        font-size: 16px;
+    }
+
+    .grid-item4 {
+        width: 660px;
+        height: 300px;
+    }
+
+    .grid-item4 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item4 .nameGraduate .graduate {
+        font-size: 18px;
+    }
+
+    .grid-item4 .description .pBold {
+        margin: 26px 0 10px 0;
+        font-size: 20px;
+    }
+
+    .grid-item4 .description .p {
+        margin-top: 20px;
+    }
+
+    .grid-item5 {
+        grid-area: item5;
+        background-color: #fff;
+        padding: 30px;
+        width: 320px;
+        height: 300px;
+    }
+
+    .grid-item5 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item5 .nameGraduate .graduate {
+        font-size: 18px;
+    }
+
+    .grid-item5 .description .pBold {
+        margin: 2px 0;
+        font-size: 18px;
+    }
+
+    .grid-item5 .description .p {
+        font-size: 11px;
+        margin-top: 2px;
+        font-weight: 500;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .grid-items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .grid-item1 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .grid-item1 .nameGraduate .name {
+        font-size: 20px;
+    }
+
+    .grid-item1 .nameGraduate .graduate {
+        font-size: 20px;
+    }
+
+    .grid-item1 .description .pBold {
+        margin: 10px 0 6px 0;
+        font-size: 22px;
+    }
+
+    .grid-item1 .description .p {
+        font-size: 0.95rem;
+        font-weight: 300;
+    }
+
+    .grid-item2 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .grid-item2 .nameGraduate .name {
+        font-size: 20px;
+    }
+
+    .grid-item2 .nameGraduate .graduate {
+        font-size: 20px;
+    }
+
+    .grid-item2 .description .pBold {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    .grid-item2 .description .p {
+        font-size: 17px;
+        margin-top: 15px;
+        font-weight: 300;
+    }
+
+    .grid-item3 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .grid-item3 .nameGraduate .name {
+        font-size: 20px;
+    }
+
+    .grid-item3 .nameGraduate .graduate {
+        font-size: 20px;
+    }
+
+    .grid-item3 .description .pBold {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    .grid-item3 .description .p {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .grid-item4 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .grid-item4 .nameGraduate .name {
+        font-size: 20px;
+    }
+
+    .grid-item4 .nameGraduate .graduate {
+        font-size: 20px;
+    }
+
+    .grid-item4 .description .pBold {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    .grid-item4 .description .p {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .grid-item5 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .grid-item5 .nameGraduate .name {
+        font-size: 20px;
+    }
+
+    .grid-item5 .nameGraduate .graduate {
+        font-size: 20px;
+    }
+
+    .grid-item5 .description .pBold {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    .grid-item5 .description .p {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        margin: 10px auto;
+    }
+
+    .grid-items {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .grid-item1 {
+        width: 270px;
+        height: 410px;
+    }
+
+    .grid-item1 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item1 .nameGraduate .graduate {
+        font-size: 18px;
+    }
+
+    .grid-item1 .description .pBold {
+        margin: 10px 0 6px 0;
+        font-size: 18px;
+    }
+
+    .grid-item1 .description .p {
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .grid-item2 {
+        width: 270px;
+        height: 300px;
+    }
+
+    .grid-item2 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item2 .nameGraduate .graduate {
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .grid-item2 .description .pBold {
+        margin: 10px 0;
+        font-size: 23px;
+    }
+
+    .grid-item2 .description .p {
+        font-size: 15px;
+        margin-top: 15px;
+        font-weight: 300;
+    }
+
+    .grid-item3 {
+        width: 270px;
+        height: 280px;
+    }
+
+    .grid-item3 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item3 .nameGraduate .graduate {
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .grid-item3 .description .pBold {
+        margin: 10px 0;
+        font-size: 23px;
+    }
+
+    .grid-item3 .description .p {
+        font-size: 15px;
+        margin-top: 15px;
+        font-weight: 300;
+    }
+
+    .grid-item4 {
+        width: 270px;
+        height: 410px;
+    }
+
+    .grid-item4 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item4 .nameGraduate .graduate {
+        font-size: 18px;
+    }
+
+    .grid-item4 .description .pBold {
+        margin: 10px 0 6px 0;
+        font-size: 18px;
+    }
+
+    .grid-item4 .description .p {
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .grid-item5 {
+        padding: 30px;
+        width: 270px;
+        height: 580px;
+    }
+
+    .grid-item5 .nameGraduate .name {
+        font-size: 18px;
+    }
+
+    .grid-item5 .nameGraduate .graduate {
+        font-size: 18px;
+    }
+
+    .grid-item5 .description .pBold {
+        margin: 10px 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .grid-item5 .description .p {
+        font-size: 15px;
+        margin-top: 10px;
+        font-weight: 400;
+    }
+}
