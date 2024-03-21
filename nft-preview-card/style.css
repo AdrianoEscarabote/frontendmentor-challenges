@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d1a2d;
+    font-family: 'Outfit', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: 140px auto;
+    width: 356px;
+    height: 590px;
+    border-radius: 10px;
+    background-color: #15273f;
+    box-shadow: 0px 0px 0px hsla(216, 48%, 13%, 0.733), -20px 30px 5px hsla(216, 48%, 13%, 0.733), 20px 30px 5px hsla(216, 48%, 13%, 0.733);
+}
+
+#nft-image {
+    height: 300px;
+    width: 320px;
+    margin-top: 16px;
+    background: url("images/image-equilibrium.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#eye-icon {
+    opacity: 0;
+}
+
+#nft-image:hover>#eye-icon {
+    opacity: 1;
+}
+
+#nft-image:hover {
+    box-shadow: 0 320px hsla(178, 100%, 50%, .5) inset;
+}
+
+.title h1 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    margin: 26px 130px 20px 12px;
+    cursor: pointer;
+}
+
+.title h1:hover {
+    color: #15c1c3;
+}
+
+.paragraph p {
+    font-size: 18px;
+    color: #839fc7;
+    margin: 0 0 0 22px;
+    font-weight: 10;
+}
+
+.price-time {
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+    margin: 20px 0;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.price img {
+    margin: 0 8px 0 14px;
+}
+
+.price p {
+    color: #15c1c3;
+    font-weight: 800;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+}
+
+.time img {
+    margin: 0 8px 0 0;
+}
+
+.time p {
+    color: #849fc5;
+    margin-right: 16px;
+}
+
+.owner {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.116);
+    width: 310px;
+}
+
+.owner img {
+    width: 36px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 18px 8px 0 0;
+}
+
+.owner p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 16px;
+    color: #425875;
+}
+
+.owner p strong a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.owner p strong a:hover {
+    color: #15c1c3;
+}
+
+@media (max-width: 1600px) {
+    .container {
+        margin: 80px auto;
+    }
+}
+
+@media (max-height: 780px) {
+    .container {
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 270px;
+        height: 500px;
+    }
+
+    #nft-image {
+        width: 240px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+        margin: 24px 100px 20px 12px;
+    }
+
+    .paragraph p {
+        font-size: 14px;
+        margin: 0 0 0 18px;
+    }
+
+    .price-time {
+        display: flex;
+        justify-content: space-between;
+        gap: 38px;
+        margin: 20px 0;
+    }
+
+    .price p {
+        font-weight: 100;
+    }
+
+    .time img {
+        margin: 0;
+    }
+
+    .time p {
+        margin-right: 22px;
+    }
+    .owner {
+        margin: 10px auto;
+        width: 245px;
+    }
+    
+    .owner img {
+        width: 30px;
+        margin: 18px 0 0 0;
+    }
+    
+    .owner p {
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 16px;
+    }
+    
+    .owner p strong a {
+        font-weight: 300;
+    }
+}
