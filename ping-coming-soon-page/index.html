@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Frontend Mentor | Ping coming soon page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <main>
+        <div class="loader-wrapper">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+        <section class="mainContent">
+            <img src="images/logo.svg" alt="" aria-hidden="true" class="logo">
+            <h1>We are launching <strong>soon!</strong></h1>
+            <p>Subscribe and get notified</p>
+            <form>
+                <input type="email" name="email" id="email" placeholder="Your email address...">
+                <span id="res"></span>
+                <button id="button" type="button" aria-label="notify me">Notify Me</button>
+            </form>
+            <img src="images/illustration-dashboard.png" alt="illustration dashboard" class="mainImage">
+            <ul class="socialIcons">
+                <li><a href="https://www.github.com/AdrainoEscarabote" aria-label="facebook"><img src="images/facebook.png" alt=""
+                            aria-hidden="true"></a></li>
+                <li><a href="https://www.github.com/AdrainoEscarabote" aria-label="twitter"><img src="images/twitter.png" alt=""
+                            aria-hidden="true"></a></li>
+                <li><a href="https://www.github.com/AdrainoEscarabote" aria-label="instagram"><img src="images/instagram.png" alt=""
+                            aria-hidden="true"></a></li>
+            </ul>
+            <span>&copy; Copyright Ping. All rights reserved.</span>
+        </section>
+        <div id="card">
+            <p>Thanks for being a nice person and testing my challenge &#129312;</p>
+            <button id="back">back</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

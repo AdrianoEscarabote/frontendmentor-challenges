@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+  background: linear-gradient(hsl(273deg, 75%, 66%) 0%, hsl(240deg, 73%, 65%) 100%);
+  font-family: "Kumbh Sans", sans-serif;
+}
+body .container-fluid {
+  min-height: 100vh;
+}
+body .container-fluid .container {
+  border-radius: 1.25rem;
+  max-width: 56.25rem;
+  min-height: 32.5rem;
+  box-shadow: 0 30px 40px rgba(29, 30, 53, 0.4);
+}
+body .container-fluid .container .box {
+  width: 12.5rem;
+  height: auto;
+  left: -8.125rem;
+  top: 42%;
+  z-index: 1;
+}
+body .container-fluid .container .col-md-6 {
+  background: url(../images/bg-pattern-desktop.svg) no-repeat;
+  background-position-x: 115%;
+  background-position-y: 68%;
+  overflow: hidden;
+}
+body .container-fluid .container .col-md-6 picture {
+  max-width: 30rem;
+  width: 100%;
+  right: 18% !important;
+  top: 0 !important;
+  margin-top: 5.625rem;
+}
+body .container-fluid .container .col {
+  gap: 1.875rem;
+  z-index: 1 !important;
+}
+body .container-fluid .container .col h1 {
+  font-size: 1.875rem;
+}
+body .container-fluid .container .col .details {
+  position: relative;
+  width: 90%;
+}
+body .container-fluid .container .col .details .img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+body .container-fluid .container .col .details .transform {
+  transform: rotate(0deg);
+}
+body .container-fluid .container .col .details .text {
+  width: 100%;
+  cursor: pointer;
+}
+body .container-fluid .container .col .details .text summary {
+  font-size: 0.8125rem;
+  display: flex;
+  font-weight: 400;
+}
+body .container-fluid .container .col .details .text summary:hover {
+  color: hsl(14deg, 88%, 65%);
+}
+body .container-fluid .container .col .details .text summary:focus {
+  font-weight: 700;
+}
+body .container-fluid .container .col .details .text summary:focus .details img {
+  transform: rotate(90deg);
+}
+body .container-fluid .container .col .details .text p {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 64.25rem) {
+  body {
+    padding: 0 5rem !important;
+  }
+}
+@media (max-width: 48rem) {
+  body {
+    padding: 0 0.625rem !important;
+  }
+  body .container {
+    max-width: 26rem !important;
+  }
+  body .container .box {
+    display: none !important;
+  }
+  body .container .col-md-6 {
+    overflow: visible !important;
+    background-image: none !important;
+  }
+  body .container .col-md-6 picture {
+    width: 100%;
+  }
+  body .container .col-md-6 picture img {
+    top: -9.0625rem !important;
+    left: 34% !important;
+    right: 0 !important;
+  }
+  body .container .col {
+    margin: 0 !important;
+    gap: 1.25rem;
+  }
+  body .container .col h1 {
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
