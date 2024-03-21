@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap');
+
+$LightCyan: #cee3e9;
+$NeonGreen: #565857;
+$GrayishBlue: #4e5d73;
+$DarkGrayishBlue: #323a49;
+$DarkBlue: #1f2632;
+$green: #52ffa8;
+$btnHover: #78fdba;
+
+@mixin flex($display, $align-items, $justsify-content, $flex-direction) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justsify-content;
+  flex-direction: $flex-direction;
+}
+
+body {
+  background-color: $DarkBlue;
+  font-size: 1.75rem;
+  font-family: 'Manrope', sans-serif;
+  padding: 1.25rem;
+  @include flex(flex, center, center, column);
+
+  main {
+    padding: 2.5rem 2.8125rem 4rem 2.8125rem;
+    position: relative;
+    max-width: 34rem;
+    height: auto;
+    border-radius: 0.9375rem;
+    background-color: $DarkGrayishBlue;
+    @include flex(flex, center, center, column);
+    gap: 2.2rem;
+    transition: 2s ease-in-out;
+
+    p {
+      letter-spacing: 0.25rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-bottom: 0rem;
+      color: $green;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.50rem;
+      text-align: center;
+      color: $LightCyan;
+    }
+
+    button {
+      background-color: $green;
+      cursor: pointer;
+      padding: 1.25rem;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -1.875rem;
+
+      &:hover,
+      &:focus {
+        background-color: $btnHover;
+        box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+        -webkit-box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+        -moz-box-shadow: 0rem 0rem 3.375rem 1.4375rem rgba(55, 255, 134, 0.3);
+
+        img {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}
+
+.animate {
+  transform: rotateY(1turn);
+}

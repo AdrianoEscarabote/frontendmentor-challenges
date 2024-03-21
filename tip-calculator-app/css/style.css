@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsl(172deg, 67%, 45%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-wrapper img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(323deg) brightness(106%) contrast(101%);
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background: url("../images/logo.svg") hsl(185deg, 41%, 84%) no-repeat;
+  font-size: 1.5rem;
+  background-position: 50% 20%;
+}
+body .container .container-fluid {
+  max-width: 43.75rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1.25rem;
+}
+body .container .container-fluid .col-md-6 {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.25rem 1.875rem;
+}
+body .container .container-fluid .col-md-6 h1,
+body .container .container-fluid .col-md-6 h2,
+body .container .container-fluid .col-md-6 h3 {
+  font-size: 0.875rem;
+  color: #7f9c9f;
+}
+body .container .container-fluid .col-md-6 .numberBill, body .container .container-fluid .col-md-6 .numberPeople {
+  background-color: hsl(189deg, 41%, 97%);
+  margin-bottom: 1.875rem;
+}
+body .container .container-fluid .col-md-6 .numberBill input, body .container .container-fluid .col-md-6 .numberPeople input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: right;
+  padding: 0.3125rem;
+  background-repeat: no-repeat;
+  background-position: 4% 50%;
+  color: hsl(183deg, 100%, 15%);
+  border-radius: 0.3125rem;
+}
+body .container .container-fluid .col-md-6 .numberBill input:focus, body .container .container-fluid .col-md-6 .numberPeople input:focus {
+  outline: 0.0625rem solid hsl(172deg, 67%, 45%);
+}
+body .container .container-fluid .col-md-6 .numberPeople {
+  margin: 0rem !important;
+}
+body .container .container-fluid .col-md-6 ul {
+  gap: 0.625rem;
+  padding: 0 !important;
+  margin-bottom: 1.875rem;
+  width: 100%;
+}
+body .container .container-fluid .col-md-6 ul li button {
+  width: 6rem;
+  height: 2.5rem;
+  background-color: hsl(183deg, 100%, 15%);
+  border: none;
+  outline: none;
+  border-radius: 0.3125rem;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.25rem;
+}
+body .container .container-fluid .col-md-6 ul li button:focus {
+  background-color: hsl(172deg, 67%, 45%);
+}
+body .container .container-fluid .col-md-6 ul .input {
+  background-color: hsl(189deg, 41%, 97%);
+}
+body .container .container-fluid .col-md-6 ul .input input {
+  width: 5.625rem;
+  text-align: right;
+  background-color: hsl(189deg, 41%, 97%);
+  border: none;
+  outline: none;
+  border-radius: 0.3125rem;
+  color: hsl(183deg, 100%, 15%);
+}
+body .container .container-fluid .col-md-6 ul .input input:focus {
+  outline: 0.0625rem solid hsl(172deg, 67%, 45%);
+}
+body .container .container-fluid .col-md-6 .d-flex {
+  justify-content: space-between;
+}
+body .container .container-fluid .col-md-6 .d-flex #error {
+  font-size: 0.75rem !important;
+  color: red;
+  display: none;
+}
+body .container .container-fluid .col {
+  margin: 0.9375rem !important;
+  padding: 1.25rem;
+  border-radius: 0.9375rem;
+  background-color: hsl(183deg, 100%, 15%);
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+body .container .container-fluid .col .content .tipAmount, body .container .container-fluid .col .content .total {
+  align-items: center;
+  justify-content: space-between;
+}
+body .container .container-fluid .col .content .tipAmount .text p, body .container .container-fluid .col .content .total .text p {
+  font-size: 0.8125rem;
+  color: hsl(0deg, 0%, 100%);
+}
+body .container .container-fluid .col .content .tipAmount .text blockquote, body .container .container-fluid .col .content .total .text blockquote {
+  font-size: 0.6875rem;
+  color: #7f9c9f;
+}
+body .container .container-fluid .col .content .tipAmount .amountNumber p, body .container .container-fluid .col .content .total .amountNumber p, body .container .container-fluid .col .content .total .totalNumber p {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  color: hsl(172deg, 67%, 45%);
+}
+body .container .container-fluid .col .content .total .totalText p {
+  font-size: 0.8125rem;
+  color: hsl(0deg, 0%, 100%);
+}
+body .container .container-fluid .col .content .total .totalText blockquote {
+  font-size: 0.6875rem;
+  color: #7f9c9f;
+}
+body .container .container-fluid .col button {
+  width: 100%;
+  background-color: hsl(172deg, 67%, 45%);
+  text-transform: uppercase;
+  color: hsl(183deg, 100%, 15%);
+}
+body .container .container-fluid .col button:hover {
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+@media (max-width: 48rem) {
+  body {
+    background-position: 50% 4%;
+    padding: 6.25rem 0 1.25rem 0;
+  }
+  body .container .container-fluid .col-md-6 {
+    padding: 1.25rem;
+  }
+  body .container .container-fluid .col-md-6 .numberBill input, body .container .container-fluid .col-md-6 .numberPeople input {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
