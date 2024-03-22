@@ -1,0 +1,322 @@
+@import "burguermenu.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9375rem;
+    font-family: 'Inter', sans-serif;
+    padding: 1.8rem 1.7rem;
+    z-index: 1;
+    transition: background 1s;
+    position: relative;
+
+    header {
+        .headerContent {
+            padding: 0;
+            max-width: 69.375rem;
+            margin: 0 auto;
+
+            .logo {
+                &:hover {
+                    filter: invert(69%) sepia(79%) saturate(4643%) hue-rotate(327deg) brightness(95%) contrast(99%);
+                }
+            }
+
+            ul {
+                align-items: center;
+                gap: 2.5rem;
+
+                li {
+                    button {
+                        margin-top: 0.5rem;
+                        background-color: transparent;
+                        border: none;
+
+                        img {
+                            width: 1.875rem;
+                            height: auto;
+                        }
+                    }
+                }
+
+                li {
+                    a {
+                        font-size: 1rem;
+                        text-decoration: none;
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            bottom: -0.1875rem;
+                            left: 0;
+                            width: 0;
+                            height: 0.125rem;
+                        }
+
+                        &:hover {
+                            &:before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    main {
+        .main {
+            max-width: 69.375rem;
+            margin: 0 auto;
+            margin-bottom: 3.75rem;
+            gap: 0 3.125rem;
+
+            .mainContent {
+                .col-md-12 {
+                    padding: 0;
+
+                    picture {
+                        overflow: hidden;
+
+                        @media (min-width: 48rem) {
+                            img {
+                                &:hover {
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .col-md-6 {
+                    padding: 0;
+
+                    h1 {
+                        font-weight: 900;
+                        font-size: 3.45rem;
+                        line-height: 1;
+                    }
+                }
+
+                .col-md-6 {
+                    margin-top: 1.875rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1.5625rem;
+
+                    p {
+                        font-size: 1rem;
+                    }
+
+                    a {
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.3125rem;
+                        padding: 1rem 1.875rem;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            aside {
+                padding: 1.5625rem;
+
+                .col-md-12 {
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+
+                    .block {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 1.25rem;
+                            margin: 1.875rem 0 0.625rem 0 !important;
+                            font-weight: 700;
+
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            line-height: 1.7;
+                            padding-bottom: 0.625rem;
+                        }
+                    }
+
+                    .block2 {
+                        @extend .block;
+                    }
+
+                    .block3 {
+                        @extend .block;
+                        border: none !important;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+footer {
+    section {
+        max-width: 69.375rem;
+        margin: 0 auto !important;
+        .col-md-4 {
+            padding: 0 0 0 0.625rem;
+            display: flex;
+
+            .img {
+                margin-right: 1rem;
+                overflow: hidden;
+
+                img {
+                    height: 8.75rem;
+                    width: 11.875rem;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.1875rem;
+
+                p {
+                    font-weight: 800;
+                    font-size: 2rem;
+                }
+
+                h3 {
+                    a {
+                        font-size: 1.125rem;
+                        font-weight: 800;
+                        text-decoration: none;
+
+                    }
+                }
+
+                span {
+                    font-size: 1rem;
+                    line-height: 1.7;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 62rem) {
+    .main {
+        flex-direction: column;
+        margin-bottom: 3.75rem;
+        margin: 0;
+        gap: 0 1.25rem;
+        padding: 0 !important;
+
+        .mainContent {
+            width: 100%;
+            display: flex !important;
+
+            .col-md-12 {
+                width: 100%;
+                padding: 0;
+            }
+
+            .col-md-6 {
+                width: 100%;
+                padding: 0;
+
+                h1 {
+                    font-size: 2.4rem !important;
+                }
+            }
+
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 1.875rem;
+                gap: 0.9375rem;
+            }
+        }
+
+        aside {
+            padding: 0.9375rem;
+            width: 100% !important;
+
+            .col-md-12 {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .block {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top: 1.25rem !important;
+        padding: 0 !important;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.875rem;
+            padding: 0 !important;
+            width: 100%;
+
+            .col-md-4 {
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+
+                .img {
+                    img {
+                        height: 7.5rem;
+                        width: 7.5rem;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.1875rem;
+
+                    p {
+                        font-size: 2rem;
+                    }
+
+                    h3 {
+                        a {
+                            font-size: 1.125rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+}

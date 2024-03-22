@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+$White: #ffffff;
+$VeryLightGrayishBlue: #f7fafd;
+$LightGrayishBlue1: #e5effa;
+$LightGrayishblue2: #dde7ee;
+$GrayishBlue: #939dae;
+$DarkGrayishBlue: #5e6778;
+$VeryDarkBlue: #1c202b;
+$Red: #f65351;
+$Blue: #0a317b;
+
+body {
+  font-size: 0.9375rem;
+  background-color: $VeryLightGrayishBlue;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.75rem 1.25rem;
+  color: $DarkGrayishBlue;
+
+  main {
+    width: 100%;
+    max-width: 43.75rem;
+    background-color: $White;
+    padding: 1.875rem;
+    border-radius: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+
+      h1 {
+        font-size: 1.25rem;
+        color: $VeryDarkBlue;
+
+        span {
+          margin-left: 0.625rem;
+          color: $White;
+          padding: 0.1625rem 0.6875rem;
+          border-radius: 0.375rem;
+          background-color: #0a317b;
+        }
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          color: $Blue;
+        }
+      }
+    }
+
+    .notification {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border-radius: 0.625rem;
+
+      img {
+        margin: 0 0.625rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          display: flex;
+          flex-direction: row-reverse;
+          color: $DarkGrayishBlue;
+
+          h2 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            width: 100%;
+
+            a {
+              text-decoration: none;
+              font-weight: 700;
+              color: $VeryDarkBlue;
+
+              &:hover {
+                color: $Blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.time {
+  color: $GrayishBlue;
+}
+
+.message {
+  position: relative;
+  display: flex;
+  align-items: flex-start !important;
+  flex-direction: column;
+
+  .content {
+    display: flex;
+    flex-direction: row !important;
+  }
+
+  .boxMessage {
+    max-width: 100%;
+    margin: 0 0 0 3.3125rem;
+
+    p {
+      border: 0.0625rem solid $LightGrayishBlue1;
+      margin: 0.625rem 0;
+      padding: 0.9375rem 1.25rem;
+
+      &:hover {
+        background-color: $VeryLightGrayishBlue;
+      }
+    }
+  }
+}
+
+.new {
+  background-color: $VeryLightGrayishBlue;
+
+  h2 {
+    &::after {
+      position: absolute;
+      margin: 0.375rem 0 0 0.5625rem;
+      border-radius: 50%;
+      width: 0.625rem;
+      height: 0.625rem;
+      content: "";
+      background-color: $Red;
+    }
+  }
+}
+
+.picture {
+  position: relative;
+  padding-right: 3.75rem !important;
+
+  .picImage {
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media (max-width: 27.5rem) {
+
+  h1,
+  body,
+  h2,
+  span {
+    font-size: 0.8125rem !important;
+  }
+
+  main {
+    padding: 0.625rem 0.5rem !important;
+  }
+
+  .notification {
+    padding: 0rem !important;
+  }
+
+  .picture {
+    padding-right: 3.125rem !important;
+  }
+
+  .number {
+    margin-left: 0.0625rem !important;
+  }
+}

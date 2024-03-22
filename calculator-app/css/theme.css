@@ -1,0 +1,131 @@
+:root {
+    --mainBackground: #3a4764;
+    --toggleBackgroundKeypadBackground: #232c43;
+    --screenBackground: #182034;
+    --keyBackground: #637097;
+    --keyShadow: #404e72;
+    --keyBackgroundToggle: #d03f2f;
+    --keyShadow2: #93261a;
+    --keyBackground2: #eae3dc;
+    --keyShadow3: #b4a597;
+    --grayish: #444b5a;
+    --text1: #ffffff;
+    --text2: #1b2428;
+    --text3: #ffffff;
+    --btnKey: #404652;
+    --hoverKey: #fff;
+    --hoverKeyBorder: #CFC4B5;
+    --equal: #fff;
+    --equalHover: #FF7361;
+    --hoverDelReset: #98A6CF;
+}
+
+.theme-2 {
+    --mainBackground: #e6e6e6;
+    --toggleBackgroundKeypadBackground: #d1cccc;
+    --screenBackground: #ededed;
+    --keyBackground: #377f86;
+    --keyShadow: #1b5f65;
+    --keyBackgroundToggle: #ca5502;
+    --keyShadow2: #893901;
+    --keyBackground2: #e5e4e1;
+    --keyShadow3: #a69d91;
+    --grayish: #35352c;
+    --text1: #ffffff;
+    --text2: #1b2428;
+    --text3: #1b2428;
+    --btnKey: #424237;
+    --equal: #fff;
+    --hoverKeyBorder: #CFC4B5;
+    --hoverKey: #fff;
+    --hoverDelReset: #6AB6BE;
+    --equalHover: #FF8932;
+}
+
+.theme-3 {
+    --mainBackground: #160628;
+    --toggleBackgroundKeypadBackground: #1d0934;
+    --screenBackground: #1d0934;
+    --keyBackground: #58077d;
+    --keyShadow: #bc15f4;
+    --keyBackgroundToggle: #00e0d1;
+    --keyShadow2: #6cf9f2;
+    --keyBackground2: #341c4f;
+    --keyShadow3: #871c9c;
+    --grayish: #35352c;
+    --text1: #ffffff;
+    --text2: #ffe53d;
+    --text3: #ffe53d;
+    --btnKey: #FFFF4C;
+    --equal: #222D32;
+    --hoverKeyBorder: #A923C3;
+    --hoverKey: #664D83;
+    --hoverDelReset: #8D37B4;
+    --equalHover: #59dbd3;
+}
+
+body {
+    background-color: var(--mainBackground);
+}
+
+h1,
+label,
+p {
+    color: var(--text3);
+}
+
+.calcResult {
+    background-color: var(--screenBackground);
+    color: var(--text3);
+}
+
+.keys {
+    background-color: var(--toggleBackgroundKeypadBackground);
+}
+
+button {
+    background-color: var(--keyBackground2);
+    color: var(--btnKey);
+    border-bottom: 0.25rem solid var(--keyShadow3) !important;
+    transition: 0.00s;
+}
+
+button:hover {
+    background-color: var(--hoverKey);
+    border-bottom: 0.25rem solid var(--hoverKeyBorder) !important;
+}
+
+button:focus {
+    border: 2px solid var(--keyBackgroundToggle) !important;
+}
+
+#del,
+#reset {
+    background-color: var(--keyBackground);
+    color: var(--text1);
+    border-bottom: 0.25rem solid var(--keyShadow) !important;
+}
+
+#del:hover,
+#reset:hover {
+    background-color: var(--hoverDelReset);
+    border-bottom: 0.25rem solid var(--keyShadow) !important;
+}
+
+#equal {
+    background-color: var(--keyBackgroundToggle);
+    color: var(--equal);
+    border-bottom: 0.25rem solid var(--keyShadow2) !important;
+}
+
+#equal:hover {
+    background-color: var(--equalHover);
+}
+
+.tri-state-toggle {
+    background-color: var(--toggleBackgroundKeypadBackground);
+}
+
+input[type='radio'] {
+    background-color: var(--keyBackgroundToggle);
+}
