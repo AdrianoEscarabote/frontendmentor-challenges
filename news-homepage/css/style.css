@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+#btnMenu {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  #menu #btnMenu {
+    display: flex;
+    margin-right: 0.9375rem;
+    border: none;
+    background-color: transparent;
+    z-index: 1000;
+  }
+  #menu #btnMenu img {
+    width: 2.5rem;
+    height: 1.875rem;
+  }
+  #menu .burguerMenu {
+    padding-top: 6.25rem;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    position: absolute;
+    width: 0rem;
+    transition: 0.7s;
+    overflow-y: hidden;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+  #menu .burguerMenu li {
+    display: none;
+  }
+  #menu .burguerMenu.active {
+    width: 70%;
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu .burguerMenu.active li {
+    display: flex;
+  }
+  #menu .burguerMenu.active #btnMenu {
+    position: absolute;
+    top: 1.875rem;
+    right: 2.5rem;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9375rem;
+  font-family: "Inter", sans-serif;
+  padding: 1.8rem 1.7rem;
+  z-index: 1;
+  transition: background 1s;
+  position: relative;
+}
+body header .headerContent {
+  padding: 0;
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+body header .headerContent .logo:hover {
+  filter: invert(69%) sepia(79%) saturate(4643%) hue-rotate(327deg) brightness(95%) contrast(99%);
+}
+body header .headerContent ul {
+  align-items: center;
+  gap: 2.5rem;
+}
+body header .headerContent ul li button {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+body header .headerContent ul li button img {
+  width: 1.875rem;
+  height: auto;
+}
+body header .headerContent ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+body header .headerContent ul li a:before {
+  content: "";
+  position: absolute;
+  bottom: -0.1875rem;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+}
+body header .headerContent ul li a:hover:before {
+  width: 100%;
+}
+body main .main {
+  max-width: 69.375rem;
+  margin: 0 auto;
+  margin-bottom: 3.75rem;
+  gap: 0 3.125rem;
+}
+body main .main .mainContent .col-md-12 {
+  padding: 0;
+}
+body main .main .mainContent .col-md-12 picture {
+  overflow: hidden;
+}
+@media (min-width: 48rem) {
+  body main .main .mainContent .col-md-12 picture img:hover {
+    transform: scale(1.05);
+  }
+}
+body main .main .mainContent .col-md-6 {
+  padding: 0;
+}
+body main .main .mainContent .col-md-6 h1 {
+  font-weight: 900;
+  font-size: 3.45rem;
+  line-height: 1;
+}
+body main .main .mainContent .col-md-6 {
+  margin-top: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5625rem;
+}
+body main .main .mainContent .col-md-6 p {
+  font-size: 1rem;
+}
+body main .main .mainContent .col-md-6 a {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3125rem;
+  padding: 1rem 1.875rem;
+  text-decoration: none;
+}
+body main .main aside {
+  padding: 1.5625rem;
+}
+body main .main aside .col-md-12 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+body main .main aside .col-md-12 .block, body main .main aside .col-md-12 .block3, body main .main aside .col-md-12 .block2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body main .main aside .col-md-12 .block a, body main .main aside .col-md-12 .block3 a, body main .main aside .col-md-12 .block2 a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 1.875rem 0 0.625rem 0 !important;
+  font-weight: 700;
+}
+body main .main aside .col-md-12 .block p, body main .main aside .col-md-12 .block3 p, body main .main aside .col-md-12 .block2 p {
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-bottom: 0.625rem;
+}
+body main .main aside .col-md-12 .block3 {
+  border: none !important;
+}
+
+footer section {
+  max-width: 69.375rem;
+  margin: 0 auto !important;
+}
+footer section .col-md-4 {
+  padding: 0 0 0 0.625rem;
+  display: flex;
+}
+footer section .col-md-4 .img {
+  margin-right: 1rem;
+  overflow: hidden;
+}
+footer section .col-md-4 .img img {
+  height: 8.75rem;
+  width: 11.875rem;
+}
+footer section .col-md-4 .img img:hover {
+  transform: scale(1.05);
+}
+footer section .col-md-4 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+}
+footer section .col-md-4 .content p {
+  font-weight: 800;
+  font-size: 2rem;
+}
+footer section .col-md-4 .content h3 a {
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+footer section .col-md-4 .content span {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 62rem) {
+  .main {
+    flex-direction: column;
+    margin-bottom: 3.75rem;
+    margin: 0;
+    gap: 0 1.25rem;
+    padding: 0 !important;
+  }
+  .main .mainContent {
+    width: 100%;
+    display: flex !important;
+  }
+  .main .mainContent .col-md-12 {
+    width: 100%;
+    padding: 0;
+  }
+  .main .mainContent .col-md-6 {
+    width: 100%;
+    padding: 0;
+  }
+  .main .mainContent .col-md-6 h1 {
+    font-size: 2.4rem !important;
+  }
+  .main .mainContent .col-md-6 {
+    width: 100%;
+    margin-bottom: 1.875rem;
+    gap: 0.9375rem;
+  }
+  .main aside {
+    padding: 0.9375rem;
+    width: 100% !important;
+  }
+  .main aside .col-md-12 h2 {
+    font-size: 2rem;
+  }
+  .main aside .col-md-12 .block, body main .main aside .col-md-12 .block2, body main .main aside .col-md-12 .block3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer {
+    margin-top: 1.25rem !important;
+    padding: 0 !important;
+  }
+  footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.875rem;
+    padding: 0 !important;
+    width: 100%;
+  }
+  footer section .col-md-4 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  footer section .col-md-4 .img img {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+  footer section .col-md-4 .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1875rem;
+  }
+  footer section .col-md-4 .content p {
+    font-size: 2rem;
+  }
+  footer section .col-md-4 .content h3 a {
+    font-size: 1.125rem;
+  }
+  footer section .col-md-4 .content span {
+    font-size: 0.875rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+#btnMenu {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    #menu {
+        #btnMenu {
+            display: flex;
+            margin-right: 0.9375rem;
+            border: none;
+            background-color: transparent;
+            z-index: 1000;
+
+            img {
+                width: 2.5rem;
+                height: 1.875rem;
+            }
+        }
+
+        .burguerMenu {
+            padding-top: 6.25rem;
+            display: flex;
+            visibility: hidden;
+            flex-direction: column;
+            position: absolute;
+            width: 0rem;
+            transition: 0.7s;
+            overflow-y: hidden;
+            right: 0;
+            top: 0;
+            height: 100%;
+
+            li {
+                display: none;
+            }
+        }
+
+        .burguerMenu.active {
+            width: 70%;
+            visibility: visible;
+            overflow-y: auto;
+
+            li {
+                display: flex;
+            }
+
+            #btnMenu {
+                position: absolute;
+                top: 1.875rem;
+                right: 2.5rem;
+            }
+        }
+    }
+}
