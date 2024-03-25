@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242F3F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+body {
+  font-size: 1.25rem;
+  font-family: "Libre Franklin", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+body main {
+  padding: 1.25rem;
+  text-align: center;
+}
+body main .mainContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body main .mainContent .logo {
+  width: 100%;
+  max-width: 5.625rem;
+  height: 1.6875rem;
+  margin-bottom: 2.5rem;
+}
+body main .mainContent h1 {
+  font-size: 2.625rem;
+  color: #969696;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+body main .mainContent h1 strong {
+  color: #151f29;
+}
+body main .mainContent p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+body main .mainContent form {
+  margin-bottom: 4.375rem;
+  width: 100%;
+}
+body main .mainContent form input[type=email] {
+  width: 100%;
+  max-width: 26.25rem;
+  font-size: 1.0625rem;
+  height: 3.5rem;
+  border: 1px solid #c2d3ff;
+  border-radius: 2em;
+  padding: 10px 32px;
+}
+body main .mainContent form #res {
+  color: red;
+  position: absolute;
+  top: 32%;
+  left: 41.8%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+body main .mainContent form button {
+  max-width: 12.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 2em;
+  box-shadow: 0 5px 10px 2px rgba(76, 123, 243, 0.2);
+  background-color: #4f7df3;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+body main .mainContent form button:hover {
+  background-color: #c2d3ff;
+}
+body main .mainContent .mainImage {
+  width: 100%;
+  max-width: 39.75rem;
+  height: 24.25rem;
+}
+body main .mainContent .socialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 4.0625rem;
+  gap: 0.625rem;
+}
+body main .mainContent .socialIcons li {
+  padding: 0.625rem;
+  border: 0.0625rem solid #4f7df3;
+  border-radius: 50%;
+}
+body main .mainContent .socialIcons li:hover {
+  background-color: #4f7df3;
+}
+body main .mainContent .socialIcons li:hover img {
+  filter: invert(100%);
+}
+body main .mainContent .socialIcons li img {
+  width: 100%;
+  max-width: 1.25rem;
+  filter: invert(38%) sepia(96%) saturate(1137%) hue-rotate(208deg) brightness(98%) contrast(94%);
+  height: 1.25rem;
+}
+body main .mainContent span {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+}
+body main #card {
+  width: 100%;
+  max-width: 25rem;
+  height: 9.375rem;
+  font-size: 1.125rem;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #4f7df3;
+  border-radius: 0.9375rem;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.25rem;
+  z-index: -1;
+}
+body main #card p {
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+body main #card button {
+  width: 12.5rem;
+  height: 3rem;
+  background: #fff;
+  box-shadow: 0.125rem 0.1875rem 0.375rem rgba(7, 4, 59, 0.157043);
+  border-radius: 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+body main #card button:hover {
+  background-color: #c2d3ff;
+}
+
+@media (max-width: 41.875rem) {
+  main .mainContent .logo {
+    max-width: 3.75rem !important;
+    height: auto !important;
+  }
+  main .mainContent h1 {
+    font-size: 1.375rem !important;
+  }
+  main .mainContent h1 strong {
+    color: #151f29;
+  }
+  main .mainContent p {
+    font-size: 0.8125rem !important;
+  }
+  main .mainContent form {
+    max-width: 26.25rem;
+  }
+  main .mainContent form input[type=email] {
+    width: 100%;
+    font-size: 0.9375rem;
+  }
+  main .mainContent form #res {
+    top: 19% !important;
+    left: 39% !important;
+  }
+  main .mainContent form button {
+    margin-top: 0.9375rem;
+    max-width: 100% !important;
+    height: auto;
+  }
+  main .mainContent .mainImage {
+    width: 100%;
+    max-width: 39.75rem;
+    height: auto !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

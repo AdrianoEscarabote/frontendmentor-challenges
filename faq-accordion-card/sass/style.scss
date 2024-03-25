@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import "colors.scss";
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%) 0%, hsl(240, 73%, 65%) 100%);
+    font-family: 'Kumbh Sans', sans-serif;
+
+    .container-fluid {
+        min-height: 100vh;
+
+        .container {
+            border-radius: 1.25rem;
+            max-width: 56.25rem;
+            min-height: 32.5rem;
+            box-shadow: 0 30px 40px rgb(29 30 53 / 40%);
+
+            .box {
+                width: 12.5rem;
+                height: auto;
+                left: -8.125rem;
+                top: 42%;
+                z-index: 1;
+            }
+
+            .col-md-6 {
+                background: url(../images/bg-pattern-desktop.svg) no-repeat;
+                background-position-x: 115%;
+                background-position-y: 68%;
+                overflow: hidden;
+
+                picture {
+                    max-width: 30rem;
+                    width: 100%;
+                    right: 18% !important;
+                    top: 0 !important;
+                    margin-top: 5.625rem;
+                }
+            }
+
+            .col {
+                gap: 1.875rem;
+                z-index: 1 !important;
+
+                h1 {
+                    font-size: 1.875rem;
+                }
+
+                .details {
+                    position: relative;
+                    width: 90%;
+
+                    .img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transform: rotate(180deg);
+                    }
+
+                    .transform {
+                        transform: rotate(0deg);
+                    }
+
+                    .text {
+                        width: 100%;
+                        cursor: pointer;
+
+                        summary {
+                            font-size: 0.8125rem;
+                            display: flex;
+                            font-weight: 400;
+
+                            &:hover {
+                                color: $SoftRed;
+                            }
+
+                            &:focus {
+                                .details img {
+                                    transform: rotate(90deg);
+                                }
+
+                                font-weight: 700;
+                            }
+                        }
+
+                        p {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 64.25rem) {
+    body {
+        padding: 0 5rem !important;
+    }
+}
+
+@media (max-width: 48rem) {
+    body {
+        padding: 0 0.625rem !important;
+
+        .container {
+            max-width: 26rem !important;
+
+            .box {
+                display: none !important;
+            }
+
+            .col-md-6 {
+                overflow: visible !important;
+                background-image: none !important;
+
+                picture {
+                    width: 100%;
+                    img {
+                        top: -9.0625rem !important;
+                        left: 34% !important;
+                        right: 0 !important;
+                    }
+                }
+
+            }
+
+            .col {
+                margin: 0 !important;
+                gap: 1.25rem;
+
+                h1 {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
