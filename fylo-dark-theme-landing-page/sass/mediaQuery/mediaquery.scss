@@ -1,0 +1,293 @@
+@media only screen and (max-width: 82.5rem) {
+    body {
+        position: relative;
+
+        header {
+            background: url("../images/bg-curvy-mobile.svg") no-repeat $darkBlueBackground;
+            background-position: bottom;
+            background-size: 100%;
+
+            nav {
+                justify-content: space-between;
+                @include max(90rem, 0 auto, 1.25rem, transparent);
+
+                .logoNav {
+                    img {
+                        width: 100%;
+                        max-width: 5rem;
+                        height: auto;
+                    }
+                }
+
+                .navContent {
+                    display: flex;
+                    gap: 1.25rem;
+
+                    a {
+                        text-decoration: none;
+                        @include font('Raleway', normal, 400, 1rem, 1.1875rem, $white);
+                    }
+                }
+            }
+
+            .gridItems1 {
+                display: grid;
+                grid-template-columns: 100%;
+                padding: 3.75rem 1.25rem 0 1.25rem !important;
+                @include max(90rem, 0 auto, 0 1.25rem, none);
+
+                .column {
+                    grid-column: auto;
+
+                    img {
+                        width: 80%;
+                        max-width: 38.75rem;
+                    }
+
+                    h1 {
+                        @include font('Raleway', normal, 700, 1.5rem, 2.25rem, $white);
+                    }
+
+                    p {
+                        @include font('Open Sans', normal, 400, 0.875rem, 1.3125rem, $white);
+                    }
+
+                    a {
+                        width: 100%;
+                        max-width: 15rem;
+                        height: 3rem;
+                        @include font('Raleway', normal, 700, 0.875rem, 1rem, $white);
+                    }
+                }
+            }
+        }
+
+        main {
+            #mainContent {
+                @include max(90rem, 0 auto, 7.5rem 1.875rem 0 1.875rem, transparent);
+                @include flex(flex, center, center, column);
+
+                .gridItems2 {
+                    margin-bottom: 8.125rem;
+                    max-width: 55rem;
+                    @include flex(flex !important, center, center, row);
+                    flex-wrap: wrap;
+                    gap: 2.5rem !important;
+
+                    .item1,
+                    .item2,
+                    .item3,
+                    .item4 {
+                        gap: 1.25rem;
+                        max-width: 21.8125rem;
+                        width: 100%;
+
+                        img {
+                            max-width: 5rem;
+                            width: 100%
+                        }
+
+                        .title {
+                            @include font('Raleway', normal, 700, 1.125rem, 1.5rem, $white);
+                        }
+                    }
+                }
+
+                .stayProductive {
+                    gap: 3.125rem;
+
+                    .image img {
+                        width: 90%;
+                        max-width: 38.4225rem;
+                        height: auto;
+                        margin: 0 auto;
+                    }
+
+                    .text {
+                        width: 100%;
+                        max-width: 35.1875rem;
+                        height: auto;
+                        @include flex(flex, flex-start, flex-start, column);
+                        gap: 1.25rem;
+
+                        h2 {
+                            text-align: center;
+                            width: 100%;
+                            @include font('Raleway', normal, 700, 1.125rem, 1.5rem, $white);
+                        }
+
+                        p {
+                            @include font('Open Sans', normal, 400, 0.875rem, 1.3125rem, $white);
+                        }
+
+                        a {
+                            @include font('Open Sans', normal, 400, 0.75rem, 1rem, $Cyan);
+                        }
+                    }
+                }
+
+                .gridItems3 {
+                    width: 100%;
+                    max-width: 18.75rem;
+                    height: 16.1875rem;
+                    @include flex(flex, center, center, column);
+                    gap: 1.25rem 0;
+                    padding: 23.3125rem 0 31.25rem 0;
+                    position: relative;
+                    background-position: 1.5625rem 5.625rem;
+                    background-size: 2.1875rem;
+
+                    .item1,
+                    .item2,
+                    .item3 {
+                        width: 100%;
+                        max-width: 17.5rem;
+                        height: 10rem;
+                        @include font('Open Sans', normal, 400, 0.625rem, 1.125rem, $white);
+                        padding: 1.25rem;
+
+                        .profile {
+                            @include flex(flex, center, flex-start, row);
+                            margin-top: 1.375rem;
+
+                            img {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                border-radius: 50%;
+                            }
+
+                            .text {
+                                @include flex(flex, flex-start, flex-start, column);
+                                padding-left: 0.625rem;
+                                gap: 0.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #card {
+                width: 100%;
+                max-width: 25rem;
+                height: 9.375rem;
+                font-size: 1.25rem;
+                color: #000;
+                position: absolute;
+                top: 78.60%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                z-index: -5;
+                opacity: 0;
+                z-index: -1;
+            }
+
+        }
+
+        footer {
+            @include flex(flex, center, center, column);
+
+            .footerContent {
+                @include max(21rem, 0 auto, 0rem 1.25rem, transparent);
+                position: relative;
+
+                .email {
+                    max-width: 21rem;
+                    height: 22.0625rem;
+                    z-index: 1;
+                    top: -12.5rem;
+                    left: 1%;
+
+                    .content {
+                        padding: 2.5rem 1.875rem;
+                        text-align: center;
+                        height: auto;
+
+                        .text {
+                            width: 100%;
+                            height: auto;
+
+                            h3 {
+                                @include font('Raleway', normal, 700, 1.125rem, 1.5rem, $white);
+                            }
+
+                            p {
+                                margin-top: 1rem;
+                            }
+                        }
+
+                        form {
+                            @include flex(flex, flex-start, space-between, column);
+                            margin-top: 2.1875rem;
+                            gap: 0.625rem;
+
+                            input[type="text"] {
+                                width: 100%;
+                                max-width: 30rem;
+                                height: 3rem;
+                                padding: 0 1.5625rem;
+                            }
+
+                            #res {
+                                top: 11.375rem;
+                                left: 3.9rem;
+                            }
+
+                            button {
+                                width: 100%;
+                                max-width: 100%;
+                                height: 3rem;
+                            }
+                        }
+
+                    }
+                }
+
+                .gridItems4 {
+                    width: 100%;
+                    max-width: 27.5rem;
+                    height: auto;
+                    @include flex(flex, flex-start, flex-start, column);
+                    padding: 17.5rem 0 1.25rem 0;
+                    gap: 2.1875rem;
+
+                    .item1 {
+                        @include flex(flex, flex-start, flex-start, row);
+                        gap: 0.9375rem;
+
+                        p {
+                            @include font('Open Sans', normal, 400, 1rem, 1.5rem, $white);
+                        }
+                    }
+
+                    .item2 {
+                        gap: 0.625rem;
+                    }
+
+                    .item3 {
+                        gap: 0.625rem;
+                    }
+
+                    .item5 {
+                        ul {
+                            @include flex(flex, center, flex-start, row);
+                            gap: 0.9375rem;
+
+                            li {
+                                padding: 0.625rem;
+                                border-radius: 50%;
+                                border: 0.0625rem solid $white;
+
+                                img {
+                                    width: 1.125rem;
+                                    height: 1.0625rem;
+                                    filter: invert(100%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
