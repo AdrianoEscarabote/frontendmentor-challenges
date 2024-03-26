@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Art gallery website</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styleLocation.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerContent">
+            <!--mapa vai entrar aqui-->
+            <div class="buttonBack">
+                <a href="index.html" aria-label="back to the main page">
+                    <div><img src="assets/icon-arrow-left.svg" alt="" aria-hidden="true"></div><span>Back to Home</span>
+                </a>
+            </div>
+            <section id="map">
+                <!-- <img src="assets/desktop/image-map.png" alt="imagem mapa" class="mapImg"> -->
+            </section>
+        </div>
+    </header>
+
+    <main>
+        <div class="mainContent">
+            <div>
+                <h1>Our location</h1>
+            </div>
+            <div class="info">
+                <h2>99 king street</h2>
+
+                <div class="location">
+                    <p>Newport</p>
+                    <p>RI 02840</p>
+                    <p>United States of America</p>
+                </div>
+
+                <div class="about">
+                    <p>Our newly opened gallery is located near the Edward King House on 99 King
+                        Street, the Modern Art Gallery is free to all visitors and open seven days
+                        a week from 8am to 9pm.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerContent">
+            <div class="footerText">
+                <img src="assets/logo-dark.svg" alt="logo dark" class="iconFooter">
+                <p> The Modern Art Gallery is free to all visitors and open seven days a week
+                    from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+            </div>
+            <div class="socialIcons">
+                <ul>
+                    <li><a href="https://github.com/AdrianoEscarabote">
+                            <img src="assets/icon-facebook.svg" alt="facebook icon">
+                        </a></li>
+                    <li><a href="https://www.instagram.com/ogdrian/">
+                            <img src="assets/icon-instagram.svg" alt="instagram icon">
+                        </a></li>
+                    <li><a href="https://twitter.com/drianEscarabote">
+                            <img src="assets/icon-twitter.svg" alt="twitter icon">
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

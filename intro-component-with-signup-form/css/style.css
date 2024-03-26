@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  background: url(../images/bg-intro-desktop.png) #ff7a7a !important;
+  background-size: cover;
+  color: #fff !important;
+  text-align: center !important;
+  font-family: "Poppins", sans-serif !important;
+}
+body main .container {
+  min-height: 100vh;
+  font-size: 1rem !important;
+}
+body main .container .container-fluid .col-md-6 {
+  text-align: center;
+}
+body main .container .container-fluid .col-md-6 h1 {
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+body main .container .container-fluid .col-md-6 h1:hover {
+  color: #6055a5;
+}
+body main .container .container-fluid .col-md-6 .py-3 {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.6;
+}
+body main .container .container-fluid .col-md .card {
+  margin-bottom: 1.5rem;
+  border-radius: 0.625rem;
+  padding: 1.25rem 0;
+  text-align: center;
+  background-color: #6055a5;
+}
+body main .container .container-fluid .col-md .card p {
+  margin: 0 !important;
+}
+body main .container .container-fluid .col-md form {
+  background-color: #fff !important;
+  color: #000 !important;
+  padding: 0.625rem !important;
+}
+body main .container .container-fluid .col-md form .col-md-12 input {
+  height: 3.4rem;
+}
+body main .container .container-fluid .col-md form .show {
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+body main .container .container-fluid .col-md form .btn {
+  background-color: #38cc8c !important;
+  box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+  padding: 0.9375rem;
+  width: 100%;
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.9375rem;
+}
+body main .container .container-fluid .col-md form .btn:hover {
+  background-color: #6055a5 !important;
+}
+body main .container .container-fluid .col-md form .terms {
+  text-align: center;
+  line-height: 1.9;
+  color: #b9b6d3;
+  font-size: 0.6875rem;
+  margin-bottom: 0.8rem;
+}
+body main .container .container-fluid .col-md form .terms a {
+  text-decoration: none;
+  color: #ff7a7a;
+  font-weight: 700;
+}
+body main .container .container-fluid .col-md form .terms a:hover {
+  color: #6055a5;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    text-align: start !important;
+  }
+  .col-md-6 h1 {
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.03125rem;
+    font-size: 3.125rem !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: none;
+  background-color: #ecf2f8;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  padding: 0.625rem;
+}
+body main {
+  position: relative;
+  width: 45.625rem;
+  height: 18.75rem;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 18.75rem 25rem;
+  grid-template-rows: 18.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 2.5rem 2.5rem -0.625rem rgba(183, 199, 216, 0.3);
+}
+body main section img {
+  width: 19.375rem;
+  height: 18.75rem;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 0.625rem 0 0 0.625rem;
+  transition: ease-out 0.3s;
+}
+body main section img:hover {
+  transform: scale(1.01);
+}
+body main .content {
+  display: flex;
+  align-items: none;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  height: 18.75rem;
+  padding: 0.625rem 0.625rem 0.625rem 1.875rem;
+}
+body main .content article h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.75rem;
+  letter-spacing: 0.0156rem;
+  color: #48556a;
+  margin-bottom: 1.25rem;
+}
+body main .content article h1:hover {
+  color: #285e4e;
+  transform: scale(1.01);
+}
+body main .content article h2 {
+  font-weight: 500;
+  font-size: 13.12px;
+  line-height: 20px;
+  letter-spacing: 0.0081rem;
+  color: hsl(214deg, 17%, 51%);
+}
+body main .content .info {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  flex-direction: none;
+  gap: 0.75rem;
+}
+body main .content .info .avatar img {
+  width: 2.875rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+body main .content .details {
+  display: flex;
+  align-items: none;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+body main .content .details .nameAndDate {
+  display: flex;
+  align-items: none;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+body main .content .details .nameAndDate .name {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.1;
+  letter-spacing: 0.0075rem;
+  color: #48556a;
+}
+body main .content .details .nameAndDate .name:hover {
+  color: #b66e29;
+}
+body main .content .details .nameAndDate .date {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.0075rem;
+  color: #9eafc2;
+}
+body main .content .details .socialButton button {
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 50%;
+}
+body main .content .details .socialButton button:hover {
+  background-color: rgba(47, 153, 123, 0.3882352941);
+}
+body main .content .details .socialButton button img:hover {
+  transform: rotate(-80deg);
+}
+body main .content .details .socialButton .socialLinks {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+  position: absolute;
+  top: 8.4375rem;
+  right: -2.75rem;
+}
+body main .content .details .socialButton .socialLinks .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 0.75rem;
+  background-color: #48556a;
+  border-radius: 0.625rem;
+  width: 14.375rem;
+  height: 3.5rem;
+}
+body main .content .details .socialButton .socialLinks .content p {
+  font-weight: 500;
+  color: #9eafc2;
+  text-transform: uppercase;
+  opacity: 75%;
+  font-size: 13px;
+  letter-spacing: 5px;
+}
+body main .content .details .socialButton .socialLinks .content img {
+  filter: brightness(0) invert(100%);
+  width: auto;
+  height: 1.375rem;
+}
+body main .content .details .socialButton .socialLinks .arrow {
+  background-color: #48556a;
+  position: absolute;
+  top: 2.875rem;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: rotate(45deg);
+}
+@media (max-width: 790px) {
+  body main {
+    width: 100%;
+    max-width: 23.125rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: none;
+  }
+  body main section img {
+    width: 100%;
+    height: 100%;
+    max-height: 18.75rem;
+    object-position: none;
+    border-radius: 0.625rem 0.625rem 0rem 0;
+  }
+  body main .content {
+    display: flex;
+    align-items: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 18.75rem;
+    padding: 0 1.5625rem;
+  }
+  body main .content article h1 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin: 1.625rem 0;
+  }
+  body main .content article h2 {
+    font-size: 13.12px;
+    line-height: 20px;
+    letter-spacing: 0.0081rem;
+    color: #6d7f97;
+  }
+  body main .content .info {
+    display: flex;
+    align-items: center;
+    justify-content: none;
+    flex-direction: none;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  body main .content .info .avatar img {
+    width: 2.875rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+  body main .content .details {
+    display: flex;
+    align-items: none;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
+  body main .content .details .nameAndDate .name {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.1;
+    letter-spacing: 0.0075rem;
+  }
+  body main .content .details .nameAndDate .date {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.0075rem;
+  }
+  body main .content .details .socialButton button {
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  body main .content .details .socialButton button img {
+    z-index: 2;
+    filter: brightness(0) invert(100%);
+  }
+  body main .content .details .socialButton button img:hover {
+    transform: none;
+  }
+  body main .content .details .socialButton .socialLinks {
+    opacity: 0;
+    position: absolute;
+    top: 88%;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  body main .content .details .socialButton .socialLinks .content {
+    display: flex;
+    align-items: none;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+    border-radius: 0 0 0.625rem 0.625rem;
+    height: 5rem;
+  }
+  body main .content .details .socialButton .socialLinks .content a img {
+    object-fit: cover;
+    max-width: 100%;
+    width: auto;
+    height: 1.875rem;
+  }
+  body main .content .details .socialButton .socialLinks .arrow {
+    display: none;
+  }
+}
+@media (max-width: 25rem) {
+  body h1 {
+    margin: 1rem 0 !important;
+  }
+  body .socialLinks {
+    top: 86% !important;
+    width: 100%;
+    gap: 0.125rem;
+  }
+  body .socialLinks .content {
+    gap: 0.375rem !important;
+  }
+  body .socialLinks .content img {
+    height: 1.25rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
