@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+$Very-dark-cyan: hsl(183, 100%, 15%);
+$Dark-grayish-cyan: hsl(186, 14%, 43%);
+$Grayish-cyan: #7f9c9f;
+$Light-grayish-cyan: hsl(185, 41%, 84%);
+$Very-light-grayish-cyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+$StrongCyan: hsl(172, 67%, 45%);
+$darkGray: rgb(31, 31, 31);
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $StrongCyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(323deg) brightness(106%) contrast(101%);
+    }
+}
+
+
+body {
+    font-family: 'Space Mono', monospace;
+    background: url("../images/logo.svg") $Light-grayish-cyan no-repeat;
+    font-size: 1.5rem;
+    background-position: 50% 20%;
+
+    .container {
+        .container-fluid {
+            max-width: 43.75rem;
+            background-color: $White;
+            border-radius: 1.25rem;
+
+            .col-md-6 {
+                display: grid;
+                gap: 0.5rem;
+                padding: 1.25rem 1.875rem;
+
+                h1,
+                h2,
+                h3 {
+                    font-size: 0.875rem;
+                    color: $Grayish-cyan;
+                }
+
+                .numberBill {
+                    background-color: $Very-light-grayish-cyan;
+                    margin-bottom: 1.875rem;
+
+                    input {
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        text-align: right;
+                        padding: 0.3125rem;
+                        background-repeat: no-repeat;
+                        background-position: 4% 50%;
+                        color: $Very-dark-cyan;
+                        border-radius: 0.3125rem;
+
+                        &:focus {
+                            outline: 0.0625rem solid $StrongCyan;
+                        }
+                    }
+                }
+
+                .numberPeople {
+                    @extend .numberBill;
+                    margin: 0rem !important;
+                }
+
+                ul {
+                    gap: 0.625rem;
+                    padding: 0 !important;
+                    margin-bottom: 1.875rem;
+                    width: 100%;
+
+                    li {
+                        button {
+                            width: 6rem;
+                            height: 2.5rem;
+                            background-color: $Very-dark-cyan;
+                            border: none;
+                            outline: none;
+                            border-radius: 0.3125rem;
+                            color: $White;
+                            font-size: 1.25rem;
+
+                            &:focus {
+                                background-color: $StrongCyan;
+                            }
+                        }
+
+
+                    }
+
+
+                    .input {
+                        background-color: $Very-light-grayish-cyan;
+
+                        input {
+                            width: 5.625rem;
+                            text-align: right;
+                            background-color: $Very-light-grayish-cyan;
+                            border: none;
+                            outline: none;
+                            border-radius: 0.3125rem;
+                            color: $Very-dark-cyan;
+
+                            &:focus {
+                                outline: 0.0625rem solid $StrongCyan;
+                            }
+                        }
+                    }
+
+                }
+
+                .d-flex {
+                    justify-content: space-between;
+
+                    #error {
+                        font-size: 0.75rem !important;
+                        color: red;
+                        display: none;
+                    }
+                }
+            }
+
+            .col {
+                margin: 0.9375rem !important;
+                padding: 1.25rem;
+                border-radius: 0.9375rem;
+                background-color: $Very-dark-cyan;
+                flex-direction: column;
+                display: flex;
+                justify-content: space-between;
+
+                .content {
+                    .tipAmount {
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .text {
+                            p {
+                                font-size: 0.8125rem;
+                                color: $White;
+                            }
+
+                            blockquote {
+                                font-size: 0.6875rem;
+                                color: $Grayish-cyan;
+                            }
+                        }
+
+                        .amountNumber {
+                            p {
+                                background-color: transparent;
+                                border: none;
+                                outline: none;
+                                font-size: 2.5rem;
+                                color: $StrongCyan;
+                            }
+                        }
+                    }
+
+                    .total {
+                        @extend .tipAmount;
+
+                        .totalText {
+                            p {
+                                font-size: 0.8125rem;
+                                color: $White;
+                            }
+
+                            blockquote {
+                                font-size: 0.6875rem;
+                                color: $Grayish-cyan;
+                            }
+                        }
+
+                        .totalNumber {
+                            @extend .amountNumber;
+                        }
+                    }
+                }
+
+
+                button {
+                    width: 100%;
+                    background-color: $StrongCyan;
+                    text-transform: uppercase;
+                    color: $Very-dark-cyan;
+
+                    &:hover {
+                        background-color: $Light-grayish-cyan;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 48rem) {
+    body {
+        background-position: 50% 4%;
+        padding: 6.25rem 0 1.25rem 0;
+
+        .container {
+            .container-fluid {
+
+                .col-md-6 {
+                    padding: 1.25rem;
+
+                    .numberBill {
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

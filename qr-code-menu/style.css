@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Sarala', sans-serif;;
+}
+body {
+    background-color: #d5e1ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: 410px;
+    height: 610px;
+    background-color: #fff;
+    border: none;
+    border-radius: 26px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 90px 0;
+}
+.img-content {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+}
+.img-content img {
+    width: 360px;
+    border-radius: 28px;
+}
+.title {
+    text-align: center;
+}
+.title h2 {
+    font-size: 22px;
+    font-weight: 800;
+}
+.paragraph {
+    text-align: center;
+    padding: 10px 20px;
+    color: rgb(97, 96, 96);
+}
+.paragraph p {
+    font-size: 20px;
+}
+@media only screen and (max-width: 356px) and (min-width: 280px) {
+    .container {
+        height: 462px;
+        width: 250px;
+        margin: 60px 0;
+    }
+    .img-content img {
+        width: 210px;
+    }
+    .title h2 {
+        font-size: 16px;
+        margin: 10px 10px;
+    }
+    .paragraph p {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 424px) and (min-width: 357px) {
+    .container {
+        margin: 60px 4px;
+        height: 600px;
+    }
+    .img-content img {
+        width: 330px;
+        height: 360px;
+    }
+    .paragraph p {
+        font-size: 18px;
+    }
+}
+/* @media (max-width: 400px) {
+    .container {
+        height: 622px;
+        width: 360px;
+        margin-top: 60px;
+    }
+    .img-content img {
+        width: 330px;
+    }
+    .title h2 {
+        font-size: 13px;
+        margin: 10px 10px;
+    }
+    .paragraph p {
+        font-size: 16px;
+    }
+} */
+
+/* 
+.container {
+    padding: 23px 0 42px 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+div.container img {
+    width: 360px;
+    border-radius: 16px;
+}
+.title {
+    color: hsl(240, 3%, 12%);
+    font-family: 'Sarala', sans-serif;
+    font-weight: 800;
+    margin: 28px 20px 0 20px;
+}
+.description {
+    color: rgb(97, 96, 96);
+    font-family: 'Sarala', sans-serif;
+    margin: 20px 10px 0 9px;
+    padding: 0 24px 0 24px;
+} */

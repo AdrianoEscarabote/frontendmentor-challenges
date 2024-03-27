@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="container-fluid">
+        <header class="container-fluid">
+            <img src="images/logo.svg" alt="" aria-hidden="true" class="logo">
+            <nav id="nav">
+                <button aria-label="open menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img id="iconMenu" src="images/icon-menu.svg" alt="" aria-hidden="true"></button>
+                <div id="menu">
+                    <div class="firstContent" id="first">
+                        <div class="dropdown d-flex flex-column">
+                            <button id="show" class="d-flex align-items-center">Features <img
+                                    src="images/icon-arrow-down.svg" alt="" id="arrow1" aria-hidden="true"></button>
+                            <ul class="list" role="menu">
+                                <li class="todo d-flex justify-content-evenly">
+                                    <img src="images/icon-todo.svg" alt="" aria-hidden="true">
+                                    <a href="/" aria-label="todo list">Todo List</a>
+                                </li>
+                                <li class="calendar d-flex justify-content-evenly">
+                                    <img src="images/icon-calendar.svg" alt="" aria-hidden="true">
+                                    <a href="/" aria-label="Calendar">Calendar</a>
+                                </li>
+                                <li class="reminders d-flex justify-content-evenly">
+                                    <img src="images/icon-reminders.svg" alt="" aria-hidden="true">
+                                    <a href="/" aria-label="Reminders">Reminders</a>
+                                </li>
+                                <li class="company d-flex justify-content-evenly">
+                                    <img src="images/icon-planning.svg" alt="" aria-hidden="true">
+                                    <a href="/" aria-label="Planning">Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown2 d-flex flex-column">
+                            <button id="show2" class="d-flex align-items-center">Company <img
+                                    src="images/icon-arrow-down.svg" alt="" id="arrow2" aria-hidden="true"></button>
+                            <ul class="list2">
+                                <li class="history">
+                                    <a href="/" aria-label="history">history</a>
+                                </li>
+                                <li class="OurTeam">
+                                    <a href="/" aria-label="our team">Our team</a>
+                                </li>
+                                <li class="Blog">
+                                    <a href="/" aria-label="blog">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="carrer">
+                            <a href="/" aria-label="carrers">Carrers</a>
+                        </div>
+                        <div class="About">
+                            <a href="/" aria-label="About">About</a>
+                        </div>
+                    </div>
+                    <div class="secondContent" id="second">
+                        <button id="button" aria-label="activate light theme"><img src="images/sun.svg" alt=""
+                                aria-hidden="true" id="icon"><span id="res">Light theme</span></button>
+                        <a href="/" aria-label="go to login" class="login">Login</a>
+                        <a href="/" aria-label="Register" class="register">Register</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="mainContent d-flex flex-row justify-content-center">
+            <div class="text d-flex justify-content-center flex-column">
+                <div class="content d-flex flex-column justify-content-center">
+                    <div class="center d-flex flex-column">
+                        <h1>Make remote work</h1>
+                        <p>Get your team in sync, no matter your location. Streamline processes,
+                            create team rituals, and watch productivity soar.</p>
+                        <a href="/" class="btn" aria-label="learn more">Learn more</a>
+                    </div>
+                    <div class="imgs">
+                        <img src="images/client-databiz.svg" alt="" aria-hidden="true">
+                        <img src="images/client-audiophile.svg" alt="" aria-hidden="true">
+                        <img src="images/client-meet.svg" alt="" aria-hidden="true">
+                        <img src="images/client-maker.svg" alt="" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+            <div class="img">
+                <picture>
+                    <source media="(max-width:992px)" srcset="images/image-hero-mobile.png">
+                    <img src="images/image-hero-desktop.png" alt="image hero" class="heroImage">
+                </picture>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
