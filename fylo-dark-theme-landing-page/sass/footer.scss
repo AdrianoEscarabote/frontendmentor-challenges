@@ -1,0 +1,160 @@
+body {
+    footer {
+        background-color: $DarkBlueFooter;
+        position: relative;
+        @include flex(flex, center, center, column);
+
+        .footerContent {
+            @include max(90rem, 0 auto, 0rem 5rem, transparent);
+            position: relative;
+
+            .email {
+                width: 100%;
+                max-width: 53.9375rem;
+                height: 17.1875rem;
+                position: absolute;
+                top: -10rem;
+                left: 19.2%;
+                background: $darkBlueBackground;
+                box-shadow: 0.3125rem 0.3125rem 0.5rem rgba(0, 0, 0, 0.254274);
+                border-radius: 0.5625rem;
+
+                .content {
+                    padding: 2.625rem 4.8125rem;
+                    text-align: center;
+
+                    .text {
+                        width: 100%;
+                        max-width: 42.0625rem;
+                        height: 6.625rem;
+
+                        h3 {
+                            @include font('Raleway', normal, 700, 2rem, 3rem, $white);
+                        }
+
+                        p {
+                            margin-top: 1rem;
+                            @include font('Raleway', normal, 400, 0.875rem, 1.3125rem, $white);
+                        }
+                    }
+
+
+                    form {
+                        @include flex(flex, flex-start, center, row);
+                        @include flex(flex, flex-start, space-between, row);
+                        margin-top: 1.875rem;
+
+                        input[type="email"] {
+                            background: $white;
+                            border-radius: 1.5rem;
+                            width: 100%;
+                            max-width: 30rem;
+                            height: 3rem;
+                            padding: 0 1.875rem;
+                            border: none;
+                        }
+
+                        #res {
+                            position: absolute;
+                            top: 14.375rem;
+                            left: 7.5rem;
+                            font-size: 0.875rem;
+                            color: red;
+                        }
+
+                        button {
+                            width: 12.5rem;
+                            height: 3rem;
+                            background: $linear-button;
+                            box-shadow: 0.125rem 0.1875rem 0.375rem rgba(7, 4, 59, 0.157043);
+                            border-radius: 1.5rem;
+                            @include font('Raleway', normal, 700, 0.875rem, 1rem, $white);
+                            border: none;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: $hover;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .gridItems4 {
+                width: 100%;
+                max-width: 77.5rem;
+                height: 13.6875rem;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                place-items: center;
+                place-content: center;
+                padding: 17.5rem 0 7.5rem 0;
+
+                .item1 {
+                    @include flex(flex, flex-start, flex-start, row);
+                    gap: 0.9375rem;
+
+                    p {
+                        @include font('Open Sans', normal, 400, 1rem, 1.5rem, $white);
+                    }
+                }
+
+                .item2 {
+                    height: 100%;
+                    gap: 0.9375rem;
+                    @include flex(flex, flex-start, flex-start, column);
+
+                    .phone {
+                        @include flex(flex, center, flex-start, row);
+                        gap: 0.9375rem;
+                    }
+
+                    .address {
+                        @extend .phone;
+                    }
+
+                    p {
+                        @include font('Open Sans', normal, 400, 0.875rem, 1.3125rem, $white);
+                    }
+                }
+
+                .item3 {
+                    height: 100%;
+                    gap: 0.9375rem;
+                    @include flex(flex, flex-start, flex-start, column);
+
+                    a {
+                        @include font('Open Sans', normal, 400, 1rem, 1.375rem, none);
+                        color: $white;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $hover;
+                        }
+                    }
+                }
+
+                .item4 {
+                    @extend .item3;
+                }
+
+                .item5 {
+                    height: 100%;
+
+                    ul {
+                        @include flex(flex, center, flex-start, row);
+                        gap: 0.9375rem;
+
+                        li {
+                            img {
+                                width: 2rem;
+                                height: 1.9375rem;
+                                filter: invert(100%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

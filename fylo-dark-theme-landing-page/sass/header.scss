@@ -1,0 +1,85 @@
+body {
+    font-size: 0.875rem;
+    background-color: $DarkBlueMain;
+    position: relative;
+
+    header {
+        background: url("../images/bg-curvy-desktop.svg") no-repeat $darkBlueBackground;
+        background-position: bottom;
+        background-size: 100% 50vh;
+        position: relative;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include max(90rem, 0 auto, 4.5625rem 5rem, transparent);
+
+            .logoNav {
+                img {
+                    width: 10rem;
+                    height: 3.125rem;
+                }
+            }
+
+            .navContent {
+                display: flex;
+                gap: 3.125rem;
+
+                a {
+                    text-decoration: none;
+                    @include font('Raleway', normal, 400, 1rem, 1.1875rem, none);
+                    color: $white;
+
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+            }
+        }
+
+        .gridItems1 {
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+            background: transparent;
+            z-index: -1;
+            padding-bottom: 9.875rem;
+            @include max(90rem, 0 auto, none, none);
+
+            .column {
+                grid-column: 2;
+                display: grid;
+                gap: 1.875rem;
+                text-align: center;
+                place-items: center;
+
+                h1 {
+                    @include font('Raleway', normal, 700, 2.5rem, 3.75rem, $white);
+
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+
+                p {
+                    @include font('Open Sans', normal, 400, 1.25rem, 1.875rem, $white);
+                }
+
+                a {
+                    background: $linear-button;
+                    border-radius: 1.875rem;
+                    width: 17.5rem;
+                    height: 3.5rem;
+                    @include font('Raleway', normal, 700, 1rem, 1.1875rem, $white);
+                    box-shadow: 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15925);
+                    text-decoration: none;
+                    @include flex(flex, center, center, row);
+
+                    &:hover {
+                        background: $hover;
+                    }
+                }
+            }
+        }
+    }
+}
