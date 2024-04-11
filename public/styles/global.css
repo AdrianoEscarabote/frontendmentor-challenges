@@ -64,3 +64,141 @@ select {
     scroll-behavior: auto !important;
   }
 }
+:root {
+  --bg-color: #05111f;
+  --white: white;
+  --accent-color: #61e9cb;
+  --acceent-color-700: #75f0d5;
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Work Sans", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 0.625rem;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 0.3125rem;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--white);
+}
+main,
+header {
+  max-width: 1100px;
+}
+h1 {
+  font-size: clamp(3rem, 12vw, 5rem);
+  font-family: var(--ff-secondary);
+  margin-bottom: 0.8em;
+  line-height: 1.05;
+  font-weight: 800;
+  overflow-wrap: normal;
+  color: var(--white);
+  letter-spacing: 0.1rem;
+  text-shadow: -0.25rem 0.2rem 0 var(--bg-color),
+    -0.45rem 0.25rem 0 rgba(116, 116, 116, 0.753);
+}
+h1 span {
+  color: var(--accent-color);
+}
+h2:hover {
+  text-decoration: underline;
+}
+p {
+  font-family: "Inter", sans-serif;
+}
+.description {
+  line-height: 1.6;
+  font-size: clamp(1rem, 7vw, 1.3175rem);
+}
+.description a:hover {
+  text-decoration: underline;
+  color: var(--acceent-color-700);
+}
+.card {
+  border: 1px solid white;
+  max-width: 340px;
+  border-radius: 8px;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(82, 174, 236, 0.185);
+}
+.card a {
+  color: inherit;
+}
+.card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+}
+.card:hover h2 {
+  color: var(--accent-color);
+}
+.card a:focus {
+  text-decoration: underline;
+}
+.card:focus-within {
+  border: unset;
+  box-shadow: 0 0 0 0.25rem var(--acceent-color-700);
+}
+.card:focus-within h2 a:focus {
+  color: var(--acceent-color-700);
+  text-decoration: underline;
+  outline: none;
+}
+.card .image {
+  height: 13rem;
+}
+.card .image img {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  filter: brightness(1);
+  transition: all 0.25s ease-in-out;
+}
+.card:focus-within .image img,
+.card:hover .image img {
+  transform: scale(1.15);
+  filter: brightness(1.02) opacity(0.9);
+}
+.card .text {
+  flex-grow: 1;
+  height: 7rem;
+  max-width: 60ch;
+  padding: 1.2rem 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.card h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+.card small {
+  margin-top: auto;
+}
+.card small a {
+  position: relative;
+  font-size: 0.8rem;
+}
+.card small a:hover {
+  text-decoration: underline;
+}
+.card small a:focus-within {
+  text-decoration: underline;
+  outline: none;
+  color: var(--acceent-color-700);
+}
+@media (max-width: 75rem) {
+  ul {
+    justify-content: center;
+  }
+  h1 {
+    text-align: center;
+  }
+}
