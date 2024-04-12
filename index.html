@@ -5,15 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor Solutions</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Discover my collection of self-created solutions to front end challenges."
+    />
+    <meta
+      name="keywords"
+      content="frontendmentor frontend-mentor frontendmentor-resolutions frontendmentor-resolutions"
+    />
+    <meta name="author" content="Adriano Escarabote" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./public/styles/global.css" />
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
   </head>
-  <body class="min-h-screen p-6 flex items-center justify-center">
+  <body class="min-h-screen p-6 flex items-center justify-center flex-col">
+    <header>
+      <h1>Frontend Mentor <span>Solutions</span></h1>
+    </header>
     <main class="flex flex-col gap-6">
-      <h1>Frontend Mentor Solutions</h1>
+      <p class="description">
+        <a
+          target="_blank"
+          aria-label="frontendmentor home"
+          href="http://frontendmentor.io"
+          >Frontend Mentor</a
+        >
+        is a platform that offers coding challenges, ranging from components to
+        fully functional web applications. Each challenge is like a real-life
+        job brief, where you are given the styles and requirements, and then
+        it's up to you to make your solution as close to the design as possible.
+        I got a lot of help here to improve my frontend skills, and these are
+        the solutions I built.
+      </p>
+
       <ul id="list" class="flex gap-10 flex-wrap"></ul>
     </main>
     <script src="./public/js/script.js" type="module"></script>
