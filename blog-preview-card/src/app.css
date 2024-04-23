@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--neutral-000: #fff;
+		--neutral-600: #7f7f7f;
+		--neutral-900: #111;
+		--neutral-999: #000;
+		--primary-700: #f4d04e;
+	}
+}
+@layer components {
+	.heading {
+		@apply font-sans text-xl leading-normal font-extrabold;
+
+		@screen sm {
+			font-size: 1.5rem;
+		}
+	}
+
+	.bodyM {
+		@apply font-sans text-sm leading-normal font-medium;
+
+		@screen sm {
+			font-size: 1rem;
+			font-weight: 400;
+		}
+	}
+
+	.bodyS {
+		@apply font-sans text-xs leading-normal font-medium;
+
+		@screen sm {
+			font-size: 0.875rem;
+			font-weight: 400;
+		}
+	}
+
+	.bodySBold {
+		@apply font-sans text-xs leading-normal font-extrabold;
+
+		@screen sm {
+			font-size: 0.875rem;
+		}
+	}
+
+	.card {
+		box-shadow: 0.5rem 0.5rem 0rem 0rem var(--neutral-999);
+	}
+}
