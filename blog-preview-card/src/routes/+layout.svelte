@@ -1,9 +1,9 @@
 <script>
-  import "../app.css";
+	import '../app.css';
 </script>
 
 <svelte:head>
-  <title>Blog Preview Card</title>
+	<title>Blog Preview Card</title>
 </svelte:head>
 
 <slot />
