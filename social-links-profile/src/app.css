@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--neutral-000: #fff;
+		--neutral-600: #333333;
+		--neutral-900: #1f1f1f;
+		--neutral-999: #141414;
+		--primary-700: #c5f82a;
+	}
+}
+@layer components {
+	.bodyBold {
+		@apply font-sans text-sm leading-normal font-bold;
+	}
+
+	.bodyRegular {
+		@apply font-sans text-sm leading-normal font-normal;
+	}
+
+	.heading {
+		@apply font-sans text-2xl leading-normal font-semibold;
+	}
+}
