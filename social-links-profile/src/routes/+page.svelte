@@ -11,7 +11,8 @@
 			<img class="rounded-full h-[88px]" src="/assets/images/avatar-jessica.jpeg" alt="" />
 		</figure>
 
-		<div class="flex flex-col gap-1 my-6">
+		<div class="flex flex-col gap-1 my-6 items-center
+		">
 			<h2 class="heading text-neutral-000">Jessica Randall</h2>
 
 			<p class="bodyBold text-primary-700">London, United Kingdom</p>
