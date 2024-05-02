@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--primary-nutmeg: #854632;
+		--primary-dark-raspberry: #7b284f;
+		--neutral-white: #fff;
+		--neutral-rose-white: #fff5fa;
+		--neutral-eggshell: #f3e6d8;
+		--neutral-light-grey: #e4ded8;
+		--neutral-dark: #5f564d;
+		--neutral-dark-charcoal: #302d2c;
+	}
+}
+
+@layer components {
+	.headingL {
+		@apply font-serif leading-none;
+
+		font-size: 2.25rem;
+
+		@screen md {
+			font-size: 2.5rem;
+		}
+	}
+
+	.headingM {
+		@apply font-serif leading-none;
+		font-size: 1.75rem;
+	}
+
+	.headingS {
+		@apply font-sans leading-none text-xl font-semibold;
+	}
+
+	.bodyRegular {
+		@apply font-sans text-base font-normal;
+	}
+
+	.bodyBold {
+		@apply font-sans text-base font-bold;
+	}
+}
