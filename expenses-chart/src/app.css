@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* primary */
+		--softRed: #ec775f;
+		--cyan: #76b5bc;
+		/* neutral */
+		--white: #fff;
+		--darkBrown: #382314;
+		--mediumBrown: #93867b;
+		--cream: #f8e9dd;
+		--veryPaleOrange: #fffaf5;
+	}
+}
+.group:hover .amount {
+	display: flex;
+}
+.amount {
+	display: none;
+}
+.mon {
+	height: 3.125rem;
+	background: var(--softRed);
+}
+.tue {
+	height: 6.25rem;
+	background: var(--softRed);
+}
+.wed {
+	height: 9.375rem;
+	background: var(--cyan);
+}
+.thu {
+	height: 5.5625rem;
+	background: var(--softRed);
+}
+.fri {
+	height: 4.1875rem;
+	background: var(--softRed);
+}
+.sat {
+	height: 7.75rem;
+	background: var(--softRed);
+}
+.sun {
+	height: 4.5625rem;
+	background: var(--softRed);
+}
+
+@layer components {
+	.headingM {
+		@apply font-sans font-bold leading-none;
+		font-size: 1.875rem;
+		line-height: 2.4375rem;
+
+		@screen md {
+			font-size: 3rem;
+			line-height: 3.875rem;
+		}
+	}
+
+	.headingS {
+		@apply font-sans leading-none font-bold;
+		font-size: 1.5rem;
+		line-height: 1.9375rem;
+
+		@screen md {
+			font-size: 2rem;
+			line-height: 2.625rem;
+		}
+	}
+
+	.bodyRegular {
+		@apply font-sans font-normal;
+		font-size: 0.9375rem;
+		line-height: 1.25rem;
+
+		@screen md {
+			font-size: 1.125rem;
+			line-height: 1.4375rem;
+		}
+	}
+
+	.bodyBold {
+		@apply font-sans text-base font-bold;
+	}
+}
