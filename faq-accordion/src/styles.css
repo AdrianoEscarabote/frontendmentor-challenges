@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --white: #fff;
+    --light-pink: #f9f0ff;
+    --grayish-purple: #8c6991;
+    --dark-purple: #2f1533;
+  }
+}
+
+.shadow {
+  box-shadow: 0rem 2rem 3.5rem 0rem #5000761a;
+}
+
+@media (max-width: 23.4375rem) {
+  body {
+    background: url("assets/images/background-pattern-mobile.svg") no-repeat !important;
+  }
+}
+
+body {
+  background: url("assets/images/background-pattern-desktop.svg") repeat-x;
+}
+
+@layer components {
+  .headingM {
+    @apply font-sans text-[2rem] leading-[2.375rem] font-bold;
+
+    @screen sm {
+      font-size: 3.5rem;
+      line-height: 4.125rem;
+    }
+  }
+
+  .bodyM {
+    @apply font-sans text-base leading-[1.1875rem] font-semibold;
+
+    @screen sm {
+      font-size: 1.125rem;
+      line-height: 1.3125rem;
+    }
+  }
+
+  .bodyS {
+    @apply font-sans text-sm leading-[1.5rem] font-normal;
+
+    @screen sm {
+      font-size: 1rem;
+    }
+  }
+}
