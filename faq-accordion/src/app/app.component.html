@@ -1,0 +1,44 @@
+<header class="sr-only">
+  <h1>FAQ accordion</h1>
+</header>
+<main
+  class="w-full md:my-[10.4688rem] my-0 md:min-w-[37.5rem] max-w-[37.5rem] bg-neutral-white md:rounded-2xl rounded-lg shadow"
+>
+  <div class="rounded-2xl p-10 pb-8 bg-primary-purple">
+    <div class="flex items-center gap-6 md:mb-[1.5625rem] mb-6">
+      <img src="../assets/images/icon-star.svg" alt="" />
+      <h2 class="headingM text-primary-dark-purple">FAQs</h2>
+    </div>
+
+    <ul class="flex flex-col gap-3">
+      <li class="border-b border-solid border-neutral-light-pink pb-[1.875rem]">
+        <faq-button-component
+          answer="Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building."
+          question="What is Frontend Mentor, and how will it help me?"
+          [showAnswer]="true"
+        ></faq-button-component>
+      </li>
+      <li class="border-b border-solid border-neutral-light-pink pb-[1.375rem]">
+        <faq-button-component
+          question="Is Frontend Mentor free?"
+          answer="Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels."
+          [showAnswer]="false"
+        ></faq-button-component>
+      </li>
+      <li class="border-b border-solid border-neutral-light-pink pb-[1.375rem]">
+        <faq-button-component
+          question="Can I use Frontend Mentor projects in my portfolio?"
+          answer="Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!"
+          [showAnswer]="false"
+        ></faq-button-component>
+      </li>
+      <li>
+        <faq-button-component
+          question="How can I get help if I'm stuck on a challenge?"
+          answer="The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members."
+          [showAnswer]="false"
+        ></faq-button-component>
+      </li>
+    </ul>
+  </div>
+</main>
