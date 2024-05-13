@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-4">
+  <button
+    class="h-11 w-full flex items-center justify-between bodyM"
+    [attr.aria-label]="showAnswer ? 'close answer' : 'show answer'"
+    (click)="showAnswerFn()"
+  >
+    <span class="text-primary-dark-purple text-start">
+      {{ question }}
+    </span>
+    <img *ngIf="!showAnswer" src="../../../assets/images/icon-plus.svg" />
+    <img *ngIf="showAnswer" src="../../../assets/images/icon-minus.svg" />
+  </button>
+
+  <p class="bodyS text-neutral-grayish-purple" *ngIf="showAnswer">
+    {{ answer }}
+  </p>
+</div>
