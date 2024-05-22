@@ -1,0 +1,100 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input_error {
+  border-color: #d94545 !important;
+}
+input,
+textarea {
+  border: 0.0625rem solid #87a3a6 !important;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  outline: none;
+  border: 0.0625rem solid #0c7d69 !important;
+}
+
+input[type='radio'] {
+  display: none;
+}
+.radio-container label {
+  display: flex;
+}
+.custom-radio {
+  border: 0.0625rem solid #87a3a6;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+.custom-radio,
+span {
+  transition: 0.5s ease;
+}
+
+.radio_container_active {
+  background-color: #dff1e7;
+  border: 1px solid #0c7d69 !important;
+}
+
+.custom-radio span {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+input[type='radio']:checked + .custom-radio {
+  border-color: #0c7d69;
+}
+
+input[type='radio']:checked + .custom-radio span {
+  background: #0c7d69;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.15em solid currentColor;
+  border-radius: 0rem;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']:checked {
+  background: #0c7d69;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  background-color: white;
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+input[type='checkbox']:focus-visible {
+  outline: max(0.125rem, 0.15em) solid currentColor;
+  outline-offset: max(0.125rem, 0.15em);
+}

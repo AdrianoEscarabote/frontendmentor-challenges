@@ -1,0 +1,35 @@
+@layer base {
+  :root {
+    /* primary */
+    --lightGreen: #dff1e7;
+    --green: #0c7d69;
+    --red: #d94545;
+    /* neutral */
+    --white: #fff;
+    --darkGrey: #2b4246;
+    --mediumGrey: #87a3a6;
+  }
+}
+
+@layer components {
+  .heading {
+    @apply font-sans font-bold leading-none;
+    font-size: 1.875rem;
+    line-height: 2.4375rem;
+
+    @screen md {
+      font-size: 1.9375rem;
+      line-height: 2.3125rem;
+      letter-spacing: -0.0313rem;
+    }
+  }
+  .bodyM {
+    @apply font-sans font-medium leading-none;
+
+    @screen md {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      letter-spacing: -0.0063rem;
+    }
+  }
+}
