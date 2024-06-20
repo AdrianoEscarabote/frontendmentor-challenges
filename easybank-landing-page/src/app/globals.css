@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@layer base {
+  :root {
+    /* primary */
+    --darkBlue: #2d314d;
+    --limeGreen: #31d35c;
+    --brightCyan: #2bb7da;
+
+    /* neutral */
+    --white: #fff;
+    --grayishBlue: #9698a6;
+    --lightGrayishBlue: #f3f4f6;
+    --veryLightGray: #fafafa;
+  }
+}
+
+@layer components {
+  .headingXl {
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 2.9375rem;
+    letter-spacing: -0.7136px;
+  }
+  @screen xl {
+    .headingXl {
+      font-size: 3.5rem;
+      line-height: 4rem;
+      letter-spacing: -1px;
+    }
+  }
+  .headingMd {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.375rem;
+    letter-spacing: -0.571429px;
+  }
+  @screen xl {
+    .headingMd {
+      font-size: 2.5rem;
+      line-height: 4rem;
+      letter-spacing: -0.714286px;
+    }
+  }
+  .headingSm {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.357143px;
+  }
+  @screen xl {
+    .headingSm {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      letter-spacing: -0.428571px;
+    }
+  }
+
+  .headingXs {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.285714px;
+  }
+
+  .bodyXl {
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    letter-spacing: -0.234375px;
+  }
+
+  @screen xl {
+    .bodyXl {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      letter-spacing: -0.28125px;
+    }
+  }
+
+  .bodyMd {
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    letter-spacing: -0.234375px;
+  }
+
+  @screen xl {
+    .bodyMd {
+      font-size: 1rem;
+      line-height: 1.625rem;
+      letter-spacing: -0.25px;
+    }
+  }
+
+  .bodySm {
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    letter-spacing: -0.203125px;
+  }
+}
