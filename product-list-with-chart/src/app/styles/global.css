@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --red: #c73a0f;
+    --green: #1ea475;
+    --rose-50: #fcf9f7;
+    --rose-100: #f4edeb;
+    --rose-300: #c9aea6;
+    --rose-400: #ad8985;
+    --rose-500: #87635a;
+    --rose-900: #260f08;
+  }
+}
