@@ -1,0 +1,9 @@
+.bg {
+  background: url("../../../public/images/bg-intro-desktop.svg");
+}
+
+@media (max-width: 768px) {
+  .bg {
+    background: url("../../../public/images/bg-intro-mobile.svg");
+  }
+}
