@@ -16,3 +16,26 @@
     --rose-900: #260f08;
   }
 }
+
+@layer components {
+  .heading {
+    @apply font-red font-bold;
+    font-size: 40px;
+    letter-spacing: 0.12px;
+  }
+
+  .headingS {
+    @apply font-red font-bold;
+    font-size: 24px;
+  }
+
+  .bodyM {
+    @apply font-red font-bold;
+    font-size: 24px;
+  }
+
+  .bodyS {
+    @apply font-red font-semibold;
+    font-size: 14px;
+  }
+}
