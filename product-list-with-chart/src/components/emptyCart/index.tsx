@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const EmptyCart = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-[14px] mt-3 mb-2">
+    <div className="flex flex-col items-center justify-center gap-[14px] mt-4 mb-2">
       <Image
         src={"/images/illustration-empty-cart.svg"}
         width={80}
