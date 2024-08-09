@@ -17,6 +17,7 @@ const config: Config = {
         "rose-400": "var(--rose-400)",
         "rose-500": "var(--rose-500)",
         "rose-900": "var(--rose-900)",
+        "hover-color": "var(--hover-color)",
       },
       fontFamily: {
         red: ["Red Hat Text", "sans-serif"],

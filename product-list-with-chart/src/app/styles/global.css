@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: 0.2s ease-in-out;
+}
+
 @layer base {
   :root {
     --red: #c73a0f;
@@ -14,6 +18,7 @@
     --rose-400: #ad8985;
     --rose-500: #87635a;
     --rose-900: #260f08;
+    --hover-color: #952c0b;
   }
 }
 
@@ -32,6 +37,11 @@
   .bodyM {
     @apply font-red font-bold;
     font-size: 24px;
+  }
+
+  .body {
+    @apply font-red font-semibold;
+    font-size: 16px;
   }
 
   .bodyS {
