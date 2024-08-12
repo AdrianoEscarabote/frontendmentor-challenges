@@ -6,6 +6,7 @@ import { removeProduct } from "@/redux/product/reducer";
 import { selectProductsPrice } from "@/redux/product/product.selector";
 import { useState } from "react";
 import OrderModal from "../orderModal";
+import style from "./style.module.css";
 
 const CartList = () => {
   const dispatch = useDispatch();
@@ -19,47 +20,54 @@ const CartList = () => {
   return (
     <>
       <div className="flex flex-col gap-4">
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-4">
           {products &&
             products.map((product, index) => (
-              <>
-                <li
-                  key={index}
-                  className="flex justify-between items-center border-b border-solid pb-2"
-                >
-                  <div className="flex flex-col gap-1">
-                    <h4 className="bodyS text-rose-900">{product.name}</h4>
+              <li
+                key={index}
+                className="flex justify-between items-center border-b border-solid pb-4"
+              >
+                <div className="flex flex-col gap-1">
+                  <h4 className="bodyS text-rose-900 tracking-[-0.4px] font-bold mb-[1px]">
+                    {product.name}
+                  </h4>
 
-                    <div className="flex gap-3">
-                      <p className="text-red">{product.quantity}x</p>
+                  <div className="flex gap-[10px]">
+                    <p className="text-red bodyS font-bold">
+                      {product.quantity}x
+                    </p>
 
-                      <p className="flex gap-3">
-                        <span className="text-neutral-500">
-                          @ $ {product.price.toFixed(2)}
-                        </span>
-                        <span>
-                          $ {(product.price * product.quantity).toFixed(2)}
-                        </span>
-                      </p>
-                    </div>
+                    <p className="flex gap-3 bodyS">
+                      <span className="text-rose-500 font-light">
+                        @ ${product.price.toFixed(2)}
+                      </span>
+                      <span className="text-rose-900 font-normal">
+                        $ {(product.price * product.quantity).toFixed(2)}
+                      </span>
+                    </p>
                   </div>
+                </div>
 
-                  <button
-                    className="border border-solid rounded-full h-full p-1"
-                    onClick={() =>
-                      dispatch(removeProduct({ name: product.name }))
-                    }
+                <button
+                  className={`${style.button} border border-solid border-rose-400 rounded-full h-full p-1 hover:border-rose-900`}
+                  onClick={() =>
+                    dispatch(removeProduct({ name: product.name }))
+                  }
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    fill="none"
+                    viewBox="0 0 10 10"
                   >
-                    <Image
-                      src={"/images/icon-remove-item.svg"}
-                      alt=""
-                      width={40}
-                      height={40}
-                      style={{ width: "auto", height: "auto" }}
+                    <path
+                      fill="#CAAFA7"
+                      d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
                     />
-                  </button>
-                </li>
-              </>
+                  </svg>
+                </button>
+              </li>
             ))}
         </ul>
 
@@ -67,12 +75,12 @@ const CartList = () => {
           <p className="flex justify-between bodyS font-normal">
             Order Total{" "}
             <span className="bodyM text-rose-900">
-              $ {productsPrice.toFixed(2)}
+              ${productsPrice.toFixed(2)}
             </span>
           </p>
         </div>
 
-        <div className="bg-rose-50 flex justify-center gap-2 p-3 rounded-lg">
+        <div className="bg-rose-50 flex justify-center gap-2 p-3 rounded-lg mt-5 mb-3">
           <Image
             src={"/images/icon-carbon-neutral.svg"}
             alt=""
@@ -82,11 +90,7 @@ const CartList = () => {
           />
 
           <p className="bodyS font-normal text-rose-900">
-            This is a{" "}
-            <span className="font-bold text-rose-900 bodyS">
-              carbon-neutral
-            </span>{" "}
-            delivery
+            This is a <span className="font-bold">carbon-neutral</span> delivery
           </p>
         </div>
 

@@ -9,7 +9,7 @@ const PrimaryButton = ({
 }: PrimaryButtonProps) => {
   return (
     <button
-      className={`${disabled ? "opacity-50" : ""} bg-red text-white rounded-full py-4 w-full font-medium text-base`}
+      className={`${disabled ? "opacity-50" : ""} bg-red text-white rounded-full py-4 w-full font-medium text-base hover:bg-hover-color`}
       onClick={onClick}
       aria-label={ariaLabel}
       disabled={disabled}
