@@ -8,7 +8,7 @@ const Cart = () => {
 
   return (
     <section>
-      <div className="bg-white rounded-xl w-full py-[30px] px-6 flex flex-col gap-5 min-w-[384px]">
+      <div className="bg-white rounded-xl w-full py-[30px] px-6 flex flex-col gap-5 md:min-w-[384px]">
         <h2 className="text-red headingS">Your Cart ({productsCount})</h2>
 
         {productsCount == 0 && <EmptyCart />}
