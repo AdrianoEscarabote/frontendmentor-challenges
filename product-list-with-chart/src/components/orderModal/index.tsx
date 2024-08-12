@@ -9,6 +9,7 @@ import { cleanProducts } from "@/redux/product/reducer";
 const OrderModal = ({ closeModal }: OrderModalProps) => {
   const dispatch = useDispatch();
   const modalRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (ev: KeyboardEvent) => {
       if (ev.key === "Escape") {
@@ -24,7 +25,7 @@ const OrderModal = ({ closeModal }: OrderModalProps) => {
       onClick={() => {
         closeModal();
       }}
-      className="absolute bottom-0 right-0 h-screen w-full flex items-center justify-center bg-[#1d1d1d93]"
+      className="fixed bottom-0 right-0 h-screen w-full flex items-end md:items-center justify-center bg-[#1d1d1d93]"
     >
       <section
         ref={modalRef}
@@ -33,7 +34,7 @@ const OrderModal = ({ closeModal }: OrderModalProps) => {
         aria-label="order modal"
         aria-describedby="modal-content"
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-10 py-10 rounded-lg w-full max-w-[592px]"
+        className="bg-white px-10 py-10 rounded-lg w-full max-w-[592px] md:min-h-0"
       >
         <Image
           src={"/images/icon-order-confirmed.svg"}

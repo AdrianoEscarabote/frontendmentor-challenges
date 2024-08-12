@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { rootState } from "@/redux/root-reducer-types";
 import { removeProduct } from "@/redux/product/reducer";
 import { selectProductsPrice } from "@/redux/product/product.selector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OrderModal from "../orderModal";
 import style from "./style.module.css";
 
@@ -16,6 +16,12 @@ const CartList = () => {
   const productsPrice = useSelector(selectProductsPrice);
 
   const [showOrderModal, setShowOrderModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    showOrderModal
+      ? document.querySelector("body")?.classList.add("overflow-hidden")
+      : document.querySelector("body")?.classList.remove("overflow-hidden");
+  }, [showOrderModal]);
 
   return (
     <>
