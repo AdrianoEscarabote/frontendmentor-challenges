@@ -1,15 +1,30 @@
 import Image from "next/image";
 import { DessertCardProps } from "./DessertCardProps";
 import AddToCartButton from "../addToCartButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addProduct,
   decreaseQuantity,
   increaseQuantity,
 } from "@/redux/product/reducer";
+import { useEffect, useState } from "react";
+import { rootState } from "@/redux/root-reducer-types";
 
 const DessertCard = ({ ...data }: DessertCardProps) => {
   const dispatch = useDispatch();
+
+  const product = useSelector(
+    (rootReducer: rootState) =>
+      rootReducer.productsSlice.filter(
+        (product) => product.name === data.name
+      )[0]
+  );
+
+  const [showBorder, setShowBorder] = useState<boolean>(product?.quantity > 0);
+
+  useEffect(() => {
+    setShowBorder(product?.quantity > 0);
+  }, [product?.quantity]);
 
   const handleDecreaseQuantity = (
     event: React.MouseEvent<HTMLButtonElement>
@@ -33,7 +48,7 @@ const DessertCard = ({ ...data }: DessertCardProps) => {
           width={300}
           height={400}
           style={{ width: "auto", height: "auto" }}
-          className="rounded-lg"
+          className={`rounded-lg ${showBorder ? "border-[3px] border-solid border-red" : ""}`}
         />
         <div className="absolute -bottom-6 left-[46px]">
           <AddToCartButton
