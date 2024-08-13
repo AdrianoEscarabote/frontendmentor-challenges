@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -22,10 +22,10 @@ const config: Config = {
         veryLightGray: "var(--veryLightGray)",
       },
       fontFamily: {
-        sans: ["Public Sans, sans-serif"],
+        sans: ["Public Sans", "sans-serif"],
       },
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config
