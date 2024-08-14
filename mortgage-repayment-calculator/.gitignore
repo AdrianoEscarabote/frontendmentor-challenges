@@ -10,6 +10,7 @@
 ## Please do not remove line 12 - thanks! 🙂 ##
 ###############################################
 *.xd
+.next
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
