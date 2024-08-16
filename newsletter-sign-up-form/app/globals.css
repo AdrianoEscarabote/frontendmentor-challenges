@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@layer base {
+  :root {
+    --tomato: #ff6257;
+    --dark-slate-grey: #242742;
+    --charcoal-grey: #36384e;
+    --grey: #9294a0;
+    --white: #fff;
+    --gradient-pink: #ff3e83;
+    --gradient-orange: #fd634a;
+    --gradient-shadow: #ff3e8355;
+  }
+}
+
+@layer components {
+  .heading {
+    @apply font-roboto font-bold;
+    font-size: 3.5rem;
+    letter-spacing: -0.1219rem;
+  }
+
+  .body {
+    @apply font-roboto text-base font-medium;
+  }
+
+  .bodySmall {
+    @apply font-roboto text-xs font-semibold;
+  }
+}
