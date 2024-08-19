@@ -4,7 +4,7 @@ import { SuccessAlertProps } from "./successAlertProps"
 
 const SuccessAlert = ({ goBackFn, email }: SuccessAlertProps) => {
   return (
-    <main className="w-full max-w-[420px] rounded-3xl bg-red-700 bg-white">
+    <main className="fade w-full max-w-[420px] rounded-3xl bg-red-700 bg-white">
       <div className="flex w-full max-w-[420px] flex-col items-start gap-4 p-10">
         <Image
           alt=""
