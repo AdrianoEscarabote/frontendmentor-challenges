@@ -32,3 +32,16 @@
     @apply font-roboto text-xs font-semibold;
   }
 }
+
+.fade {
+  animation: Fade 0.4s ease-in-out;
+}
+
+@keyframes Fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
