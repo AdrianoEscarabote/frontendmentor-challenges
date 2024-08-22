@@ -50,13 +50,13 @@ Follow these steps to set up the project:
 Clone the project repository using the following command:
 
 ```sh
-git clone https://github.com/AdrianoEscarabote/frontendmentor-challenges/tree/main/product-list-with-chart
+git clone https://github.com/AdrianoEscarabote/frontendmentor-challenges/tree/main/newsletter-sign-up-form
 ```
 
 Navigate to the project's root directory:
 
 ```sh
-cd product-list-with-chart/
+cd newsletter-sign-up-form/
 ```
 
 Install project dependencies by running:
