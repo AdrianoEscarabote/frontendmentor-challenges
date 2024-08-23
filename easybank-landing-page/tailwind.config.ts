@@ -21,9 +21,6 @@ const config: Config = {
         lightGrayishBlue: "var(--lightGrayishBlue)",
         veryLightGray: "var(--veryLightGray)",
       },
-      fontFamily: {
-        sans: ["Public Sans", "sans-serif"],
-      },
     },
   },
   plugins: [],
