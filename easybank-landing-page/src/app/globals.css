@@ -2,21 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 @layer base {
   :root {
     /* primary */
     --darkBlue: #2d314d;
     --limeGreen: #31d35c;
     --brightCyan: #2bb7da;
-
     /* neutral */
     --white: #fff;
     --grayishBlue: #9698a6;
@@ -25,9 +16,30 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+body {
+  text-rendering: optimizeSpeed;
+}
+body::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, var(--limeGreen), var(--brightCyan));
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #83d398, #74c1d4);
+}
+
 @layer components {
   .headingXl {
-    font-weight: 300;
+    @apply font-light;
     font-size: 2.5rem;
     line-height: 2.9375rem;
     letter-spacing: -0.7136px;
