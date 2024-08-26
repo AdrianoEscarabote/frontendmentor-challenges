@@ -1,9 +1,11 @@
-import { Meta, StoryObj } from "@storybook/react";
-import LatestArticles from ".";
+import { Meta, StoryObj } from "@storybook/react"
+import LatestArticles from "."
 
 export default {
   title: "components/latestArticles",
   component: LatestArticles,
-} as Meta;
+  tags: ["autodocs"],
+} as Meta
 
-export const Primary: StoryObj = {};
+/** Latest Articles Component */
+export const Primary: StoryObj = {}
