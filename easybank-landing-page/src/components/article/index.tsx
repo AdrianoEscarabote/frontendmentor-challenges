@@ -1,19 +1,26 @@
-import Image from "next/image";
-import { ArticleProps } from "./article";
+import Image from "next/image"
+import { ArticleProps } from "./article"
+import style from "./style.module.css"
 
 const Article = ({ author, imagePath, text, title }: ArticleProps) => {
   return (
-    <article className="rounded-lg overflow-hidden w-full max-w-[240px]">
+    <article className="w-full max-w-[320px] overflow-hidden rounded-lg md:max-w-[255px]">
       <div className="rounded-lg bg-white">
-        <Image src={`${imagePath}`} alt="" width={500} height={500} />
-        <div className="p-3">
-          <p className="bodySm text-grayishBlue">{author}</p>
-          <h4 className="headingSm text-darkBlue">{title}</h4>
-          <p className="bodyMd text-grayishBlue">{text}</p>
+        <Image
+          src={`${imagePath}`}
+          alt=""
+          width={0}
+          height={0}
+          className="h-auto w-[320px] object-cover lg:h-[201px] lg:w-[255px]"
+        />
+        <div className="p-6 pt-[26px]">
+          <p className="text-[10px] text-grayishBlue">{author}</p>
+          <h4 className="headingXs mt-[9px] text-darkBlue">{title}</h4>
+          <p className="bodySm mt-[8px] text-grayishBlue">{text}</p>
         </div>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article
