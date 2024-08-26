@@ -1,9 +1,14 @@
 .bg {
-  background: url("../../../public/images/bg-intro-desktop.svg");
+  background: url("../../../public/images/bg-intro-desktop.svg") no-repeat;
+  background-size: auto;
+  background-position: 624px -262px;
+  background-attachment: absolute !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .bg {
-    background: url("../../../public/images/bg-intro-mobile.svg");
+    background: url("../../../public/images/bg-intro-mobile.svg") no-repeat;
+    background-position: center top;
+    background-size: 100% 500px;
   }
 }
