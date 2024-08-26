@@ -5,10 +5,10 @@ const WhyChooseEasyBank = () => {
     <section className="bg-lightGrayishBlue py-24">
       <div className="mx-auto max-w-[1440px] px-5 xl:px-[165px]">
         <div className="flex flex-col gap-[18px]">
-          <h2 className="headingMd lg:text-star text-center text-darkBlue">
+          <h2 className="headingMd text-center text-darkBlue lg:text-start">
             Why choose Easybank?
           </h2>
-          <p className="bodyXl lg:text-star mb-8 flex flex-col gap-[2px] text-center text-grayishBlue lg:mb-0">
+          <p className="bodyXl mb-8 flex flex-col gap-[2px] text-center text-grayishBlue lg:mb-0 lg:text-start">
             We leverage Open Banking to turn your bank account into your
             financial hub.
             <span>Control your finances like never before.</span>

@@ -112,7 +112,7 @@ const Header = () => {
           className={`lg:mt-[82px] ${style.bg} relative mx-auto max-w-[1440px] overflow-visible`}
         >
           <div className="relative mx-auto flex max-w-[1440px] flex-col-reverse items-center lg:flex-row lg:justify-between xl:px-[165px]">
-            <div className="relative -top-[40px] flex flex-col items-center gap-6 px-5 text-center lg:-top-0 lg:my-[170px] lg:items-start lg:text-start">
+            <div className="relative -top-[40px] flex flex-col items-center gap-6 px-5 text-center md:px-0 lg:-top-0 lg:my-[170px] lg:items-start lg:text-start">
               <h1 className="headingXl flex flex-col text-darkBlue">
                 Next generation <span>digital banking</span>
               </h1>

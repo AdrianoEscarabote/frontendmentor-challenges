@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-darkBlue">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between px-5 py-12 md:flex-row xl:px-[165px]">
         <nav className="flex w-full max-w-[660px] flex-col items-center gap-7 md:flex-row md:gap-20">
-          <div className="md:items-left flex h-full w-full max-w-[205px] flex-col items-center gap-7 md:gap-[55px]">
+          <div className="flex h-full w-full max-w-[205px] flex-col items-center gap-7 md:items-start md:gap-[55px]">
             <Image
               src={"/images/white-logo.svg"}
               alt=""
