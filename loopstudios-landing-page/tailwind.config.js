@@ -2,6 +2,10 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		backgroundImage: {
+			'gradient-image': 'linear-gradient(180deg, transparent 40%, #000b)',
+			'gradient-hover': 'linear-gradient(180deg, transparent 50%, hsla(0, 0%, 100%, 1))'
+		},
 		colors: {
 			white: 'var(--white)',
 			black: 'var(--black)',
