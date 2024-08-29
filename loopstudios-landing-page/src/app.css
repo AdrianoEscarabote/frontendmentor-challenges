@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--white: #fff;
+		--black: #000;
+		--dark-gray: hsl(0, 0%, 55%);
+		--very-dark-gray: hsl(0, 0%, 41%);
+	}
+}
+
+* {
+	transition: 0.1s ease-in-out all;
+}
+
+@layer components {
+	.headingM {
+		@apply font-sans uppercase text-[34.4px] font-extralight;
+
+		@screen md {
+			font-size: 72px;
+			line-height: 71px;
+		}
+	}
+
+	.headingS {
+		@apply font-sans uppercase text-[32px] font-light;
+
+		@screen md {
+			font-size: 48px;
+		}
+	}
+
+	.body {
+		@apply font-alata text-[14.4px] leading-[16px] text-white tracking-[0.32px];
+	}
+
+	.headingXs {
+		@apply font-sans text-[48px] font-light;
+
+		@screen md {
+			font-size: 32px;
+			line-height: 32px;
+		}
+	}
+}
