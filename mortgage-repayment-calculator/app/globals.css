@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lime: #d7da2f;
+  --red: #d73328;
+  --slate100: #e3f3fd;
+  --slate300: #9abed5;
+  --slate500: #6b94a8;
+  --slate700: #4e6e7e;
+  --slate900: #122f3f;
+}
+
+@layer components {
+  .heading {
+    @apply text-2xl font-bold;
+  }
+  .body {
+    @apply font-semibold;
+  }
+  .bodyS {
+    @apply font-thin;
+  }
+}
