@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --purple100: #dacffc;
+    --purple500: #7650dc;
+    --yellow100: #f9eee1;
+    --yellow500: #ffcb6b;
+    --white: #fff;
+    --black: #000;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 57px 57px 57px 57px 57px 70px 57px 60px 57px 65px;
+    grid-template-areas:
+      "item1 item2 item2 item3"
+      "item1 item2 item2 item3"
+      "item1 item2 item2 item3"
+      "item1 item2 item2 item3"
+      "item1 item5 item6 item3"
+      "item4 item5 item6 item3"
+      "item4 item5 item6 item3"
+      "item4 item7 item8 item8"
+      "item4 item7 item8 item8"
+      "item4 item7 item8 item8";
+    max-width: 1118px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-auto-columns: 1fr;
+    grid-auto-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "item2 item2 item2 item2"
+      "item5 item5 item5 item5"
+      "item6 item6 item6 item6"
+      "item3 item3 item3 item3"
+      "item8 item8 item8 item8"
+      "item7 item7 item7 item7"
+      "item1 item1 item1 item1"
+      "item4 item4 item4 item4";
+    margin: 0 auto;
+  }
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@layer components {
+  .heading {
+    @apply font-medium;
+    font-size: 2.5rem;
+  }
+
+  @screen xl {
+    .heading {
+      font-size: 58px;
+      line-height: 57px;
+      letter-spacing: -0.9px;
+    }
+  }
+  .headingM {
+    font-size: 32px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: -3.3px;
+  }
+
+  @screen xl {
+    .headingM {
+      font-size: 38px;
+      line-height: 36px;
+      letter-spacing: -3.3px;
+    }
+    .headingM i {
+      letter-spacing: -4px;
+    }
+  }
+
+  .headingS {
+    font-size: 28px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+
+  @screen xl {
+    .headingS {
+      font-size: 30px;
+      line-height: 28px;
+      letter-spacing: -1.2px;
+    }
+  }
+  .body {
+    @apply text-lg font-normal;
+  }
+}
