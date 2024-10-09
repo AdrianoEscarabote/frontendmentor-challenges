@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --purple: #854dff;
+    --light-red: #ff5757;
+    --white: #ffffff;
+    --off-white: #f0f0f0;
+    --light-grey: #dbdbdb;
+    --smokey-grey: #716f6f;
+    --off-black: #141414;
+  }
+}
+
+* {
+  transition: 0.3s ease-in-out;
+}
+
+@layer components {
+  .heading {
+    @apply text-[3.25rem] font-black italic;
+  }
+  @screen md {
+    .heading {
+      @apply text-[6.375rem] leading-[7.125rem];
+    }
+  }
+  .body {
+    @apply text-[1.9625rem] font-semibold;
+  }
+  .bodyS {
+    @apply text-[0.875rem] font-semibold tracking-[0.2rem];
+  }
+}
