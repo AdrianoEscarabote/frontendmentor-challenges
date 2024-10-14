@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --darkViolet: #2d2641;
+    --grayishBlue: #a5b1c2;
+    --veryDarkViolet: #2b272f;
+    --darkGrayishViolet: #837d88;
+    --veryLightGray: #fafafa;
+    --white: #fff;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+@layer components {
+  @media (min-width: 80rem) {
+    .headingXl {
+      @apply text-[4.5rem] leading-[4rem] tracking-[-0.9px] !important;
+    }
+
+    .headingMd {
+      @apply text-[3.5rem] leading-[3.5rem] !important;
+    }
+  }
+
+  .headingXl {
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: -0.666667px;
+  }
+
+  .headingMd {
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.555556px;
+  }
+
+  .headingSm {
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+    letter-spacing: -0.388889px;
+  }
+
+  .bodyLg {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.36364px;
+  }
+
+  .bodyMd {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+
+  .bodySm {
+    font-weight: 700;
+    font-size: 12.2px;
+    line-height: 15px;
+    letter-spacing: 1.5px;
+  }
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
