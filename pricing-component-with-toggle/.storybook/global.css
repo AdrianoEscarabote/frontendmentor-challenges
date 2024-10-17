@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --white: #fff;
+    --purple: #6d72de;
+    --very-light-grayish-blue: #f7f7fe;
+    --light-grayish-blue: #b3b5c6;
+    --grayish-blue: #6e728e;
+    --dark-grayish-blue: #4a4d60;
+    --secondary-border-color: #6e728e40;
+    --primary-border-color: #ffffff40;
+  }
+}
+
+@layer components {
+  .heading {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+  .price {
+    @apply text-[4.5rem] leading-[4.4375rem] tracking-[-1.9px];
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Montserrat' sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
