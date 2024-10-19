@@ -1,0 +1,49 @@
+<div
+  class="container flex items-center lg:justify-center justify-between gap-[0.125rem] text-neutral-light-grayish-blue w-full lg:max-w-[16.25rem] relative bottom-[0.125rem]"
+>
+  <span class="pr-[0.6875rem] font-bold text-color-secondary text-sm"
+    >Dark Mode</span
+  >
+  <input class="input" type="checkbox" id="switch" (change)="toggleTheme()" />
+  <label class="label bg-button-gradient after:bg-bg-card-top" for="switch"
+    >Toggle</label
+  >
+</div>
+
+<style lang="css">
+  .input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  .label {
+    cursor: pointer;
+    text-indent: -624.9375rem;
+    width: 3rem;
+    height: 1.5rem;
+    display: block;
+    border-radius: 6.25rem;
+    position: relative;
+  }
+
+  .label:after {
+    content: "";
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.25rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 5.625rem;
+    transition: 0.3s;
+  }
+
+  .input:checked + .label:after {
+    left: calc(100% - 0.3125rem);
+    transform: translateX(-100%);
+  }
+
+  .label:active:after {
+    width: 2rem;
+  }
+</style>
