@@ -1,0 +1,121 @@
+<main
+  class="max-w-[90rem] xl:px-[10.3125rem] px-5 w-full mx-auto my-0 flex flex-col items-start gap-6 pt-[0.625rem]"
+>
+  <ul
+    class="flex lg:flex-nowrap flex-wrap lg:gap-0 gap-5 w-full mt-0 lg:justify-between justify-center"
+  >
+    <li>
+      <statsCard-component
+        username="@nathanf"
+        number="1987"
+        [changeToday]="12"
+        followersLabel="Followers"
+        socialType="facebook"
+      ></statsCard-component>
+    </li>
+    <li>
+      <statsCard-component
+        username="@nathanf"
+        number="1044"
+        [changeToday]="99"
+        followersLabel="Followers"
+        socialType="twitter"
+      ></statsCard-component>
+    </li>
+    <li>
+      <statsCard-component
+        username="@realnathanf"
+        number="11k"
+        [changeToday]="1099"
+        followersLabel="Followers"
+        socialType="instagram"
+      ></statsCard-component>
+    </li>
+    <li>
+      <statsCard-component
+        username="Nathan F."
+        number="8239"
+        [changeToday]="-144"
+        followersLabel="Subscribers"
+        socialType="youtube"
+      ></statsCard-component>
+    </li>
+  </ul>
+
+  <h2 class="text-2xl mt-5 text-color-primary font-bold">Overview - Today</h2>
+
+  <ul class="flex flex-col gap-[1.375rem] w-full lg:mb-0 mb-5">
+    <div
+      class="flex lg:flex-nowrap flex-wrap lg:gap-0 gap-5 w-full mt-0 lg:justify-between justify-center"
+    >
+      <li>
+        <overviewCard-component
+          title="Page Views"
+          views="87"
+          [percentage]="3"
+          socialType="facebook"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Likes"
+          views="52"
+          [percentage]="-2"
+          socialType="facebook"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Likes"
+          views="5462"
+          [percentage]="2257"
+          socialType="instagram"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Profile Views"
+          views="52k"
+          [percentage]="1375"
+          socialType="instagram"
+        ></overviewCard-component>
+      </li>
+    </div>
+    <div
+      class="flex lg:flex-nowrap flex-wrap lg:gap-0 gap-5 w-full mt-0 lg:justify-between justify-center"
+    >
+      <li>
+        <overviewCard-component
+          title="Retweets"
+          views="117"
+          [percentage]="303"
+          socialType="twitter"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Likes"
+          views="507"
+          [percentage]="553"
+          socialType="twitter"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Likes"
+          views="107"
+          [percentage]="-19"
+          socialType="youtube"
+        ></overviewCard-component>
+      </li>
+      <li>
+        <overviewCard-component
+          title="Total Views"
+          views="1407"
+          [percentage]="-12"
+          socialType="youtube"
+        ></overviewCard-component>
+      </li>
+    </div>
+  </ul>
+</main>
