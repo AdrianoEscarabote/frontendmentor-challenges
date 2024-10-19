@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --lime-green: #1eb589;
+    --bright-red: #ff3d3d;
+    --facebook: #178ff5;
+    --twitter: #1da1f2;
+    --instagram: linear-gradient(
+      225deg,
+      #df4896 0%,
+      #ee877e 50.91%,
+      #fdc366 100%
+    );
+    --youtube: #ff0000;
+    --toggle: linear-gradient(#3399ff, #33cc99);
+    --bg-color: #1d1f29;
+    --bg-card-top: #20222f;
+    --bg-card: #252b42;
+    --color-primary: #ffffff;
+    --color-secondary: #8c98c6;
+    --color-tertiary: #333a55;
+  }
+  .light {
+    --lime-green: #1eb589;
+    --bright-red: #ff3d3d;
+    --facebook: #178ff5;
+    --twitter: #1da1f2;
+    --instagram: linear-gradient(
+      225deg,
+      #df4896 0%,
+      #ee877e 50.91%,
+      #fdc366 100%
+    );
+    --youtube: #ff0000;
+    --toggle: #b3b3b3;
+    --bg-color: #ffffff;
+    --bg-card-top: #f7f9ff;
+    --bg-card: #f1f3fa;
+    --color-primary: #1d1f29;
+    --color-secondary: #63687d;
+    --color-tertiary: #e1e4f0;
+  }
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
