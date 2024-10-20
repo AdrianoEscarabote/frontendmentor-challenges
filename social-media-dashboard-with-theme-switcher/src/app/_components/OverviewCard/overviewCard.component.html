@@ -1,0 +1,28 @@
+<article
+  class="w-[15.9375rem] rounded-md pl-6 pr-8 pt-6 pb-6 flex flex-row justify-between h-[7.8125rem] bg-bg-card text-color-pr"
+>
+  <div class="h-full">
+    <p
+      class="flex flex-col h-full justify-between text-sm text-color-secondary font-bold"
+    >
+      {{ title }}
+      <span class="text-color-primary text-[2rem] mb-[0.4375rem]">{{
+        views
+      }}</span>
+    </p>
+  </div>
+
+  <div class="flex flex-col justify-between items-end">
+    <img [src]="getSocialIcon()" class="w-5 h-5" [alt]="socialType + ' icon'" />
+    <p
+      class="font-bold flex text-xs items-center justify-center gap-1"
+      [ngClass]="{
+        'text-limeGreen': percentage >= 0,
+        'text-brightRed': percentage < 0
+      }"
+    >
+      <img [src]="getChangeIcon()" alt="icon arrow" />
+      {{ getAbsolutePercentage() }}%
+    </p>
+  </div>
+</article>
