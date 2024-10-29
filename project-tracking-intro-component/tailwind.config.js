@@ -14,6 +14,10 @@ module.exports = {
           red: "var(--red)",
         },
       },
+      fontFamily: {
+        condensed: ["Barlow Condensed", "sans-serif"],
+        barlow: ["Barlow", "sans-serif"],
+      },
     },
   },
   plugins: [],
