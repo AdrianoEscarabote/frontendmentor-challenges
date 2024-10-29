@@ -1,0 +1,82 @@
+<header>
+  <div
+    class="relative z-50 max-w-[90rem] lg:px-[10.3125rem] px-5 mx-auto my-0 flex items-center w-full justify-between lg:pt-16 pt-10 lg:pb-10 pb-6"
+  >
+    <img src="/images/logo.svg" alt="logo" />
+
+    <nav
+      class="hidden lg:flex gap-3 items-center mt-[0.125rem] text-neutral-very-dark-blue"
+    >
+      <ul class="flex gap-[2.625rem] mt-[0.0625rem]">
+        <li class="uppercase">
+          <a
+            href="/"
+            class="text-[1.0625rem] font-bold lg:hover:underline lg:hover:underline-offset-2"
+            >Product</a
+          >
+        </li>
+        <li class="uppercase">
+          <a
+            href="/"
+            class="text-[1.0625rem] font-bold lg:hover:underline lg:hover:underline-offset-2"
+            >Features</a
+          >
+        </li>
+        <li class="uppercase">
+          <a
+            href="/"
+            class="text-[1.0625rem] font-bold lg:hover:underline lg:hover:underline-offset-2"
+            >Pricing</a
+          >
+        </li>
+      </ul>
+      <div
+        class="w-[0.375rem] h-[0.375rem] bg-neutral-very-dark-blue opacity-10 rounded-full mr-[2.1875rem] ml-[1.875rem]"
+      ></div>
+      <a
+        href="/"
+        class="uppercase text-neutral-grayish-blue text-[1.0625rem] font-bold lg:hover:underline lg:hover:underline-offset-2"
+        >Login</a
+      >
+    </nav>
+
+    <button (click)="toggleMenu()" class="lg:hidden flex">
+      <img *ngIf="isMenuOpen" src="/images/icon-close.svg" alt="Close Menu" />
+      <img
+        *ngIf="!isMenuOpen"
+        src="/images/icon-hamburger.svg"
+        alt="open Menu"
+      />
+    </button>
+    <div *ngIf="isMenuOpen" class="absolute right-0 w-full px-5">
+      <nav
+        *ngIf="isMenuOpen"
+        class="mobile-menu lg:hidden shadow-md absolute flex bg-white p-5 rounded-lg w-[90%] top-[3.125rem]"
+      >
+        <ul class="text-center space-y-4 w-full">
+          <li>
+            <a href="/" class="text-[1.0625rem] font-bold uppercase">Product</a>
+          </li>
+          <li>
+            <a href="/" class="text-[1.0625rem] font-bold uppercase"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="/" class="text-[1.0625rem] font-bold uppercase">Pricing</a>
+          </li>
+          <div
+            class="w-full h-[0.0625rem] bg-neutral-very-dark-blue opacity-10 rounded-full mx-auto"
+          ></div>
+          <li>
+            <a
+              href="/"
+              class="uppercase text-neutral-grayish-blue text-[1.0625rem] font-bold lg:hover:underline lg:hover:underline-offset-2"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
