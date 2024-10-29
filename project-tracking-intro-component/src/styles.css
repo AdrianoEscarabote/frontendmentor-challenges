@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --red: #ff5e5e;
+    --very-dark-blue: #242942;
+    --dark-grayish-blue: #5b5f71;
+    --grayish-blue: #a0a1ac;
+    --light-grayish-blue: #edf2f6;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Barlow Condensed", sans-serif;
+  }
+}
