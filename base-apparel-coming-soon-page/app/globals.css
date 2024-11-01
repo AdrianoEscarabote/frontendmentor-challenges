@@ -12,6 +12,27 @@
   }
 }
 
+body {
+  background-color: #fff7f8;
+}
+
 .input_border {
   border: 0.0625rem solid hsla(0, 36%, 70%, 0.5);
+}
+
+.submit_button {
+  box-shadow: 0 15px 20px hsla(0, 44%, 60%, 0.248);
+}
+
+.bg-image {
+  background: url("/images/bg-pattern-desktop.svg") #fff7f8 no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  height: 50rem;
+  left: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 57.64vw;
+  z-index: -1;
 }

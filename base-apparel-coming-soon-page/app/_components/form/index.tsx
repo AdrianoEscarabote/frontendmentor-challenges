@@ -31,7 +31,7 @@ const Form = () => {
               type="text"
               placeholder="Email Address"
               id="email"
-              className="h-14 w-full rounded-full border-none pl-8 outline-none placeholder:text-primary-desaturated-red"
+              className="h-14 w-full rounded-full border-none bg-transparent pl-8 outline-none placeholder:text-primary-desaturated-red placeholder:opacity-50"
               {...register("email", {
                 required: "This field is required",
                 pattern: {
@@ -56,7 +56,7 @@ const Form = () => {
             )}
           </label>
           <button
-            className="flex h-14 w-[6.1875rem] items-center justify-center rounded-full bg-gradient-dark"
+            className="submit_button flex h-14 w-[6.1875rem] items-center justify-center rounded-full bg-gradient-dark"
             type="submit"
             aria-label="submit button"
           >

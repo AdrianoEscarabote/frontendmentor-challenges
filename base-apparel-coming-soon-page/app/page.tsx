@@ -4,6 +4,7 @@ import LaunchAnnouncement from "./_components/launchAnnouncement"
 export default function Home() {
   return (
     <div className="relative mx-auto flex min-h-screen max-w-[90rem] flex-col-reverse items-center justify-start lg:flex-row lg:justify-between">
+      <div className="bg-image"></div>
       <Image
         width={158}
         height={50}
