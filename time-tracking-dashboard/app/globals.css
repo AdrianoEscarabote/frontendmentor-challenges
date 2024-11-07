@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --blue: #5847eb;
+    --light-red-primary: #ff8c66;
+    --soft-blue: #56c2e6;
+    --light-red-secondary: #ff5c7c;
+    --lime-green: #4acf81;
+    --violet: #7536d3;
+    --soft-orange: #f1c65b;
+
+    --very-dark-blue: #0f1424;
+    --dark-blue: #1c1f4a;
+    --desaturated-blue: #6f76c8;
+    --pale-blue: #bdc1ff;
+  }
+}
+
+@layer components {
+  .heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  @media (max-width: 64rem) {
+    .heading {
+      font-size: 2rem;
+    }
+  }
+  .headingS {
+    font-size: 0.9375rem;
+    font-weight: 300;
+  }
+}
