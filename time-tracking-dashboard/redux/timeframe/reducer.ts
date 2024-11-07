@@ -1,19 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { initialStateType } from "../reduxTypes";
+import { createSlice } from "@reduxjs/toolkit"
+import { initialStateType } from "../reduxTypes"
 
 const initialState: initialStateType = {
-  timeframe: "daily",
-};
+  timeframe: "weekly",
+}
 
 const timeframeSlice = createSlice({
   name: "timeframe",
   initialState,
   reducers: {
     setTimeframe: (state, action) => {
-      state.timeframe = action.payload;
+      state.timeframe = action.payload
     },
   },
-});
+})
 
-export const { setTimeframe } = timeframeSlice.actions;
-export default timeframeSlice.reducer;
+export const { setTimeframe } = timeframeSlice.actions
+export default timeframeSlice.reducer
