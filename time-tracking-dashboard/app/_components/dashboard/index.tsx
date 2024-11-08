@@ -48,7 +48,7 @@ const Dashboard = () => {
           <div className="flex flex-row justify-center gap-[0.875rem] px-[2rem] py-5 pt-6 lg:flex-col lg:items-start lg:pb-0">
             <button
               onClick={() => dispatch(setTimeframe("daily"))}
-              className={`text-lg font-light ${
+              className={`text-lg font-light hover:text-white ${
                 timeframe === "daily"
                   ? "text-white"
                   : "text-neutral-desaturated-blue"
@@ -58,7 +58,7 @@ const Dashboard = () => {
             </button>
             <button
               onClick={() => dispatch(setTimeframe("weekly"))}
-              className={`text-lg font-light ${
+              className={`text-lg font-light hover:text-white ${
                 timeframe === "weekly"
                   ? "text-white"
                   : "text-neutral-desaturated-blue"
@@ -68,7 +68,7 @@ const Dashboard = () => {
             </button>
             <button
               onClick={() => dispatch(setTimeframe("monthly"))}
-              className={`text-lg font-light ${
+              className={`text-lg font-light hover:text-white ${
                 timeframe === "monthly"
                   ? "text-white"
                   : "text-neutral-desaturated-blue"

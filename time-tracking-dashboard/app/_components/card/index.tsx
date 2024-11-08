@@ -43,7 +43,7 @@ const Card = ({ title, timeframes, type }: CardProps) => {
           )}
         </div>
 
-        <div className="relative -top-[0.875rem] h-full rounded-2xl bg-neutral-dark-blue px-[0.875rem] py-[1.5rem] lg:px-[1.875rem]">
+        <div className="relative -top-[0.875rem] h-full cursor-pointer rounded-2xl bg-neutral-dark-blue px-[0.875rem] py-[1.5rem] hover:bg-neutral-desaturated-blue lg:px-[1.875rem]">
           <div className="flex w-full justify-between">
             <h3 className="text-lg text-white">{title}</h3>
             <button className="pr-[0.0625rem]">
