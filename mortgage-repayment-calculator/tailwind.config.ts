@@ -15,6 +15,7 @@ const config: Config = {
         slate300: "var(--slate300)",
         slate500: "var(--slate500)",
         slate700: "var(--slate700)",
+        slate800: "var(--slate800)",
         slate900: "var(--slate900)",
       },
     },
