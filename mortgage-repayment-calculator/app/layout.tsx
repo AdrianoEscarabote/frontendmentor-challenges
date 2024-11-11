@@ -25,7 +25,9 @@ export default function RootLayout({
         <meta http-equiv="X-UA-Compatible" content="IE=7" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
-      <body className="flex items-center justify-center min-h-screen bg-slate100">{children}</body>
+      <body className="flex min-h-screen items-center justify-center bg-slate100">
+        {children}
+      </body>
     </html>
   )
 }
