@@ -1,15 +1,19 @@
 import Image from "next/image"
+import { CalculateButtonProps } from "./CalculateButtonProps"
 
-const CalculateButton = () => {
+const CalculateButton = ({ ...props }: CalculateButtonProps) => {
   return (
-    <button className="flex h-[54px] w-full max-w-[314px] items-center justify-center gap-[32px] rounded-full bg-lime pl-0">
+    <button
+      className="flex h-[3.375rem] w-full max-w-[19.625rem] items-center justify-center gap-[0.625rem] rounded-full bg-lime pl-0 text-lg font-bold text-slate900"
+      {...props}
+    >
       <Image
         alt=""
         src={"/images/icon-calculator.svg"}
         width={24}
         height={40}
       />
-      <span className="body">Calculate Repayments</span>
+      <span className="">Calculate Repayments</span>
     </button>
   )
 }
