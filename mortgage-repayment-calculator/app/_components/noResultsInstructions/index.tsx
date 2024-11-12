@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const NoResultsInstructions = () => {
   return (
-    <article className="rounded-bl-[76px] bg-slate900">
+    <article className="bg-slate900 py-10 lg:h-auto lg:rounded-bl-[80px] lg:py-0">
       <div className="flex h-full flex-col items-center justify-center">
         <Image
           alt=""
@@ -11,7 +11,7 @@ const NoResultsInstructions = () => {
           height={120}
         />
         <h2 className="heading mt-4 text-white">Results shown here</h2>
-        <p className="bodyS mt-4 max-w-[420px] text-center text-slate300">
+        <p className="mt-4 max-w-[420px] text-center tracking-[0.1px] text-slate300">
           Complete the form and click “calculate repayments” to see what your
           monthly repayments would be.
         </p>
