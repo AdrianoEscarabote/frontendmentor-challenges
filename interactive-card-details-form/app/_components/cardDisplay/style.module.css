@@ -1,0 +1,10 @@
+.background::after {
+  min-height: 100vh;
+  content: "";
+  position: absolute;
+  left: -165px;
+  top: 0px;
+  width: 483px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
