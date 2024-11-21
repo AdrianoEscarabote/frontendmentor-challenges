@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grayish-blue: #8486a9;
+    --soft-red: #fb6087;
+    --white: #ffffff;
+    --dark-desaturated-blue: #343650;
+    --dark-blue: #1e1f29;
+    --very-dark-blue: #191a24;
+  }
+}
