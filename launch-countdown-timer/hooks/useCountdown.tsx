@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 export const useCountdown = () => {
-  const [day, setDay] = useState<string>("");
-  const [hour, setHour] = useState<string>("");
-  const [minute, setMinute] = useState<string>("");
-  const [second, setSecond] = useState<string>("");
+  const [day, setDay] = useState<string>("08");
+  const [hour, setHour] = useState<string>("23");
+  const [minute, setMinute] = useState<string>("55");
+  const [second, setSecond] = useState<string>("41");
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date(new Date().getFullYear(), 11, 17);
+      const targetDate = new Date(new Date().getFullYear(), 11, 22);
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
@@ -29,6 +29,8 @@ export const useCountdown = () => {
         setSecond("00");
       }
     };
+
+    calculateTimeLeft();
 
     const timer = setInterval(calculateTimeLeft, 1000);
 
