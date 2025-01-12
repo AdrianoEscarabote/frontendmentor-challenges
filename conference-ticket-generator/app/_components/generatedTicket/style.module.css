@@ -1,0 +1,15 @@
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: 2.0625rem;
+  right: -8.375rem;
+  width: 13.5625rem;
+  height: 13.5625rem;
+  background: url("../../../public/images/pattern-circle.svg") no-repeat;
+}
+
+@media (max-width: 64rem) {
+  .ticket::after {
+    display: none !important;
+  }
+}
