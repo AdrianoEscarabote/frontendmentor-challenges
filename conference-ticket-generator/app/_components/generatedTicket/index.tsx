@@ -2,7 +2,13 @@ import Image from "next/image";
 import { GeneratedTicketProps } from "./generatedTicketProps";
 import style from "./style.module.css";
 
-const GeneratedTicket = ({ email, name, username }: GeneratedTicketProps) => {
+const GeneratedTicket = ({
+  email,
+  name,
+  username,
+  image,
+}: GeneratedTicketProps) => {
+  const imagePreviewUrl = image ? URL.createObjectURL(image[0]) : "";
   return (
     <section>
       <div className="lg:px-0 px-4 flex flex-col items-center justify-center py-10 relative">
@@ -48,14 +54,25 @@ const GeneratedTicket = ({ email, name, username }: GeneratedTicketProps) => {
             </p>
           </div>
           <div className="flex gap-4">
-            <Image
-              src={"/images/image-avatar.jpg"}
-              alt=""
-              data-testid="avatar"
-              width={80}
-              height={80}
-              className="rounded-xl lg:w-[5rem] w-[3.5rem] lg:h-[5rem] h-[3.5rem]"
-            />
+            {!image ? (
+              <Image
+                src={"/images/image-avatar.jpg"}
+                alt=""
+                data-testid="avatar"
+                width={80}
+                height={80}
+                className="rounded-xl lg:w-[5rem] w-[3.5rem] lg:h-[5rem] h-[3.5rem]"
+              />
+            ) : (
+              <Image
+                src={imagePreviewUrl}
+                alt="Uploaded Avatar"
+                data-testid="avatar"
+                width={80}
+                height={80}
+                className="rounded-xl lg:w-[5rem] w-[3.5rem] lg:h-[5rem] h-[3.5rem]"
+              />
+            )}
             <div>
               <p className="text-neutral-300 text-xl lg:text-[1.75rem] lg:mt-1">
                 {name}
