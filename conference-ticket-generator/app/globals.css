@@ -14,3 +14,37 @@
     --orange-700: hsl(7, 71%, 60%);
   }
 }
+
+body::after {
+  position: absolute;
+  content: "";
+  bottom: 0rem;
+  left: 0rem;
+  width: 47.5rem;
+  height: 33.125rem;
+  background: url("../public/images/pattern-squiggly-line-bottom.svg") no-repeat;
+  z-index: -20;
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  top: 4.75rem;
+  right: 0rem;
+  width: 27.875rem;
+  height: 13rem;
+  z-index: -20;
+  background: url("../public/images/pattern-squiggly-line-top.svg") no-repeat;
+}
+
+@media (max-width: 48rem) {
+  body::after {
+    width: 100%;
+    height: 20rem;
+  }
+
+  body::before {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+}
