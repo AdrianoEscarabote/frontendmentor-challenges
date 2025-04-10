@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 118);
+  --color-neutral-900: oklch(21.79% 0.0835 267.08);
+  --color-neutral-800: oklch(26.71% 0.0309 270.81);
+  --color-neutral-700: oklch(33.58% 0.0384 270.01);
+  --color-neutral-600: oklch(46.19% 0.0268 271.63);
+  --color-neutral-300: oklch(82.66% 0 0);
+  --color-neutral-200: oklch(90.95% 0.029 259.59);
+  --color-neutral-100: oklch(94.91% 0 0);
+  --color-neutral-0: oklch(99.28% 0.0025 228.78);
+  --color-red-700: oklch(53.58% 0.1993 29.07);
+  --color-red-500: oklch(61.22% 0.1878 27.19);
+  --color-red-400: oklch(66.96% 0.1862 26.39);
+
+  --color-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --color-background-1: oklch(26.71% 0.0309 270.81);
+  --color-background-button: oklch(66.96% 0.1862 26.39);
+  --color-text-color-1: oklch(99.28% 0.0025 228.78);
+  --color-text-color-2: oklch(82.66% 0 0);
+  --color-text-color-3: oklch(21.79% 0.0835 267.08);
+  --color-background-red: oklch(66.96% 0.1862 26.39);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+.light {
+  --color-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --color-background-1: oklch(99.28% 0.0025 228.78);
+  --color-background-button: oklch(53.58% 0.1993 29.07);
+  --color-text-color-1: oklch(21.79% 0.0835 267.08);
+  --color-text-color-2: oklch(46.19% 0.0268 271.63);
+  --color-text-color-3: oklch(99.28% 0.0025 228.78);
+  --color-background-red: oklch(53.58% 0.1993 29.07);
+}
+
+.text-preset-1 {
+  font-size: 2.125rem;
+  line-height: 100%;
+  letter-spacing: -0.0625rem;
+  font-weight: 700;
+}
+
+.text-preset-2 {
+  font-size: 1.25rem;
+  line-height: 120%;
+  letter-spacing: -0.0125rem;
+  font-weight: 700;
+}
+
+.text-preset-3 {
+  font-size: 1.25rem;
+  line-height: 140%;
+  letter-spacing: -0.0187rem;
+  font-weight: 400;
+}
+
+.text-preset-4 {
+  font-size: 1.25rem;
+  line-height: 140%;
+  letter-spacing: -0.0187rem;
+  font-weight: 500;
+}
+
+.text-preset-5 {
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.0313rem;
+  font-weight: 400;
+}
+
+.text-preset-5 {
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.0313rem;
+  font-weight: 500;
+}
+
+/* 
+### Gradient
+
+- **Light Gradient**: `linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)`
+- **Dark Gradient**: `linear-gradient(180deg, #040918 0%, #091540 100%)`
+ */
