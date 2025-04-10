@@ -20,7 +20,7 @@ const Card = memo(({ name, description, logo, isActive }: CardProps) => {
   return (
     <article
       data-testid="card"
-      className="bg-background-1 flex h-[200px] w-full max-w-[382px] flex-col justify-between rounded-[20px] p-5"
+      className="bg-background-1 flex h-[200px] w-full flex-col justify-between rounded-[20px] p-5 md:max-w-[382px]"
     >
       <div className="flex items-start gap-4">
         <Image src={logo} alt="" width={60} height={60} />

@@ -10,11 +10,11 @@ import Header from "./_components/header"
 
 export default function Home() {
   return (
-    <div className="mx-auto min-h-screen max-w-[1440px] py-10 lg:px-[135px]">
+    <div className="mx-auto min-h-screen max-w-[1440px] px-5 py-10 lg:px-[135px]">
       <Header />
       <Provider store={store}>
-        <main className="mt-16">
-          <div className="flex items-center justify-between">
+        <main className="mt-8 md:mt-16">
+          <div className="mg:flex-row flex flex-col items-center justify-center gap-6 md:flex-row md:justify-between lg:gap-0">
             <h1 className="text-preset-1 text-text-color-1">Extensions List</h1>
             <FilterTabs />
           </div>

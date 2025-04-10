@@ -22,7 +22,7 @@ const ExtensionsList = () => {
 
   return (
     <section className="mt-8">
-      <ul className="flex flex-wrap gap-3">
+      <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
         {filteredExtensions.map((extension, index) => (
           <Card
             key={`${index}-${extension.name}`}
