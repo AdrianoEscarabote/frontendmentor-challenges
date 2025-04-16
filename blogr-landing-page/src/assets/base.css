@@ -1,0 +1,94 @@
+@theme {
+  --color-neutral-0: #ffffff;
+  --color-neutral-900: #24242c;
+  --color-red-700: #ff505c;
+  --color-red-300: #ff7b86;
+  --color-blue-700: #1f3e5a;
+
+  --color-gradient-red: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  --color-gradient-blue: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+}
+
+.overpass {
+  font-family: 'Overpass', sans-serif;
+}
+
+.ubuntu {
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.gradient-red {
+  background: var(--color-gradient-red);
+}
+
+.gradient-blue {
+  background: var(--color-gradient-blue);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+.text-preset-1 {
+  padding-right: 10px;
+  font-size: 64px;
+  letter-spacing: -2.2px;
+  font-weight: 500;
+}
+
+.text-preset-2 {
+  font-size: 40px;
+  letter-spacing: -1.2px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .text-preset-1 {
+    font-size: 36px !important;
+  }
+  .text-preset-2 {
+    font-size: 28px !important;
+  }
+}
+
+.text-preset-3 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 28px;
+}
+
+.text-preset-4 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 33px;
+}
+
+.text-preset-5 {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+}
+
+.text-preset-6 {
+  font-size: 15px;
+  line-height: 33px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
