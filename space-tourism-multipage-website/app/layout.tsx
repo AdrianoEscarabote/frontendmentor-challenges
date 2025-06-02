@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
-import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+
+import type { Metadata } from "next";
+import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google";
+
+import Header from "./_components/header";
 
 const BellefairFont = Bellefair({
   subsets: ["latin"],
@@ -32,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${BellefairFont.className} ${BarlowFont.className} ${BarlowCondensedFont.className} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
