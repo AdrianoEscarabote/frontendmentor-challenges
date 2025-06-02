@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-blue-900: #0b0d17;
+  --color-blue-300: #d0d6f9;
+  --color-white: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.text-preset-1 {
+  font-size: 144px;
+  letter-spacing: 0px;
+  font-weight: 400;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.text-preset-2 {
+  font-size: 100px;
+  letter-spacing: 0px;
+  font-weight: 400;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-preset-3 {
+  font-size: 56px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-preset-4 {
+  font-size: 32px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-preset-5 {
+  font-size: 28px;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+.text-preset-6 {
+  font-size: 28px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.text-preset-7 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.text-preset-8 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.text-preset-9 {
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
 }
