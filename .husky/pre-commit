@@ -1,0 +1,1 @@
+npx lint-staged || { echo "❌ Pre-commit failed. Check lint-staged output above."; exit 1; }
