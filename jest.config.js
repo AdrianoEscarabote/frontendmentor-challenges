@@ -10,7 +10,7 @@ const customJestConfig = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/app/$1',
+    '^@/(.*)$': '<rootDir>/$1',
   },
 }
 
