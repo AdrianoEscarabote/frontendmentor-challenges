@@ -1,0 +1,21 @@
+{
+  "name": "Weather App",
+  "short_name": "Weather",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#181825",
+  "theme_color": "#181825",
+  "description": "Responsive weather app for location-based forecasts, unit selection, and theme switching.",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
