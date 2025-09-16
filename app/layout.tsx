@@ -3,7 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Bricolage_Grotesque, DM_Sans } from 'next/font/google'
 
-import { ThemeProvider } from '@/app/_components/theme-provider'
+import { ThemeProvider } from '@/app/_components/theme-provider/index'
 
 const BricolageGrotesque = Bricolage_Grotesque({
   subsets: ['latin'],
