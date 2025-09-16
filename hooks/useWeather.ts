@@ -1,0 +1,33 @@
+import { useCallback } from 'react'
+
+import { useWeatherStore } from '@/app/_store/weather'
+
+const getCityName = async (lat: string, lon: string) => {
+  const res = await fetch(`/api/reverse-geocode?lat=${lat}&lon=${lon}`)
+  const data = await res.json()
+  const city = data.address?.city || data.address?.town || data.address?.village
+  const country = data.address?.country
+  return city && country ? `${city}, ${country}` : city || country || 'Your Location'
+}
+
+const useWeather = () => {
+  const { setWeather, units } = useWeatherStore()
+
+  const fetchWeather = useCallback(
+    async (lat: string, lon: string, cityName?: string) => {
+      let resolvedCityName = cityName
+      if (!cityName || cityName === 'Your Location') {
+        resolvedCityName = await getCityName(lat, lon)
+      }
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=${units.temperature}&windspeed_unit=${units.wind}&precipitation_unit=${units.precipitation}&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum`
+      const response = await fetch(url)
+      const data = await response.json()
+      setWeather(data, resolvedCityName)
+    },
+    [units, setWeather],
+  )
+
+  return { fetchWeather }
+}
+
+export default useWeather

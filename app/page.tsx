@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-import useWeather from '@/hooks/useWeahter'
+import useWeather from '@/hooks/useWeather'
 
 import DailyForecast from './_components/daily-forecast'
 import DailyForecastSkeleton from './_components/daily-forecast/daily-forecast-skeleton'
