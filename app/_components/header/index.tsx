@@ -14,13 +14,13 @@ const Header = () => {
       className="flex w-full flex-col items-center justify-center"
     >
       <h1 className="sr-only">Weather App - Weather forecast and meteorological conditions</h1>
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-4 pt-4 md:px-[24px] md:pt-6 xl:px-[112px] xl:pt-12">
+      <div className="mx-auto flex w-full max-w-[90rem] items-center justify-between px-4 pt-4 md:px-[1.5rem] md:pt-6 xl:px-[7rem] xl:pt-12">
         <Logo
-          className="dark:text-neutral-0 h-[28px] w-[137px] text-neutral-900 md:h-[40px] md:w-[197px]"
+          className="dark:text-neutral-0 h-[1.75rem] w-[8.5625rem] text-neutral-900 md:h-[2.5rem] md:w-[12.3125rem]"
           data-testid="logo"
           aria-label="Weather Now logo"
         />
-        <div className="flex min-w-[170px] items-center justify-end gap-3">
+        <div className="flex min-w-[10.625rem] items-center justify-end gap-3">
           <ModeToggle />
           <UnitDropdown />
         </div>

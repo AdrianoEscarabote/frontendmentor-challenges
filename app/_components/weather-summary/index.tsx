@@ -27,12 +27,12 @@ const WeatherSummary = () => {
 
   return (
     <section
-      className="flex max-w-[800px] flex-col gap-0 sm:gap-8"
+      className="flex max-w-[50rem] flex-col gap-0 sm:gap-8"
       role="region"
       aria-label="Weather summary"
     >
       <div
-        className="relative rounded-[20px] bg-[url('/images/bg-today-small.svg')] bg-cover bg-center px-6 py-20 lg:bg-[url('/images/bg-today-large.svg')]"
+        className="relative rounded-[1.25rem] bg-[url('/images/bg-today-small.svg')] bg-cover bg-center px-6 py-20 lg:bg-[url('/images/bg-today-large.svg')]"
         role="region"
         aria-label={`Current weather for ${cityName}`}
       >
@@ -72,7 +72,7 @@ const WeatherSummary = () => {
         aria-label="Weather details"
       >
         <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[12px] border p-5 lg:max-w-[182px] dark:border-neutral-600 dark:bg-neutral-800"
+          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
           role="group"
           aria-label="Feels Like"
         >
@@ -86,7 +86,7 @@ const WeatherSummary = () => {
           </p>
         </div>
         <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[12px] border p-5 lg:max-w-[182px] dark:border-neutral-600 dark:bg-neutral-800"
+          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
           role="group"
           aria-label="Humidity"
         >
@@ -100,7 +100,7 @@ const WeatherSummary = () => {
           </p>
         </div>
         <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[12px] border p-5 lg:max-w-[182px] dark:border-neutral-600 dark:bg-neutral-800"
+          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
           role="group"
           aria-label="Wind"
         >
@@ -114,7 +114,7 @@ const WeatherSummary = () => {
           </p>
         </div>
         <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[12px] border p-5 lg:max-w-[182px] dark:border-neutral-600 dark:bg-neutral-800"
+          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
           role="group"
           aria-label="Precipitation"
         >

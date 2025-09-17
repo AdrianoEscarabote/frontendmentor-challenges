@@ -25,7 +25,7 @@ export function ModeToggle() {
           aria-label="Toggle theme"
           aria-haspopup="menu"
           aria-expanded={open}
-          className="h-[43px] w-[43px] cursor-pointer border-none bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+          className="h-[2.6875rem] w-[2.6875rem] cursor-pointer border-none bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700"
         >
           <Sun
             className="text-neutral-0 h-[1.25rem] w-[1.25rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
