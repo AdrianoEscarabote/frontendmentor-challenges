@@ -37,7 +37,8 @@ describe('SearchForm', () => {
   it('renders input and button', () => {
     render(<SearchForm />)
     expect(screen.getByPlaceholderText(/search for a place/i)).toBeInTheDocument()
-    expect(screen.getByRole('button')).toBeInTheDocument()
+    const buttons = screen.getAllByRole('button')
+    expect(buttons.length).toBe(2)
   })
 
   it('shows "No search result found!" when no results', async () => {
@@ -45,15 +46,15 @@ describe('SearchForm', () => {
     const input = screen.getByPlaceholderText(/search for a place/i)
     await userEvent.type(input, 'qweqweqwe')
     await waitFor(() => expect(screen.getByText(/no search result found!/i)).toBeInTheDocument())
-    expect(screen.getByRole('button')).toBeDisabled()
+    expect(screen.getByTestId('search-button')).toBeDisabled()
   })
 
   it('enables button and calls fetchWeather when valid city', async () => {
     render(<SearchForm />)
     const input = screen.getByPlaceholderText(/search for a place/i)
     await userEvent.type(input, 'Mexico')
-    await waitFor(() => expect(screen.getByRole('button')).not.toBeDisabled())
-    await userEvent.click(screen.getByRole('button'))
+    await waitFor(() => expect(screen.getByTestId('search-button')).not.toBeDisabled())
+    await userEvent.click(screen.getByTestId('search-button'))
     // fetchWeather is called via mock
     expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('Mexico'))
   })

@@ -9,6 +9,7 @@ import useWeather from '@/hooks/useWeather'
 
 import PrimaryButton from '../primary-button'
 import SearchDropdown from '../search-dropdown'
+import VoiceSearchButton from '../voice-search-button'
 
 export type CitySuggestion = {
   name: string
@@ -162,12 +163,19 @@ const SearchForm = () => {
           </AnimatePresence>
         )}
       </div>
-      <PrimaryButton
-        type="submit"
-        aria-label="Search"
-        className="w-full max-w-none md:w-auto"
-        disabled={loading || suggestions.length === 0}
-      />
+      <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
+        <PrimaryButton
+          type="submit"
+          aria-label="Search"
+          className="w-full max-w-none md:w-auto"
+          disabled={loading || suggestions.length === 0}
+          data-testid="search-button"
+        />
+        <VoiceSearchButton
+          onTranscript={(text) => setValue('query', text)}
+          onError={(msg) => setError(msg)}
+        />
+      </div>
     </form>
   )
 }
