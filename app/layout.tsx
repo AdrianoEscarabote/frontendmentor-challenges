@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Bricolage_Grotesque, DM_Sans } from 'next/font/google'
 
 import { ThemeProvider } from '@/app/_components/theme-provider/index'
+import { Toaster } from '@/app/_components/ui/sonner'
 
 const BricolageGrotesque = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster position="top-center" richColors closeButton duration={3500} />
         </ThemeProvider>
       </body>
     </html>
