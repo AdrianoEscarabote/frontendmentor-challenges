@@ -96,6 +96,10 @@ const SearchForm = () => {
       cityToUse.name,
     )
 
+    if (window.innerWidth < 768) {
+      document.getElementById('weather-summary')?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     setLoading(false)
     setValue('query', '')
     setSuggestions([])
@@ -137,17 +141,11 @@ const SearchForm = () => {
           }}
           onBlur={handleBlur}
         />
-        {errors.query && (
-          <span
-            id="search-error"
-            className="text-preset-7 absolute top-14 left-0 mt-2 text-red-400"
-            role="alert"
-          >
-            {errors.query.message}
-          </span>
-        )}
         {query && !loading && suggestions.length === 0 && (
-          <span role="alert" className="text-preset-7 absolute top-14 left-0 mt-2 text-red-400">
+          <span
+            role="alert"
+            className="text-preset-7 absolute -top-8 left-0 mt-2 text-red-400 md:top-14"
+          >
             No search result found!
           </span>
         )}
@@ -170,6 +168,7 @@ const SearchForm = () => {
           className="w-full max-w-none md:w-auto"
           disabled={loading || suggestions.length === 0}
           data-testid="search-button"
+          loading={loading}
         />
         <VoiceSearchButton
           onTranscript={(text) => setValue('query', text)}

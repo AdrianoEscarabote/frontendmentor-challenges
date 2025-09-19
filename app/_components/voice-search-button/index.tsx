@@ -103,7 +103,7 @@ const VoiceSearchButton = ({
       <motion.button
         type="button"
         aria-label={listening ? 'Listening... Click to stop' : 'Voice Search'}
-        className={`relative z-10 grid h-[3.5rem] w-[3.5rem] cursor-pointer place-content-center rounded-[0.75rem] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none ${
+        className={`relative grid h-[3.5rem] w-[3.5rem] cursor-pointer place-content-center rounded-[0.75rem] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none ${
           listening
             ? 'bg-red-500 hover:bg-red-600 focus-visible:ring-red-500'
             : 'bg-blue-500 hover:bg-blue-700 focus-visible:ring-blue-500'
