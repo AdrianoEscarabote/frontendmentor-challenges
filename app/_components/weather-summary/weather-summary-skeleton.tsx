@@ -1,6 +1,6 @@
 const WeatherSummarySkeleton = () => (
-  <section className="flex max-w-[800px] animate-pulse flex-col gap-5 sm:gap-8">
-    <div className="relative flex items-center justify-center rounded-[20px] bg-neutral-800 px-6 py-20 md:min-h-[280px]">
+  <section className="flex max-w-[50rem] animate-pulse flex-col gap-5 sm:gap-8">
+    <div className="relative flex items-center justify-center rounded-[1.25rem] bg-neutral-800 px-6 py-36 md:min-h-[17.5rem]">
       <div className="flex flex-col items-center">
         <div className="mb-2 flex gap-2">
           <span
@@ -20,10 +20,10 @@ const WeatherSummarySkeleton = () => (
       </div>
     </div>
     <div className="grid grid-cols-2 items-center gap-4 md:flex md:gap-6">
-      {[...Array(4)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <div
           key={i}
-          className="bg-card flex w-full flex-col gap-6 rounded-[12px] p-5 dark:bg-neutral-800"
+          className="bg-card flex w-full flex-col gap-6 rounded-[0.75rem] p-5 dark:bg-neutral-800"
         >
           <div className="h-6 w-24 rounded bg-neutral-700" />
           <div className="h-8 w-16 rounded bg-neutral-700" />

@@ -13,10 +13,64 @@ const WeatherSummary = () => {
   const temp = weather.current_weather.temperature
   const weatherCode = weather.current_weather.weathercode
   const icon = weatherIconMap[weatherCode] || 'icon-error.svg'
-  const feelsLike = weather.hourly.apparent_temperature.at(-1)
-  const humidity = weather.hourly.relative_humidity_2m.at(-1)
   const wind = weather.current_weather.windspeed
-  const precipitation = weather.hourly.precipitation.at(-1)
+  const currentTime = weather.current_weather.time
+
+  const getLastHourIndex = (times: string[], currentIso: string) => {
+    const currentTs = new Date(currentIso).getTime()
+    let idx = -1
+    for (let i = 0; i < times.length; i++) {
+      const ts = new Date(times[i]).getTime()
+      if (ts <= currentTs) idx = i
+      else break
+    }
+    return idx === -1 ? 0 : idx
+  }
+
+  const hourIdx = getLastHourIndex(weather.hourly.time, currentTime)
+
+  const cardData = [
+    {
+      label: 'Feels Like',
+      value: `${weather.hourly.apparent_temperature[hourIdx]?.toFixed(0)}°`,
+      aria: `Feels like: ${weather.hourly.apparent_temperature[hourIdx]?.toFixed(0)} degrees`,
+    },
+    {
+      label: 'Humidity',
+      value: `${weather.hourly.relative_humidity_2m[hourIdx]?.toFixed(0)}%`,
+      aria: `Humidity: ${weather.hourly.relative_humidity_2m[hourIdx]?.toFixed(0)} percent`,
+    },
+    {
+      label: 'Wind',
+      value: `${wind?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
+      aria: `Wind: ${wind?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
+    },
+    {
+      label: 'Precipitation',
+      value: `${weather.hourly.precipitation[hourIdx]} mm`,
+      aria: `Precipitation: ${weather.hourly.precipitation[hourIdx]} mm`,
+    },
+    {
+      label: 'UV Index',
+      value: `${weather.hourly.uv_index[hourIdx]}`,
+      aria: `UV Index: ${weather.hourly.uv_index[hourIdx]}`,
+    },
+    {
+      label: 'Visibility',
+      value: `${weather.hourly.visibility[hourIdx]?.toFixed(0)} m`,
+      aria: `Visibility: ${weather.hourly.visibility[hourIdx]?.toFixed(0)} meters`,
+    },
+    {
+      label: 'Air Pressure',
+      value: `${weather.hourly.pressure_msl[hourIdx]?.toFixed(0)} hPa`,
+      aria: `Air Pressure: ${weather.hourly.pressure_msl[hourIdx]?.toFixed(0)} hPa`,
+    },
+    {
+      label: 'Cloud Cover',
+      value: `${weather.hourly.cloudcover[hourIdx]?.toFixed(0)}%`,
+      aria: `Cloud Cover: ${weather.hourly.cloudcover[hourIdx]?.toFixed(0)} percent`,
+    },
+  ]
 
   const dateStr = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -68,66 +122,27 @@ const WeatherSummary = () => {
         </div>
       </div>
       <div
-        className="grid grid-cols-2 items-center gap-4 py-6 md:flex md:gap-6 md:py-0 dark:bg-neutral-900"
+        className="grid grid-cols-2 items-center gap-4 py-6 sm:flex-col md:grid-cols-4 md:grid-rows-2 md:gap-6 md:py-0 dark:bg-neutral-900"
         role="region"
         aria-label="Weather details"
       >
-        <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
-          role="group"
-          aria-label="Feels Like"
-        >
-          <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">Feels Like</p>
-          <p
-            className="dark:text-neutral-0 text-preset-3 text-neutral-200"
-            aria-live="polite"
-            aria-label={`Feels like: ${feelsLike?.toFixed(0)} degrees`}
+        {cardData.map((card) => (
+          <div
+            key={card.label}
+            className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
+            role="group"
+            aria-label={card.label}
           >
-            {feelsLike?.toFixed(0)}°
-          </p>
-        </div>
-        <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
-          role="group"
-          aria-label="Humidity"
-        >
-          <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">Humidity</p>
-          <p
-            className="dark:text-neutral-0 text-preset-3 text-neutral-200"
-            aria-live="polite"
-            aria-label={`Humidity: ${humidity?.toFixed(0)} percent`}
-          >
-            {humidity?.toFixed(0)}%
-          </p>
-        </div>
-        <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
-          role="group"
-          aria-label="Wind"
-        >
-          <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">Wind</p>
-          <p
-            className="dark:text-neutral-0 text-preset-3 text-neutral-200"
-            aria-live="polite"
-            aria-label={`Wind: ${wind?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`}
-          >
-            {wind?.toFixed(0)} {units.wind.replace('kmh', 'km/h')}
-          </p>
-        </div>
-        <div
-          className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
-          role="group"
-          aria-label="Precipitation"
-        >
-          <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">Precipitation</p>
-          <p
-            className="dark:text-neutral-0 text-preset-3 text-neutral-200"
-            aria-live="polite"
-            aria-label={`Precipitation: ${precipitation?.toFixed(0)} mm`}
-          >
-            {precipitation?.toFixed(0)} mm
-          </p>
-        </div>
+            <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">{card.label}</p>
+            <p
+              className="dark:text-neutral-0 text-preset-3 text-neutral-200"
+              aria-live="polite"
+              aria-label={card.aria}
+            >
+              {card.value}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
