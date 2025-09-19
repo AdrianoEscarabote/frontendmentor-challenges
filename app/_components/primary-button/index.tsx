@@ -1,14 +1,17 @@
+import { Loader2 } from 'lucide-react'
 import { ComponentPropsWithoutRef } from 'react'
 
-export type ButtonProps = ComponentPropsWithoutRef<'button'>
+export type ButtonProps = ComponentPropsWithoutRef<'button'> & {
+  loading?: boolean
+}
 
-const PrimaryButton = ({ ...props }: ButtonProps) => {
+const PrimaryButton = ({ loading, ...props }: ButtonProps) => {
   return (
     <button
       {...props}
-      className={`text-preset-5-medium focus-visible:ring-offset-background h-14 cursor-pointer rounded-[12px] bg-blue-500 px-4 py-2 text-white transition-all duration-150 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 focus-visible:outline-none disabled:cursor-not-allowed disabled:hover:bg-blue-500 ${props.className}`}
+      className={`text-preset-5-medium focus-visible:ring-offset-background h-14 min-w-[6.0781rem] cursor-pointer rounded-[12px] bg-blue-500 px-4 py-2 text-white transition-all duration-150 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-4 focus-visible:outline-none disabled:cursor-not-allowed disabled:hover:bg-blue-500 ${props.className}`}
     >
-      Search
+      {loading ? <Loader2 className="mx-auto animate-spin" /> : 'Search'}
     </button>
   )
 }
