@@ -29,6 +29,10 @@ export const mockWeather: WeatherStoreState = {
       precipitation: [0, 0, 0, 0, 0, 0, 0],
       weathercode: [0, 1, 2, 3, 45, 48, 51],
       windspeed_10m: [2, 2.2, 2.4, 2.6, 2.8, 3, 3.2],
+      visibility: [10, 10, 10, 10, 10, 10, 10],
+      pressure_msl: [1015, 1014, 1013, 1012, 1011, 1010, 1009],
+      cloudcover: [20, 25, 30, 35, 40, 45, 50],
+      uv_index: [0, 0, 0, 0, 0, 0, 0],
     },
     daily: {
       time: [

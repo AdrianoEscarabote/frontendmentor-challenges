@@ -18,6 +18,10 @@ export type WeatherApiResponse = {
     precipitation: number[]
     weathercode: number[]
     windspeed_10m: number[]
+    uv_index: number[]
+    visibility: number[]
+    pressure_msl: number[]
+    cloudcover: number[]
   }
   daily: {
     time: string[]
