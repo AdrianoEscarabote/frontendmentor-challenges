@@ -21,7 +21,7 @@ const SearchDropdown = ({ loading, suggestions = [], onSelect }: SearchDropdownP
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="flex w-full flex-col gap-1 rounded-[12px] border border-neutral-700 bg-neutral-900 p-2 transition-all duration-200 md:max-w-[526px] dark:bg-neutral-800"
+        className="flex w-full flex-col gap-1 rounded-[0.75rem] border border-neutral-700 bg-neutral-900 p-2 transition-all duration-200 md:max-w-[32.875rem] dark:bg-neutral-800"
         role="listbox"
         aria-label="City suggestions"
       >
@@ -46,7 +46,7 @@ const SearchDropdown = ({ loading, suggestions = [], onSelect }: SearchDropdownP
             {suggestions.map((city, idx) => (
               <button
                 key={idx}
-                className="text-neutral-0 text-preset-7 w-full cursor-pointer rounded-[8px] px-2 py-2.5 text-left hover:bg-neutral-700"
+                className={`text-neutral-0 text-preset-7 w-full cursor-pointer rounded-[0.5rem] px-2 py-2.5 text-left hover:bg-neutral-700 ${idx === 0 ? 'border border-neutral-700 bg-neutral-800 dark:border-neutral-600 dark:bg-neutral-700' : ''}`}
                 type="button"
                 role="option"
                 aria-selected={false}
