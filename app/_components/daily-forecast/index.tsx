@@ -7,6 +7,7 @@ import { weatherIconMap } from '@/utils/weatherIconMap'
 
 const DailyForecast = () => {
   const weather = useWeatherStore((state) => state.weather)
+  const units = useWeatherStore((s) => s.units)
 
   if (!weather) return null
 
@@ -14,7 +15,10 @@ const DailyForecast = () => {
   const dailyTimes = weather.daily.time.slice(0, daysToShow)
   const dailyMax = weather.daily.temperature_2m_max.slice(0, daysToShow)
   const dailyMin = weather.daily.temperature_2m_min.slice(0, daysToShow)
-  const dailyCodes = weather.daily.weathercode.slice(0, daysToShow)
+
+  const toTemp = (c: number) => (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c)
+  const dailyMaxDisp = dailyMax.map(toTemp)
+  const dailyMinDisp = dailyMin.map(toTemp)
 
   const getLabel = (date: string) => {
     const [year, month, day] = date.split('-').map(Number)
@@ -38,7 +42,7 @@ const DailyForecast = () => {
           role="list"
         >
           {dailyTimes.map((date, idx) => {
-            const code = dailyCodes[idx]
+            const code = weather.daily.weathercode[idx]
             const iconName = weatherIconMap[code] || 'icon-error.svg'
             return (
               <li
@@ -58,15 +62,15 @@ const DailyForecast = () => {
                 <div className="flex w-full items-center justify-between">
                   <span
                     className="text-preset-7 text-neutral-0"
-                    aria-label={`Maximum temperature: ${dailyMax[idx].toFixed(0)} degrees`}
+                    aria-label={`Maximum temperature: ${dailyMaxDisp[idx].toFixed(0)} degrees`}
                   >
-                    {dailyMax[idx].toFixed(0)}°
+                    {dailyMaxDisp[idx].toFixed(0)}°
                   </span>
                   <span
                     className="text-preset-7 text-neutral-200"
-                    aria-label={`Minimum temperature: ${dailyMin[idx].toFixed(0)} degrees`}
+                    aria-label={`Minimum temperature: ${dailyMinDisp[idx].toFixed(0)} degrees`}
                   >
-                    {dailyMin[idx].toFixed(0)}°
+                    {dailyMinDisp[idx].toFixed(0)}°
                   </span>
                 </div>
               </li>

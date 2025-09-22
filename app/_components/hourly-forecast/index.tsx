@@ -7,7 +7,8 @@ import { weatherIconMap } from '@/utils/weatherIconMap'
 import DaysDropdown from '../days-dropdown'
 
 const HourlyForecast = () => {
-  const weather = useWeatherStore((state) => state.weather)
+  const weather = useWeatherStore((s) => s.weather)
+  const units = useWeatherStore((s) => s.units)
   const [selectedDayIdx, setSelectedDayIdx] = useState(0)
 
   if (!weather) return null
@@ -29,12 +30,14 @@ const HourlyForecast = () => {
     return `${hour12} ${period}`
   }
 
+  const toTemp = (c: number) => (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c)
+
   const hourlyData = weather.hourly.time
     .map((time, idx) => {
       if (time.startsWith(selectedDate)) {
         return {
           hour: new Date(time).getHours(),
-          temperature: weather.hourly.temperature_2m[idx],
+          temperature: toTemp(weather.hourly.temperature_2m[idx]),
           weatherCode: weather.hourly.weathercode[idx],
         }
       }

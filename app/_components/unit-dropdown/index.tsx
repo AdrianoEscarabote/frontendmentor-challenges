@@ -24,7 +24,7 @@ const windOptions = [
 
 const precipitationOptions = [
   { label: 'Millimeters (mm)', value: 'mm' },
-  { label: 'Inches (in)', value: 'in' },
+  { label: 'Inches (inch)', value: 'inch' },
 ]
 
 const UnitDropdown = () => {
@@ -33,7 +33,7 @@ const UnitDropdown = () => {
 
   const handleUnitSystemToggle = () => {
     if (units.temperature === 'celsius' && units.wind === 'kmh' && units.precipitation === 'mm') {
-      setUnits({ temperature: 'fahrenheit', wind: 'mph', precipitation: 'in' })
+      setUnits({ temperature: 'fahrenheit', wind: 'mph', precipitation: 'inch' })
     } else {
       setUnits({ temperature: 'celsius', wind: 'kmh', precipitation: 'mm' })
     }
@@ -123,7 +123,7 @@ const UnitDropdown = () => {
         </DropdownMenuLabel>
         <DropdownMenuRadioGroup
           value={units.precipitation}
-          onValueChange={(value) => setUnits({ precipitation: value as 'mm' | 'in' })}
+          onValueChange={(value) => setUnits({ precipitation: value as 'mm' | 'inch' })}
           className="flex flex-col gap-1.5"
         >
           {precipitationOptions.map((opt) => (
