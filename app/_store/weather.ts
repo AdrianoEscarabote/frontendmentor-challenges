@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
 export type WeatherApiResponse = {
   latitude: number
@@ -41,21 +42,51 @@ export interface WeatherStoreState {
     precipitation: 'mm' | 'inch'
   }
   setWeather: (data: WeatherApiResponse, cityName?: string) => void
-  setUnits: (units: Partial<WeatherStoreState['units']>) => void // <-- CORRIGIDO
+  setUnits: (units: Partial<WeatherStoreState['units']>) => void
 }
 
-export const useWeatherStore = create<WeatherStoreState>((set) => ({
-  weather: null,
-  cityName: null,
-  units: {
-    temperature: 'celsius',
-    wind: 'kmh',
-    precipitation: 'mm',
-  },
-  setWeather: (data, cityName) => set({ weather: data, cityName }),
-  setUnits: (newUnits: Partial<WeatherStoreState['units']>) =>
-    set((state) => ({
-      ...state,
-      units: { ...state.units, ...newUnits },
-    })),
-}))
+type UnitsV0 = {
+  temperature?: 'celsius' | 'fahrenheit'
+  wind?: 'kmh' | 'mph'
+  precipitation?: 'mm' | 'inch'
+}
+
+type PersistedV0 = {
+  state?: { units?: UnitsV0 }
+  version?: number
+}
+
+type PersistedV1 = {
+  state: { units: WeatherStoreState['units'] }
+  version: number
+}
+
+export const useWeatherStore = create<WeatherStoreState>()(
+  persist(
+    (set) => ({
+      weather: null,
+      cityName: null,
+      units: { temperature: 'celsius', wind: 'kmh', precipitation: 'mm' },
+      setWeather: (data, cityName) => set({ weather: data, cityName }),
+      setUnits: (newUnits) => set((state) => ({ units: { ...state.units, ...newUnits } })),
+    }),
+    {
+      name: 'weather-preferences',
+      version: 1,
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({ units: state.units }),
+      migrate: (persisted: unknown): PersistedV1 => {
+        const data = (persisted as PersistedV0) ?? {}
+        const u0 = data.state?.units ?? {}
+
+        const units: WeatherStoreState['units'] = {
+          temperature: u0.temperature === 'fahrenheit' ? 'fahrenheit' : 'celsius',
+          wind: u0.wind === 'mph' ? 'mph' : 'kmh',
+          precipitation: u0.precipitation === 'inch' ? 'inch' : 'mm',
+        }
+
+        return { state: { units }, version: 1 }
+      },
+    },
+  ),
+)
