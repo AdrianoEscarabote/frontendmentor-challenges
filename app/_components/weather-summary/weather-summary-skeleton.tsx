@@ -19,7 +19,7 @@ const WeatherSummarySkeleton = () => (
         <span className="text-preset-6 text-neutral-200">Loading...</span>
       </div>
     </div>
-    <div className="grid grid-cols-2 items-center gap-4 md:flex md:gap-6">
+    <div className="grid grid-cols-2 items-center gap-4 py-6 sm:flex-col md:grid-cols-4 md:grid-rows-2 md:gap-6 md:py-0 dark:bg-neutral-900">
       {[...Array(8)].map((_, i) => (
         <div
           key={i}

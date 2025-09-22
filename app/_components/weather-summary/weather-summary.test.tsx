@@ -26,7 +26,7 @@ describe('WeatherSummary', () => {
     expect(screen.getByText('Wind')).toBeInTheDocument()
     expect(screen.getByText('2 km/h')).toBeInTheDocument()
     expect(screen.getByText('Precipitation')).toBeInTheDocument()
-    expect(screen.getByText('0 mm')).toBeInTheDocument()
+    expect(screen.getByText('0.0 mm')).toBeInTheDocument()
     expect(screen.getByText('UV Index')).toBeInTheDocument()
     expect(screen.getByText('0')).toBeInTheDocument()
     expect(screen.getByText('Visibility')).toBeInTheDocument()

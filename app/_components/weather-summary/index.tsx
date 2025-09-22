@@ -3,6 +3,22 @@ import Image from 'next/image'
 import { useWeatherStore } from '@/app/_store/weather'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
+export function formatVisibility(
+  meters: number,
+  units: { temperature: string; wind: string; precipitation: string },
+) {
+  const isImperial =
+    units.temperature === 'fahrenheit' || units.wind === 'mph' || units.precipitation === 'inch'
+
+  if (isImperial) {
+    const mi = meters / 1609.344
+    return `${mi >= 10 ? Math.round(mi) : mi.toFixed(1)} mi`
+  }
+  if (meters >= 1000)
+    return `${meters >= 10000 ? Math.round(meters / 1000) : (meters / 1000).toFixed(1)} km`
+  return `${Math.round(meters)} m`
+}
+
 const WeatherSummary = () => {
   const cityName = useWeatherStore((state) => state.cityName)
   const weather = useWeatherStore((state) => state.weather)
@@ -13,26 +29,47 @@ const WeatherSummary = () => {
   const temp = weather.current_weather.temperature
   const weatherCode = weather.current_weather.weathercode
   const icon = weatherIconMap[weatherCode] || 'icon-error.svg'
-  const wind = weather.current_weather.windspeed
   const currentTime = weather.current_weather.time
 
-  const getLastHourIndex = (times: string[], currentIso: string) => {
-    const currentTs = new Date(currentIso).getTime()
-    let idx = -1
-    for (let i = 0; i < times.length; i++) {
-      const ts = new Date(times[i]).getTime()
-      if (ts <= currentTs) idx = i
-      else break
-    }
-    return idx === -1 ? 0 : idx
+  function toHourIso(iso: string) {
+    return iso.slice(0, 13) + ':00'
   }
 
-  const hourIdx = getLastHourIndex(weather.hourly.time, currentTime)
+  function getHourIndex(times: string[], currentIso: string) {
+    const curHour = toHourIso(currentIso)
+
+    const exact = times.indexOf(curHour)
+    if (exact !== -1) return exact
+
+    let last = 0
+    for (let i = 0; i < times.length; i++) {
+      if (times[i] <= curHour) last = i
+      else break
+    }
+    return last
+  }
+
+  const hourIdx = getHourIndex(weather.hourly.time, currentTime)
+
+  const tempC = weather.current_weather.temperature
+  const tempDisplay = units.temperature === 'fahrenheit' ? (tempC * 9) / 5 + 32 : tempC
+
+  const windKmh = weather.current_weather.windspeed
+  const windDisplay = units.wind === 'mph' ? windKmh * 0.621371 : windKmh
+
+  const precipMm = weather.hourly.precipitation[hourIdx]
+  const precipDisplay =
+    units.precipitation === 'inch'
+      ? `${(precipMm / 25.4).toFixed(2)} in`
+      : `${precipMm.toFixed(1)} mm`
 
   const cardData = [
     {
       label: 'Feels Like',
-      value: `${weather.hourly.apparent_temperature[hourIdx]?.toFixed(0)}°`,
+      value: `${(units.temperature === 'fahrenheit'
+        ? (weather.hourly.apparent_temperature[hourIdx] * 9) / 5 + 32
+        : weather.hourly.apparent_temperature[hourIdx]
+      )?.toFixed(0)}°`,
       aria: `Feels like: ${weather.hourly.apparent_temperature[hourIdx]?.toFixed(0)} degrees`,
     },
     {
@@ -42,13 +79,13 @@ const WeatherSummary = () => {
     },
     {
       label: 'Wind',
-      value: `${wind?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
-      aria: `Wind: ${wind?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
+      value: `${windDisplay?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
+      aria: `Wind: ${windDisplay?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
     },
     {
       label: 'Precipitation',
-      value: `${weather.hourly.precipitation[hourIdx]} mm`,
-      aria: `Precipitation: ${weather.hourly.precipitation[hourIdx]} mm`,
+      value: precipDisplay,
+      aria: `Precipitation: ${precipDisplay}`,
     },
     {
       label: 'UV Index',
@@ -57,8 +94,8 @@ const WeatherSummary = () => {
     },
     {
       label: 'Visibility',
-      value: `${weather.hourly.visibility[hourIdx]?.toFixed(0)} m`,
-      aria: `Visibility: ${weather.hourly.visibility[hourIdx]?.toFixed(0)} meters`,
+      value: formatVisibility(weather.hourly.visibility[hourIdx], units),
+      aria: `Visibility: ${formatVisibility(weather.hourly.visibility[hourIdx], units)}`,
     },
     {
       label: 'Air Pressure',
@@ -116,7 +153,7 @@ const WeatherSummary = () => {
               aria-live="polite"
               aria-label={`Temperature: ${temp.toFixed(0)} degrees`}
             >
-              {temp.toFixed(0)}°
+              {tempDisplay.toFixed(0)}°
             </span>
           </div>
         </div>
