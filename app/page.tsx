@@ -34,10 +34,10 @@ export default function Home() {
   }, [fetchWeather])
 
   return (
-    <div className="flex min-h-screen w-full flex-col gap-12">
+    <div className="flex min-h-screen w-full flex-col gap-4 md:gap-12">
       <Header />
       <div className="mx-auto flex w-full max-w-[90rem] flex-col gap-8 px-5 pb-20 lg:flex-row xl:px-[7rem]">
-        <div className="flex w-full flex-1 flex-col gap-12">
+        <div className="flex w-full flex-1 flex-col gap-4 md:gap-12">
           {weather ? <WeatherSummary /> : <WeatherSummarySkeleton />}
           {weather ? <DailyForecast /> : <DailyForecastSkeleton />}
         </div>
