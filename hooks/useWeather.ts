@@ -11,7 +11,7 @@ const getCityName = async (lat: string, lon: string) => {
 }
 
 const useWeather = () => {
-  const { setWeather, units } = useWeatherStore()
+  const { setWeather } = useWeatherStore()
 
   const fetchWeather = useCallback(
     async (lat: string, lon: string, cityName?: string) => {
@@ -19,12 +19,12 @@ const useWeather = () => {
       if (!cityName || cityName === 'Your Location') {
         resolvedCityName = await getCityName(lat, lon)
       }
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=${units.temperature}&windspeed_unit=${units.wind}&precipitation_unit=${units.precipitation}&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m,uv_index,visibility,pressure_msl,cloudcover&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum`
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=auto&timeformat=iso8601&current_weather=true&temperature_unit=celsius&windspeed_unit=kmh&precipitation_unit=mm&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m,uv_index,visibility,pressure_msl,cloudcover&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum`
       const response = await fetch(url)
       const data = await response.json()
       setWeather(data, resolvedCityName)
     },
-    [units, setWeather],
+    [setWeather],
   )
 
   return { fetchWeather }
