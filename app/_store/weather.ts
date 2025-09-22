@@ -38,7 +38,7 @@ export interface WeatherStoreState {
   units: {
     temperature: 'celsius' | 'fahrenheit'
     wind: 'kmh' | 'mph'
-    precipitation: 'mm' | 'in'
+    precipitation: 'mm' | 'inch'
   }
   setWeather: (data: WeatherApiResponse, cityName?: string) => void
   setUnits: (units: Partial<WeatherStoreState['units']>) => void // <-- CORRIGIDO
