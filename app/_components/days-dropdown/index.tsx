@@ -34,7 +34,7 @@ const DaysDropdown = ({ days, selectedIdx, onChange }: DaysDropdownProps) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="relative right-10 w-[13.375rem] rounded-[0.75rem] border border-neutral-600 bg-neutral-800 p-2"
+        className="relative right-10 w-[13.375rem] rounded-[0.75rem] border border-neutral-600 bg-neutral-900 p-2 dark:bg-neutral-800"
         role="listbox"
         aria-label="Days of the week"
       >
@@ -42,7 +42,7 @@ const DaysDropdown = ({ days, selectedIdx, onChange }: DaysDropdownProps) => {
           {days.map((itemDay, idx) => (
             <DropdownMenuItem
               key={itemDay}
-              className={`text-preset-7 text-neutral-0 w-full cursor-pointer px-2 py-2.5 focus:bg-neutral-700 ${selectedIdx === idx ? 'bg-neutral-700' : 'bg-transparent'}`}
+              className={`text-preset-7 text-neutral-0 focus:text-neutral-0 w-full cursor-pointer px-2 py-2.5 focus:bg-neutral-700 ${selectedIdx === idx ? 'bg-neutral-700' : 'bg-transparent'}`}
               role="option"
               aria-selected={selectedIdx === idx}
               onClick={() => onChange(idx)}
