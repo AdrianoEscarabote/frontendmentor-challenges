@@ -1,15 +1,19 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { useWeatherStore } from '@/app/_store/weather'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
 import DaysDropdown from '../days-dropdown'
 
+type HourlyItem = { hour: number; temperature: number; weatherCode: number }
+
 const HourlyForecast = () => {
   const weather = useWeatherStore((s) => s.weather)
   const units = useWeatherStore((s) => s.units)
   const [selectedDayIdx, setSelectedDayIdx] = useState(0)
+  const listRef = useRef<HTMLUListElement>(null)
+  const didAutoScrollRef = useRef(false)
 
   if (!weather) return null
 
@@ -35,15 +39,45 @@ const HourlyForecast = () => {
   const hourlyData = weather.hourly.time
     .map((time, idx) => {
       if (time.startsWith(selectedDate)) {
+        const hour = parseInt(time.slice(11, 13), 10)
         return {
-          hour: new Date(time).getHours(),
+          hour,
           temperature: toTemp(weather.hourly.temperature_2m[idx]),
           weatherCode: weather.hourly.weathercode[idx],
-        }
+        } as HourlyItem
       }
       return null
     })
-    .filter(Boolean)
+    .filter(Boolean) as HourlyItem[]
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    const list = listRef.current
+    if (!weather || !list) return
+
+    const todayISO = weather.current_weather.time.slice(0, 10)
+    const isToday = selectedDate === todayISO
+
+    if (!isToday) {
+      list.scrollTo({ top: 0, behavior: 'auto' })
+      didAutoScrollRef.current = false
+      return
+    }
+
+    if (didAutoScrollRef.current) return
+
+    const currentHour = parseInt(weather.current_weather.time.slice(11, 13), 10)
+    const target = list.querySelector<HTMLElement>(`[data-hour="${currentHour}"]`)
+    if (!target) return
+
+    const listRect = list.getBoundingClientRect()
+    const targetRect = target.getBoundingClientRect()
+    const paddingTop = parseFloat(getComputedStyle(list).paddingTop || '0')
+    const newTop = list.scrollTop + (targetRect.top - listRect.top) - paddingTop
+
+    list.scrollTo({ top: Math.max(newTop, 0), behavior: 'auto' })
+    didAutoScrollRef.current = true
+  }, [selectedDate, weather])
 
   return (
     <section
@@ -55,19 +89,24 @@ const HourlyForecast = () => {
         <h3 className="dark:text-neutral-0 text-preset-5 text-neutral-900">Hourly forecast</h3>
         <DaysDropdown days={daysOfWeek} selectedIdx={selectedDayIdx} onChange={setSelectedDayIdx} />
       </div>
-      <ul className="hourly-scroll flex flex-col gap-4 overflow-y-scroll px-6 pb-6" role="list">
+      <ul
+        ref={listRef}
+        className="hourly-scroll flex flex-col gap-4 overflow-y-scroll px-6 pb-6"
+        role="list"
+      >
         {hourlyData.map((item, idx) => (
           <li
             key={idx}
+            data-hour={item.hour}
             className="border-border bg-card flex min-h-[3.75rem] items-center justify-between rounded-[0.5rem] border px-4 py-2 dark:border-neutral-600 dark:bg-neutral-700"
             role="listitem"
-            aria-label={`At ${formatHour(item!.hour)}, ${item!.temperature.toFixed(0)} degrees, ${weatherIconMap[item!.weatherCode]?.replace('icon-', '').replace('.svg', '').replace('-', ' ') || 'Unknown weather'}`}
+            aria-label={`At ${formatHour(item.hour)}, ${item.temperature.toFixed(0)} degrees, ${weatherIconMap[item.weatherCode]?.replace('icon-', '').replace('.svg', '').replace('-', ' ') || 'Unknown weather'}`}
           >
             <div className="flex items-center gap-2">
               <Image
-                src={`/images/${weatherIconMap[item!.weatherCode] || 'icon-error.svg'}`}
+                src={`/images/${weatherIconMap[item.weatherCode] || 'icon-error.svg'}`}
                 alt={
-                  weatherIconMap[item!.weatherCode]
+                  weatherIconMap[item.weatherCode]
                     ?.replace('icon-', '')
                     .replace('.svg', '')
                     .replace('-', ' ') || 'weather icon'
@@ -75,13 +114,13 @@ const HourlyForecast = () => {
                 width={32}
                 height={32}
               />
-              <p className="text-preset-5-medium text-neutral-0">{formatHour(item!.hour)}</p>
+              <p className="text-preset-5-medium text-neutral-0">{formatHour(item.hour)}</p>
             </div>
             <p
               className="text-preset-7 text-neutral-0"
-              aria-label={`Temperature: ${item!.temperature.toFixed(0)} degrees`}
+              aria-label={`Temperature: ${item.temperature.toFixed(0)} degrees`}
             >
-              {item!.temperature.toFixed(0)}°
+              {item.temperature.toFixed(0)}°
             </p>
           </li>
         ))}

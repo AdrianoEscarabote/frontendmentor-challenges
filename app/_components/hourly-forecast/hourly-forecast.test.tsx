@@ -4,6 +4,10 @@ import HourlyForecast from './index'
 
 jest.mock('@/app/_store/weather')
 
+beforeAll(() => {
+  Element.prototype.scrollTo = jest.fn()
+})
+
 describe('HourlyForecast', () => {
   it('renders the hourly forecast section', async () => {
     render(<HourlyForecast />)
