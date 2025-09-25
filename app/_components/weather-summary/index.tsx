@@ -1,5 +1,7 @@
+import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
+import { Carousel, CarouselContent, CarouselItem } from '@/app/_components/ui/carousel'
 import { useWeatherStore } from '@/app/_store/weather'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
@@ -158,29 +160,40 @@ const WeatherSummary = () => {
           </div>
         </div>
       </div>
-      <div
-        className="grid grid-cols-2 items-center gap-4 py-6 sm:flex-col md:grid-cols-4 md:grid-rows-2 md:gap-6 md:py-0 dark:bg-neutral-900"
-        role="region"
-        aria-label="Weather details"
+
+      <Carousel
+        className="w-full"
+        opts={{ align: 'start', containScroll: 'trimSnaps' }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
       >
-        {cardData.map((card) => (
-          <div
-            key={card.label}
-            className="bg-card border-border flex w-full max-w-none flex-col items-start gap-6 rounded-[0.75rem] border p-5 lg:max-w-[11.375rem] dark:border-neutral-600 dark:bg-neutral-800"
-            role="group"
-            aria-label={card.label}
-          >
-            <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">{card.label}</p>
-            <p
-              className="dark:text-neutral-0 text-preset-3 text-neutral-200"
-              aria-live="polite"
-              aria-label={card.aria}
+        <CarouselContent
+          className="m-0 flex gap-4 py-6 md:gap-6 md:py-0 dark:bg-neutral-900"
+          role="region"
+          aria-label="Weather details"
+        >
+          {cardData.map((card) => (
+            <CarouselItem
+              key={card.label}
+              className="bg-card border-border flex w-auto max-w-none shrink-0 basis-[calc((100%-theme(space.4))/2)] flex-col items-start gap-6 rounded-[0.75rem] border p-5 md:basis-[calc((100%-theme(space.6)*3)/4)] dark:border-neutral-600 dark:bg-neutral-800"
+              role="group"
+              aria-label={card.label}
             >
-              {card.value}
-            </p>
-          </div>
-        ))}
-      </div>
+              <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">{card.label}</p>
+              <p
+                className="dark:text-neutral-0 text-preset-3 text-neutral-200"
+                aria-live="polite"
+                aria-label={card.aria}
+              >
+                {card.value}
+              </p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   )
 }

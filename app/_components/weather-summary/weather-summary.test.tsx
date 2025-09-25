@@ -1,8 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { render, screen } from '@testing-library/react'
 
 import WeatherSummary from './index'
 
 jest.mock('@/app/_store/weather')
+
+jest.mock('@/app/_components/ui/carousel', () => ({
+  Carousel: ({ children }: any) => <div>{children}</div>,
+  CarouselContent: ({ children }: any) => <div>{children}</div>,
+  CarouselItem: ({ children }: any) => <div>{children}</div>,
+}))
 
 describe('WeatherSummary', () => {
   it('renders city name and date', () => {
