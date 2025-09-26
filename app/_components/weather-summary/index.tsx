@@ -21,6 +21,26 @@ export function formatVisibility(
   return `${Math.round(meters)} m`
 }
 
+function getBackgroundVideo(code: number) {
+  if (!Number.isFinite(code)) return `/partly-cloudy.mp4`
+
+  if ([45, 48].includes(code)) return `/fog.mp4`
+
+  if ([95, 96, 99].includes(code)) return `/storm.mp4`
+
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return `/snow.mp4`
+
+  if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return `/rain.mp4`
+
+  if (code === 0) return `/sunny.mp4`
+
+  if ([1, 2].includes(code)) return `/partly-cloudy.mp4`
+
+  if (code === 3) return `/cloudy.mp4`
+
+  return `/partly-cloudy.mp4`
+}
+
 const WeatherSummary = () => {
   const cityName = useWeatherStore((state) => state.cityName)
   const weather = useWeatherStore((state) => state.weather)
@@ -118,6 +138,8 @@ const WeatherSummary = () => {
     year: 'numeric',
   })
 
+  const videoSrc = getBackgroundVideo(weatherCode)
+
   return (
     <section
       id="weather-summary"
@@ -126,11 +148,27 @@ const WeatherSummary = () => {
       aria-label="Weather summary"
     >
       <div
-        className="relative rounded-[1.25rem] bg-[url('/images/bg-today-small.svg')] bg-cover bg-center px-6 py-20 lg:bg-[url('/images/bg-today-large.svg')]"
+        className="relative overflow-hidden rounded-[1.25rem] bg-[url('/images/bg-today-small.svg')] bg-cover bg-center px-6 py-20 lg:bg-[url('/images/bg-today-large.svg')]"
         role="region"
         aria-label={`Current weather for ${cityName}`}
       >
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row lg:gap-0">
+        <video
+          key={videoSrc}
+          aria-hidden
+          tabIndex={-1}
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-105 object-cover blur-[8px]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
+
+        <div className="relative z-10 flex flex-col items-center justify-between gap-4 md:flex-row lg:gap-0">
           <div className="flex flex-col gap-3">
             <h2 className="text-neutral-0 text-preset-4" aria-label={`City: ${cityName}`}>
               {cityName}
