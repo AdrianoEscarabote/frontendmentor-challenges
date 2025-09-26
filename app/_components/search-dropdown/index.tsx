@@ -21,7 +21,7 @@ const SearchDropdown = ({ loading, suggestions = [], onSelect }: SearchDropdownP
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="flex w-full flex-col gap-1 rounded-[0.75rem] border border-neutral-700 bg-neutral-900 p-2 transition-all duration-200 md:max-w-[32.875rem] dark:bg-neutral-800"
+        className="z-50 flex w-full flex-col gap-1 rounded-[0.75rem] border border-neutral-700 bg-neutral-900 p-2 transition-all duration-200 md:max-w-[32.875rem] dark:bg-neutral-800"
         role="listbox"
         aria-label="City suggestions"
       >
