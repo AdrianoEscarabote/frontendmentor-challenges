@@ -120,7 +120,7 @@ const SearchForm = () => {
     <form
       role="search"
       aria-label="Search for a place"
-      className="flex w-full flex-col items-center justify-center gap-4 px-4 md:flex-row md:px-0"
+      className="relative z-50 flex w-full flex-col items-center justify-center gap-4 px-4 md:flex-row md:px-0"
       onSubmit={onSubmit}
     >
       <div className="relative w-full md:max-w-[526px]">
@@ -140,6 +140,7 @@ const SearchForm = () => {
             setError(null)
           }}
           onBlur={handleBlur}
+          aria-controls="city-suggestions"
         />
         {query && !loading && suggestions.length === 0 && (
           <span
@@ -151,8 +152,9 @@ const SearchForm = () => {
         )}
         {query && showDropdown && (
           <AnimatePresence>
-            <div className="absolute top-16 left-0 z-10 w-full">
+            <div className="pointer-events-auto absolute top-16 left-0 z-[70] w-full">
               <SearchDropdown
+                key={suggestions.length}
                 loading={loading}
                 suggestions={suggestions}
                 onSelect={handleSelectCity}
