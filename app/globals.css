@@ -220,15 +220,13 @@ body::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-700);
-  border-radius: 8px;
-  border: 1px solid var(--color-neutral-600) !important;
+body::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-body {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: var(--color-neutral-700) transparent; /* Firefox */
+body::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-700);
+  border-radius: 0.25rem;
 }
 
 .hourly-scroll::-webkit-scrollbar {
