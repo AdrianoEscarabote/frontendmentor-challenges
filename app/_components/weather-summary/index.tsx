@@ -1,7 +1,9 @@
 import Autoplay from 'embla-carousel-autoplay'
+import { Star } from 'lucide-react'
 import Image from 'next/image'
 
 import { Carousel, CarouselContent, CarouselItem } from '@/app/_components/ui/carousel'
+import { useFavoritesStore } from '@/app/_store/favorites'
 import { useWeatherStore } from '@/app/_store/weather'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
@@ -45,6 +47,12 @@ const WeatherSummary = () => {
   const cityName = useWeatherStore((state) => state.cityName)
   const weather = useWeatherStore((state) => state.weather)
   const units = useWeatherStore((s) => s.units)
+
+  const { toggleFavorite, isFavorite } = useFavoritesStore()
+  const lat = weather?.latitude
+  const lon = weather?.longitude
+  const favId = typeof lat === 'number' && typeof lon === 'number' ? `${lat},${lon}` : null
+  const favActive = favId ? isFavorite(favId) : false
 
   if (!weather) return null
 
@@ -197,6 +205,18 @@ const WeatherSummary = () => {
             </span>
           </div>
         </div>
+
+        {favId && cityName && (
+          <button
+            type="button"
+            onClick={() => toggleFavorite({ name: cityName, latitude: lat!, longitude: lon! })}
+            className={`absolute top-3 right-3 cursor-pointer rounded-md border px-2 py-2 backdrop-blur-sm transition-colors ${favActive ? 'border-yellow-400/40 bg-yellow-400/10 text-yellow-300' : 'border-white/20 bg-black/20 text-white/90 hover:bg-white/10'}`}
+            aria-pressed={favActive}
+            aria-label={favActive ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            <Star className={`h-[1.125rem] w-[1.125rem] ${favActive ? 'fill-current' : ''}`} />
+          </button>
+        )}
       </div>
 
       <Carousel
