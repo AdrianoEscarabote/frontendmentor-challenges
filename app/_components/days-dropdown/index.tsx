@@ -30,7 +30,7 @@ const DaysDropdown = ({ days, selectedIdx, onChange }: DaysDropdownProps) => {
           aria-expanded={open}
         >
           {days[selectedIdx]}
-          <ChevronDown size={20} className="ml-2" />
+          <ChevronDown size={20} className={`ml-2 transition-all ${open ? 'rotate-180' : ''}`} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent

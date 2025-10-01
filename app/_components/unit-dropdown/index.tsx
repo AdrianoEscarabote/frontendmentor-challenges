@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useState } from 'react'
 
 import {
   DropdownMenu,
@@ -30,6 +31,7 @@ const precipitationOptions = [
 const UnitDropdown = () => {
   const units = useWeatherStore((s) => s.units)
   const setUnits = useWeatherStore((s) => s.setUnits)
+  const [open, setOpen] = useState(false)
 
   const handleUnitSystemToggle = () => {
     if (units.temperature === 'celsius' && units.wind === 'kmh' && units.precipitation === 'mm') {
@@ -37,10 +39,11 @@ const UnitDropdown = () => {
     } else {
       setUnits({ temperature: 'celsius', wind: 'kmh', precipitation: 'mm' })
     }
+    setOpen(false)
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <button
           className="text-preset-7 text-neutral-0 focus:ring-none flex h-[2.6875rem] w-[7.4375rem] cursor-pointer items-center justify-center gap-2.5 rounded-[0.5rem] bg-neutral-900 focus:outline-none md:transition-all md:hover:bg-neutral-800 dark:bg-neutral-800 dark:md:hover:bg-neutral-700"
@@ -48,9 +51,16 @@ const UnitDropdown = () => {
         >
           <Image src={'/images/icon-units.svg'} alt="units icon" width={16} height={16} />
           Units
-          <Image src={'/images/icon-dropdown.svg'} alt="dropdown icon" width={12} height={18} />
+          <Image
+            src={'/images/icon-dropdown.svg'}
+            alt="dropdown icon"
+            className={`transition-all ${open ? 'rotate-180' : ''}`}
+            width={12}
+            height={18}
+          />
         </button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="border-border relative top-1 right-12 w-[13.375rem] border bg-neutral-900 px-2 py-1.5 dark:border-neutral-600 dark:bg-neutral-800">
         <DropdownMenuItem asChild>
           <button
