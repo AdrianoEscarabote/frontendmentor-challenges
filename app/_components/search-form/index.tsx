@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 
 import useWeather from '@/hooks/useWeather'
 
+import FavoritesMenu from '../favorites-menu'
 import PrimaryButton from '../primary-button'
 import SearchDropdown from '../search-dropdown'
 import VoiceSearchButton from '../voice-search-button'
@@ -37,7 +38,6 @@ const SearchForm = () => {
   } | null>(null)
 
   const [showDropdown, setShowDropdown] = useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const SearchForm = () => {
       .then((res) => res.json())
       .then((data) => {
         setSuggestions(
-          data.results.map(
+          (data.results ?? []).map(
             (city: { name: string; country: string; latitude: number; longitude: number }) => ({
               name: `${city.name}, ${city.country}`,
               latitude: city.latitude,
@@ -123,46 +123,55 @@ const SearchForm = () => {
       className="relative z-50 flex w-full flex-col items-center justify-center gap-4 px-4 md:flex-row md:px-0"
       onSubmit={onSubmit}
     >
-      <div className="relative w-full md:max-w-[526px]">
-        <span className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-400">
-          <Search size={20} />
-        </span>
-        <input
-          type="text"
-          placeholder="Search for a place..."
-          aria-label="Search for a place"
-          aria-invalid={!!errors.query}
-          aria-describedby={errors.query ? 'search-error' : undefined}
-          className={`text-preset-5-medium h-14 w-full max-w-none cursor-pointer rounded-md bg-neutral-900 p-2 pl-12 text-white md:max-w-[526px] dark:bg-neutral-800 ${errors.query && 'border border-red-400 outline outline-red-400'}`}
-          {...register('query', { required: 'Please enter a location' })}
-          onFocus={() => {
-            setShowDropdown(true)
-            setError(null)
-          }}
-          onBlur={handleBlur}
-          aria-controls="city-suggestions"
-        />
-        {query && !loading && suggestions.length === 0 && (
-          <span
-            role="alert"
-            className="text-preset-7 absolute -top-8 left-0 mt-2 text-red-400 md:top-14"
-          >
-            No search result found!
+      <div className="flex w-full items-center gap-2 md:max-w-[664px]">
+        <div className="hidden shrink-0 md:block">
+          <FavoritesMenu />
+        </div>
+
+        <div className="relative w-full">
+          <span className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-400">
+            <Search size={20} />
           </span>
-        )}
-        {query && showDropdown && (
-          <AnimatePresence>
-            <div className="pointer-events-auto absolute top-16 left-0 z-[70] w-full">
-              <SearchDropdown
-                key={suggestions.length}
-                loading={loading}
-                suggestions={suggestions}
-                onSelect={handleSelectCity}
-              />
-            </div>
-          </AnimatePresence>
-        )}
+          <input
+            type="text"
+            placeholder="Search for a place..."
+            aria-label="Search for a place"
+            aria-invalid={!!errors.query}
+            aria-describedby={errors.query ? 'search-error' : undefined}
+            className={`text-preset-5-medium h-14 w-full max-w-none cursor-pointer rounded-md bg-neutral-900 p-2 pl-12 text-white dark:bg-neutral-800 ${
+              errors.query && 'border border-red-400 outline outline-red-400'
+            }`}
+            {...register('query', { required: 'Please enter a location' })}
+            onFocus={() => {
+              setShowDropdown(true)
+              setError(null)
+            }}
+            onBlur={handleBlur}
+            aria-controls="city-suggestions"
+          />
+          {query && !loading && suggestions.length === 0 && (
+            <span
+              role="alert"
+              className="text-preset-7 absolute -top-8 left-0 mt-2 text-red-400 md:top-14"
+            >
+              No search result found!
+            </span>
+          )}
+          {query && showDropdown && (
+            <AnimatePresence>
+              <div className="pointer-events-auto absolute top-16 left-0 z-[70] w-full">
+                <SearchDropdown
+                  key={suggestions.length}
+                  loading={loading}
+                  suggestions={suggestions}
+                  onSelect={handleSelectCity}
+                />
+              </div>
+            </AnimatePresence>
+          )}
+        </div>
       </div>
+
       <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
         <PrimaryButton
           type="submit"
@@ -172,10 +181,20 @@ const SearchForm = () => {
           data-testid="search-button"
           loading={loading}
         />
-        <VoiceSearchButton
-          onTranscript={(text) => setValue('query', text)}
-          onError={(msg) => setError(msg)}
-        />
+
+        <div className="flex w-full items-center justify-center gap-5 md:hidden">
+          <FavoritesMenu />
+          <VoiceSearchButton
+            onTranscript={(text) => setValue('query', text)}
+            onError={(msg) => setError(msg)}
+          />
+        </div>
+        <div className="hidden md:flex">
+          <VoiceSearchButton
+            onTranscript={(text) => setValue('query', text)}
+            onError={(msg) => setError(msg)}
+          />
+        </div>
       </div>
     </form>
   )
