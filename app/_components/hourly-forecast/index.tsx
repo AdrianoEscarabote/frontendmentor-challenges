@@ -2,11 +2,12 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 import { useWeatherStore } from '@/app/_store/weather'
+import { pickAt, toFixedSafe } from '@/utils/formatters'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
 import DaysDropdown from '../days-dropdown'
 
-type HourlyItem = { hour: number; temperature: number; weatherCode: number }
+type HourlyItem = { hour: number; temperature?: number; weatherCode?: number }
 
 const HourlyForecast = () => {
   const weather = useWeatherStore((s) => s.weather)
@@ -18,6 +19,7 @@ const HourlyForecast = () => {
   if (!weather) return null
 
   const dailyTimes = weather.daily.time.slice(0, 7)
+  if (!dailyTimes.length) return null
   const daysOfWeek = dailyTimes.map((date) => {
     const [year, month, day] = date.split('-').map(Number)
     return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString('en-US', {
@@ -34,17 +36,16 @@ const HourlyForecast = () => {
     return `${hour12} ${period}`
   }
 
-  const toTemp = (c: number) => (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c)
+  const toTemp = (c?: number) =>
+    typeof c === 'number' ? (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c) : undefined
 
   const hourlyData = weather.hourly.time
     .map((time, idx) => {
       if (time.startsWith(selectedDate)) {
         const hour = parseInt(time.slice(11, 13), 10)
-        return {
-          hour,
-          temperature: toTemp(weather.hourly.temperature_2m[idx]),
-          weatherCode: weather.hourly.weathercode[idx],
-        } as HourlyItem
+        const tempC = pickAt<number>(weather.hourly.temperature_2m, idx)
+        const code = pickAt<number>(weather.hourly.weathercode, idx)
+        return { hour, temperature: toTemp(tempC), weatherCode: code } as HourlyItem
       }
       return null
     })
@@ -54,8 +55,9 @@ const HourlyForecast = () => {
   useEffect(() => {
     const list = listRef.current
     if (!weather || !list) return
-
-    const todayISO = weather.current_weather.time.slice(0, 10)
+    const nowISO = weather.current_weather?.time
+    if (!nowISO) return
+    const todayISO = nowISO.slice(0, 10)
     const isToday = selectedDate === todayISO
 
     if (!isToday) {
@@ -66,7 +68,7 @@ const HourlyForecast = () => {
 
     if (didAutoScrollRef.current) return
 
-    const currentHour = parseInt(weather.current_weather.time.slice(11, 13), 10)
+    const currentHour = parseInt(nowISO.slice(11, 13), 10)
     const target = list.querySelector<HTMLElement>(`[data-hour="${currentHour}"]`)
     if (!target) return
 
@@ -100,13 +102,18 @@ const HourlyForecast = () => {
             data-hour={item.hour}
             className="border-border bg-card flex min-h-[3.75rem] items-center justify-between rounded-[0.5rem] border px-4 py-2 dark:border-neutral-600 dark:bg-neutral-700"
             role="listitem"
-            aria-label={`At ${formatHour(item.hour)}, ${item.temperature.toFixed(0)} degrees, ${weatherIconMap[item.weatherCode]?.replace('icon-', '').replace('.svg', '').replace('-', ' ') || 'Unknown weather'}`}
+            aria-label={`At ${formatHour(item.hour)}, ${toFixedSafe(item.temperature, 0)} degrees, ${
+              weatherIconMap[item.weatherCode as number]
+                ?.replace('icon-', '')
+                .replace('.svg', '')
+                .replace('-', ' ') || 'Unknown weather'
+            }`}
           >
             <div className="flex items-center gap-2">
               <Image
-                src={`/images/${weatherIconMap[item.weatherCode] || 'icon-error.svg'}`}
+                src={`/images/${weatherIconMap[item.weatherCode as number] || 'icon-error.svg'}`}
                 alt={
-                  weatherIconMap[item.weatherCode]
+                  weatherIconMap[item.weatherCode as number]
                     ?.replace('icon-', '')
                     .replace('.svg', '')
                     .replace('-', ' ') || 'weather icon'
@@ -118,9 +125,9 @@ const HourlyForecast = () => {
             </div>
             <p
               className="text-preset-7 text-neutral-0"
-              aria-label={`Temperature: ${item.temperature.toFixed(0)} degrees`}
+              aria-label={`Temperature: ${toFixedSafe(item.temperature, 0)} degrees`}
             >
-              {item.temperature.toFixed(0)}°
+              {toFixedSafe(item.temperature, 0)}°
             </p>
           </li>
         ))}

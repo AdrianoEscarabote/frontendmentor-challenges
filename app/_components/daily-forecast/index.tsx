@@ -3,6 +3,7 @@
 import Image from 'next/image'
 
 import { useWeatherStore } from '@/app/_store/weather'
+import { toFixedSafe } from '@/utils/formatters'
 import { weatherIconMap } from '@/utils/weatherIconMap'
 
 const DailyForecast = () => {
@@ -16,9 +17,10 @@ const DailyForecast = () => {
   const dailyMax = weather.daily.temperature_2m_max.slice(0, daysToShow)
   const dailyMin = weather.daily.temperature_2m_min.slice(0, daysToShow)
 
-  const toTemp = (c: number) => (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c)
-  const dailyMaxDisp = dailyMax.map(toTemp)
-  const dailyMinDisp = dailyMin.map(toTemp)
+  const toTemp = (c?: number) =>
+    typeof c === 'number' ? (units.temperature === 'fahrenheit' ? (c * 9) / 5 + 32 : c) : undefined
+  const dailyMaxDisp = dailyMax.map((v) => toTemp(v))
+  const dailyMinDisp = dailyMin.map((v) => toTemp(v))
 
   const getLabel = (date: string) => {
     const [year, month, day] = date.split('-').map(Number)
@@ -49,7 +51,10 @@ const DailyForecast = () => {
                 key={date}
                 className="bg-card flex w-full max-w-[9.375rem] flex-col items-center gap-4 rounded-[0.75rem] border px-2.5 py-4 sm:flex md:max-w-[6.2856rem] dark:border-neutral-600 dark:bg-neutral-800"
                 role="group"
-                aria-label={`Forecast for ${getLabel(date)}: ${dailyMax[idx].toFixed(0)}° max, ${dailyMin[idx].toFixed(0)}° min`}
+                aria-label={`Forecast for ${getLabel(date)}: ${toFixedSafe(dailyMax[idx], 0)}° max, ${toFixedSafe(
+                  dailyMin[idx],
+                  0,
+                )}° min`}
               >
                 <p className="text-preset-6 text-neutral-0">{getLabel(date)}</p>
                 <Image
@@ -62,15 +67,15 @@ const DailyForecast = () => {
                 <div className="flex w-full items-center justify-between">
                   <span
                     className="text-preset-7 text-neutral-0"
-                    aria-label={`Maximum temperature: ${dailyMaxDisp[idx].toFixed(0)} degrees`}
+                    aria-label={`Maximum temperature: ${toFixedSafe(dailyMaxDisp[idx], 0)} degrees`}
                   >
-                    {dailyMaxDisp[idx].toFixed(0)}°
+                    {toFixedSafe(dailyMaxDisp[idx], 0)}°
                   </span>
                   <span
                     className="text-preset-7 text-neutral-200"
-                    aria-label={`Minimum temperature: ${dailyMinDisp[idx].toFixed(0)} degrees`}
+                    aria-label={`Minimum temperature: ${toFixedSafe(dailyMinDisp[idx], 0)} degrees`}
                   >
-                    {dailyMinDisp[idx].toFixed(0)}°
+                    {toFixedSafe(dailyMinDisp[idx], 0)}°
                   </span>
                 </div>
               </li>

@@ -5,23 +5,8 @@ import Image from 'next/image'
 import { Carousel, CarouselContent, CarouselItem } from '@/app/_components/ui/carousel'
 import { useFavoritesStore } from '@/app/_store/favorites'
 import { useWeatherStore } from '@/app/_store/weather'
+import { formatVisibility, pickAt, toFixedSafe } from '@/utils/formatters'
 import { weatherIconMap } from '@/utils/weatherIconMap'
-
-export function formatVisibility(
-  meters: number,
-  units: { temperature: string; wind: string; precipitation: string },
-) {
-  const isImperial =
-    units.temperature === 'fahrenheit' || units.wind === 'mph' || units.precipitation === 'inch'
-
-  if (isImperial) {
-    const mi = meters / 1609.344
-    return `${mi >= 10 ? Math.round(mi) : mi.toFixed(1)} mi`
-  }
-  if (meters >= 1000)
-    return `${meters >= 10000 ? Math.round(meters / 1000) : (meters / 1000).toFixed(1)} km`
-  return `${Math.round(meters)} m`
-}
 
 function getBackgroundVideo(code: number) {
   if (!Number.isFinite(code)) return `/partly-cloudy.mp4`
@@ -56,7 +41,6 @@ const WeatherSummary = () => {
 
   if (!weather) return null
 
-  const temp = weather.current_weather.temperature
   const weatherCode = weather.current_weather.weathercode
   const icon = weatherIconMap[weatherCode] || 'icon-error.svg'
   const currentTime = weather.current_weather.time
@@ -82,35 +66,51 @@ const WeatherSummary = () => {
   const hourIdx = getHourIndex(weather.hourly.time, currentTime)
 
   const tempC = weather.current_weather.temperature
-  const tempDisplay = units.temperature === 'fahrenheit' ? (tempC * 9) / 5 + 32 : tempC
+  const tempDisplayNum =
+    typeof tempC === 'number'
+      ? units.temperature === 'fahrenheit'
+        ? (tempC * 9) / 5 + 32
+        : tempC
+      : undefined
 
   const windKmh = weather.current_weather.windspeed
-  const windDisplay = units.wind === 'mph' ? windKmh * 0.621371 : windKmh
+  const windDisplayNum =
+    typeof windKmh === 'number' ? (units.wind === 'mph' ? windKmh * 0.621371 : windKmh) : undefined
 
-  const precipMm = weather.hourly.precipitation[hourIdx]
+  const precipMm = pickAt(weather.hourly.precipitation, hourIdx)
   const precipDisplay =
     units.precipitation === 'inch'
-      ? `${(precipMm / 25.4).toFixed(2)} in`
-      : `${precipMm.toFixed(1)} mm`
+      ? `${toFixedSafe(typeof precipMm === 'number' ? precipMm / 25.4 : undefined, 2)} in`
+      : `${toFixedSafe(precipMm, 1)} mm`
+
+  const feelsLikeC = pickAt(weather.hourly.apparent_temperature, hourIdx)
+  const feelsLike =
+    typeof feelsLikeC === 'number'
+      ? units.temperature === 'fahrenheit'
+        ? (feelsLikeC * 9) / 5 + 32
+        : feelsLikeC
+      : undefined
+  const humidityVal = pickAt(weather.hourly.relative_humidity_2m, hourIdx)
+  const uvVal = pickAt(weather.hourly.uv_index, hourIdx)
+  const visibilityVal = pickAt(weather.hourly.visibility, hourIdx) as number | undefined
+  const pressureVal = pickAt(weather.hourly.pressure_msl, hourIdx)
+  const cloudVal = pickAt(weather.hourly.cloudcover, hourIdx)
 
   const cardData = [
     {
       label: 'Feels Like',
-      value: `${(units.temperature === 'fahrenheit'
-        ? (weather.hourly.apparent_temperature[hourIdx] * 9) / 5 + 32
-        : weather.hourly.apparent_temperature[hourIdx]
-      )?.toFixed(0)}°`,
-      aria: `Feels like: ${weather.hourly.apparent_temperature[hourIdx]?.toFixed(0)} degrees`,
+      value: `${toFixedSafe(feelsLike, 0)}°`,
+      aria: `Feels like: ${toFixedSafe(feelsLike, 0)} degrees`,
     },
     {
       label: 'Humidity',
-      value: `${weather.hourly.relative_humidity_2m[hourIdx]?.toFixed(0)}%`,
-      aria: `Humidity: ${weather.hourly.relative_humidity_2m[hourIdx]?.toFixed(0)} percent`,
+      value: `${toFixedSafe(humidityVal, 0)}%`,
+      aria: `Humidity: ${toFixedSafe(humidityVal, 0)} percent`,
     },
     {
       label: 'Wind',
-      value: `${windDisplay?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
-      aria: `Wind: ${windDisplay?.toFixed(0)} ${units.wind.replace('kmh', 'km/h')}`,
+      value: `${toFixedSafe(windDisplayNum, 0)} ${units.wind.replace('kmh', 'km/h')}`,
+      aria: `Wind: ${toFixedSafe(windDisplayNum, 0)} ${units.wind.replace('kmh', 'km/h')}`,
     },
     {
       label: 'Precipitation',
@@ -119,23 +119,23 @@ const WeatherSummary = () => {
     },
     {
       label: 'UV Index',
-      value: `${weather.hourly.uv_index[hourIdx]}`,
-      aria: `UV Index: ${weather.hourly.uv_index[hourIdx]}`,
+      value: `${toFixedSafe(uvVal, 0)}`,
+      aria: `UV Index: ${toFixedSafe(uvVal, 0)}`,
     },
     {
       label: 'Visibility',
-      value: formatVisibility(weather.hourly.visibility[hourIdx], units),
-      aria: `Visibility: ${formatVisibility(weather.hourly.visibility[hourIdx], units)}`,
+      value: formatVisibility(visibilityVal, units),
+      aria: `Visibility: ${formatVisibility(visibilityVal, units)}`,
     },
     {
       label: 'Air Pressure',
-      value: `${weather.hourly.pressure_msl[hourIdx]?.toFixed(0)} hPa`,
-      aria: `Air Pressure: ${weather.hourly.pressure_msl[hourIdx]?.toFixed(0)} hPa`,
+      value: `${toFixedSafe(pressureVal, 0)} hPa`,
+      aria: `Air Pressure: ${toFixedSafe(pressureVal, 0)} hPa`,
     },
     {
       label: 'Cloud Cover',
-      value: `${weather.hourly.cloudcover[hourIdx]?.toFixed(0)}%`,
-      aria: `Cloud Cover: ${weather.hourly.cloudcover[hourIdx]?.toFixed(0)} percent`,
+      value: `${toFixedSafe(cloudVal, 0)}%`,
+      aria: `Cloud Cover: ${toFixedSafe(cloudVal, 0)} percent`,
     },
   ]
 
@@ -187,7 +187,7 @@ const WeatherSummary = () => {
           </div>
           <div
             className="flex items-center gap-2"
-            aria-label={`Temperature: ${temp.toFixed(0)} degrees`}
+            aria-label={`Temperature: ${toFixedSafe(tempDisplayNum, 0)} degrees`}
           >
             <Image
               src={`/images/${icon}`}
@@ -199,9 +199,9 @@ const WeatherSummary = () => {
             <span
               className="text-neutral-0 text-preset-1"
               aria-live="polite"
-              aria-label={`Temperature: ${temp.toFixed(0)} degrees`}
+              aria-label={`Temperature: ${toFixedSafe(tempDisplayNum, 0)} degrees`}
             >
-              {tempDisplay.toFixed(0)}°
+              {toFixedSafe(tempDisplayNum, 0)}°
             </span>
           </div>
         </div>
