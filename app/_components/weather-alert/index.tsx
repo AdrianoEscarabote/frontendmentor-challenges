@@ -46,7 +46,6 @@ export default function WeatherAlert() {
       })
     }
 
-    // Temperatures (Open‑Meteo schema)
     const currentTemp = weather.current_weather?.temperature ?? NaN
     const maxTempToday = weather.daily?.temperature_2m_max?.[0]
     const minTempToday = weather.daily?.temperature_2m_min?.[0]
@@ -89,7 +88,9 @@ export default function WeatherAlert() {
         id: 'wind-alert',
         type: 'wind',
         title: 'Strong Winds',
-        message: `Strong winds of ${Math.round(windSpeed)} km/h. Beware of loose objects and outdoor activities.`,
+        message: `Strong winds of ${Math.round(
+          windSpeed,
+        )} km/h. Beware of loose objects and outdoor activities.`,
         severity: 'medium',
         icon: <Wind className="h-5 w-5" />,
       })
@@ -121,43 +122,56 @@ export default function WeatherAlert() {
   const getSeverityStyles = (severity: string) => {
     switch (severity) {
       case 'high':
-        return 'bg-red-500/10 border-red-500/20 text-red-100'
+        return 'border-red-300 ring-1 ring-inset ring-red-300/30 dark:border-red-400/30 dark:ring-red-400/20'
       case 'medium':
-        return 'bg-yellow-500/10 border-yellow-500/20 text-yellow-100'
+        return 'border-amber-300 ring-1 ring-inset ring-amber-300/30 dark:border-yellow-400/30 dark:ring-yellow-400/20'
       case 'low':
-        return 'bg-blue-500/10 border-blue-500/20 text-blue-100'
+        return 'border-blue-300 ring-1 ring-inset ring-blue-300/30 dark:border-blue-400/30 dark:ring-blue-400/20'
       default:
-        return 'bg-gray-500/10 border-gray-500/20 text-gray-100'
+        return 'border-neutral-200 ring-1 ring-inset ring-black/10 dark:border-neutral-600/40 dark:ring-white/10'
     }
   }
 
   if (alerts.length === 0) return null
 
   return (
-    <div className="fixed top-4 right-4 z-50 max-w-sm space-y-3">
+    <div className="pointer-events-none fixed top-4 right-4 left-4 z-[2147483647] max-w-sm space-y-3 md:right-4 md:left-auto">
       {alerts.map((alert) => (
         <div
           key={alert.id}
-          className={`relative overflow-hidden rounded-xl border backdrop-blur-md ${getSeverityStyles(alert.severity)} animate-in slide-in-from-right-full shadow-lg shadow-black/20 duration-500`}
+          data-testid={`weather-alert-${alert.type}`}
+          role="alert"
+          aria-live="polite"
+          className={`relative overflow-hidden rounded-xl border bg-white/70 shadow-lg shadow-black/10 backdrop-saturate-150 supports-[backdrop-filter]:backdrop-blur-md dark:bg-neutral-800/70 ${getSeverityStyles(
+            alert.severity,
+          )} animate-in slide-in-from-right-full pointer-events-auto motion-reduce:animate-none`}
         >
-          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/20 to-transparent opacity-60 dark:from-black/40 dark:via-black/20 dark:to-transparent" />
 
           <div className="relative p-4">
             <div className="flex items-start gap-3">
-              <div className="mt-0.5 flex-shrink-0">{alert.icon}</div>
+              <div className="mt-0.5 flex-shrink-0 text-neutral-700 dark:text-neutral-200">
+                {alert.icon}
+              </div>
 
               <div className="min-w-0 flex-1">
-                <div className="mb-1 flex items-center justify-between">
-                  <h4 className="text-sm font-semibold">{alert.title}</h4>
+                <div className="mb-1 flex items-center justify-between gap-3">
+                  <h4 className="dark:text-neutral-0 text-sm font-semibold text-neutral-900">
+                    {alert.title}
+                  </h4>
                   <button
                     onClick={() => dismissAlert(alert.id)}
-                    className="flex-shrink-0 rounded-full p-1 transition-colors hover:bg-white/10"
+                    type="button"
+                    aria-label="Close alert"
+                    className="flex-shrink-0 rounded-full p-1 text-neutral-700 transition-colors hover:bg-black/5 dark:text-neutral-200 dark:hover:bg-white/10"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 </div>
 
-                <p className="text-xs leading-relaxed opacity-90">{alert.message}</p>
+                <p className="text-xs leading-relaxed text-neutral-700 dark:text-neutral-200">
+                  {alert.message}
+                </p>
               </div>
             </div>
           </div>
