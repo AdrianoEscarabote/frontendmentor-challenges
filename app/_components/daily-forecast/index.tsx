@@ -46,17 +46,18 @@ const DailyForecast = () => {
           {dailyTimes.map((date, idx) => {
             const code = weather.daily.weathercode[idx]
             const iconName = weatherIconMap[code] || 'icon-error.svg'
+            const dayId = `daily-${idx}-label`
+            const descId = `daily-${idx}-desc`
             return (
               <li
                 key={date}
                 className="bg-card flex w-full max-w-[9.375rem] flex-col items-center gap-4 rounded-[0.75rem] border px-2.5 py-4 sm:flex md:max-w-[6.2856rem] dark:border-neutral-600 dark:bg-neutral-800"
-                role="group"
-                aria-label={`Forecast for ${getLabel(date)}: ${toFixedSafe(dailyMax[idx], 0)}° max, ${toFixedSafe(
-                  dailyMin[idx],
-                  0,
-                )}° min`}
+                aria-labelledby={dayId}
+                aria-describedby={descId}
               >
-                <p className="text-preset-6 text-neutral-0">{getLabel(date)}</p>
+                <p id={dayId} className="text-preset-6 text-neutral-0">
+                  {getLabel(date)}
+                </p>
                 <Image
                   src={`/images/${iconName}`}
                   alt={`Weather icon for ${getLabel(date)}`}
@@ -78,6 +79,11 @@ const DailyForecast = () => {
                     {toFixedSafe(dailyMinDisp[idx], 0)}°
                   </span>
                 </div>
+                {/* Descrição acessível sem impactar o layout */}
+                <span id={descId} className="sr-only">
+                  Forecast for {getLabel(date)}: {toFixedSafe(dailyMax[idx], 0)} degrees max,{' '}
+                  {toFixedSafe(dailyMin[idx], 0)} degrees min
+                </span>
               </li>
             )
           })}
