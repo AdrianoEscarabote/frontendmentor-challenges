@@ -1,17 +1,14 @@
 import { expect, test } from '@playwright/test'
 
-import { mockForecast, mockGeocodingSuggestions, mockReverseGeocode } from './utils/mocks'
+import { bootstrapApp, mockGeocodingSuggestions } from './utils/mocks'
 
 test('search: selects suggestion and closes on blur', async ({ page }) => {
   page.on('console', (m) => m.type() === 'error' && console.log('[console.error]', m.text()))
   page.on('pageerror', (e) => console.log('[pageerror]', e))
 
-  await mockReverseGeocode(page, 'Mexico', 'Mexico')
-  await mockForecast(page)
+  await bootstrapApp(page, { city: 'Mexico', country: 'Mexico' })
 
   await mockGeocodingSuggestions(page, /mex/i, [{ name: 'Mexico, Mexico', lat: 23, lon: -102 }])
-
-  await page.goto('/')
 
   const input = page.getByPlaceholder('Search for a place...')
   await input.focus()

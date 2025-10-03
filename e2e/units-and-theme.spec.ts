@@ -1,7 +1,9 @@
 import { expect, test } from '@playwright/test'
 
+import { bootstrapApp } from './utils/mocks'
+
 test('units: switch to imperial updates UI', async ({ page }) => {
-  await page.goto('/')
+  await bootstrapApp(page)
 
   await page.getByRole('button', { name: /units/i }).click()
   await page.getByTestId('unit-system-toggle').click()
