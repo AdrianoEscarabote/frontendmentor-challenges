@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import fs from 'node:fs'
 import path from 'node:path'
 
-import type { Page, Request, Route } from '@playwright/test'
+import type { Request } from '@playwright/test'
+import { expect, Page, Route } from '@playwright/test'
 
 const weatherFixturePath = path.join(__dirname, '..', 'fixtures', 'weather.json')
 export const weatherData = JSON.parse(fs.readFileSync(weatherFixturePath, 'utf-8'))
 
-export async function mockForecast(page: Page) {
+export async function mockForecast(page: Page, weather: any) {
   await page.route('**/v1/forecast?**', (route: Route) =>
     route.fulfill({
       status: 200,
@@ -59,6 +62,44 @@ export async function mockReverseGeocode(page: Page, city = 'London', country = 
       body: JSON.stringify({ address: { city, country } }),
     }),
   )
+}
+
+export async function clearClientState(page: Page) {
+  await page.addInitScript(() => {
+    try {
+      localStorage.clear()
+      sessionStorage.clear()
+      // @ts-ignore
+      if (indexedDB?.databases) {
+        // @ts-ignore
+        indexedDB
+          .databases()
+          .then((dbs: any[]) => dbs.forEach((d) => d?.name && indexedDB.deleteDatabase(d.name)))
+      }
+    } catch {}
+  })
+}
+
+export async function bootstrapApp(
+  page: Page,
+  opts: { city?: string; country?: string; weather?: any } = {},
+) {
+  const city = opts.city ?? 'London'
+  const country = opts.country ?? 'United Kingdom'
+  await mockReverseGeocode(page, city, country)
+  await mockForecast(page, opts.weather)
+  await clearClientState(page)
+
+  await page.goto('/')
+
+  const fallback = page.getByRole('button', { name: /use default location/i })
+  if (await fallback.isVisible().catch(() => false)) {
+    await fallback.click()
+  }
+
+  await expect(page.getByRole('region', { name: /weather details/i })).toBeVisible({
+    timeout: 15000,
+  })
 }
 
 export function isForecast(req: Request) {
