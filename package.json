@@ -10,7 +10,9 @@
     "prepare": "husky install",
     "test": "jest",
     "e2e": "playwright test",
-    "e2e:ui": "playwright test --ui"
+    "e2e:ui": "playwright test --ui",
+    "lh:mobile": "lighthouse http://localhost:3000 --output html --output json --output-path docs/lighthouse-mobile --chrome-flags='--headless=new'",
+    "lh:desktop": "lighthouse http://localhost:3000 --preset=desktop --output html --output json --output-path docs/lighthouse-desktop --chrome-flags='--headless=new'"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
