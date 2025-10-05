@@ -188,16 +188,14 @@ npm run build && npm run start
 ## Performance (Lighthouse)
 
 - Results:
--
-- Desktop
-  ![Lighthouse Desktop](docs/lighthouse-desktop.png)
-- Mobile
-  ![Lighthouse Mobile](docs/lighthouse-mobile.png)
 
-Relatórios completos:
+Desktop
 
-- [Desktop](docs/lighthouse-desktop.report.html)
-- [Mobile](docs/lighthouse-mobile.report.html)
+![Lighthouse Desktop](docs/lighthouse-desktop.png)
+
+Mobile
+
+![Lighthouse Mobile](docs/lighthouse-mobile.png)
 
 ## 👤 Author
 
@@ -205,8 +203,6 @@ Relatórios completos:
 
 - Github: [@AdrianoEscarabote](https://github.com/AdrianoEscarabote)
 - Linkedin: [@AdrianoEscarabote](https://www.linkedin.com/in/AdrianoEscarabote/)
-- GitHub: [@AdrianoEscarabote](https://github.com/AdrianoEscarabote)
-- LinkedIn: [@AdrianoEscarabote](https://www.linkedin.com/in/AdrianoEscarabote/)
 - Frontend Mentor: [@AdrianoEscarabote](https://www.frontendmentor.io/profile/AdrianoEscarabote)
 - Twitter: [@drianEscarabote](https://twitter.com/drianEscarabote)
 
