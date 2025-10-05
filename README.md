@@ -161,13 +161,13 @@ npm run e2e:ui     # Playwright UI
   - Mocks/boot helpers:
     - Fixtures: [e2e/fixtures/weather.json](e2e/fixtures/weather.json)
     - Utils: [e2e/utils/mocks.ts](e2e/utils/mocks.ts)
-      - `bootstrapApp(page, { city, country })`: padroniza o boot (mocks, fallback e espera UI estável)
+      - `bootstrapApp(page, { city, country })`: standardizes app bootstrap (mocks, fallback, and waits for a stable UI)
       - `mockForecast`, `mockReverseGeocode`, `mockGeocodingSuggestions`
       - `clearClientState`, `dismissRainAlertIfPresent`, `stubBrowserNotifications`
   - Debug:
-    - Console e exceções: `page.on('console'...)`, `page.on('pageerror'...)`
-    - Report HTML: após rodar, acesse o link gerado pelo Playwright (playwright-report)
-    - Traços/Vídeo (opcional no playwright.config): `trace: 'on-first-retry'`, `video: 'on'`
+    - Console and exceptions: `page.on('console'...)`, `page.on('pageerror'...)`
+    - HTML report: after running, open the generated Playwright report (playwright-report)
+    - Traces/Video (optional in playwright.config): `trace: 'on-first-retry'`, `video: 'on'`
 
 ## Accessibility
 
