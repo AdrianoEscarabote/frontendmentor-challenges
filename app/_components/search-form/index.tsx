@@ -120,10 +120,10 @@ const SearchForm = () => {
     <form
       role="search"
       aria-label="Search for a place"
-      className="relative z-50 flex w-full flex-col items-center justify-center gap-4 px-4 md:flex-row md:px-0"
+      className="relative z-50 flex w-full flex-col items-center justify-center gap-4 px-4 md:flex-row"
       onSubmit={onSubmit}
     >
-      <div className="flex w-full items-center gap-2 md:max-w-[664px]">
+      <div className="flex w-full items-center gap-4 md:max-w-[664px]">
         <div className="hidden shrink-0 md:block">
           <FavoritesMenu />
         </div>

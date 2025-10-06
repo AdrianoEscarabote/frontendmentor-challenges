@@ -87,13 +87,16 @@ const HourlyForecast = () => {
       role="region"
       aria-label="Hourly weather forecast"
     >
-      <div className="flex items-center justify-between px-6 pt-6">
-        <h3 className="dark:text-neutral-0 text-preset-5 text-neutral-900">Hourly forecast</h3>
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 px-6 pt-6">
+        <h3 className="text-preset-5 dark:text-neutral-0 text-center whitespace-nowrap text-neutral-900">
+          Hourly forecast
+        </h3>
+
         <DaysDropdown days={daysOfWeek} selectedIdx={selectedDayIdx} onChange={setSelectedDayIdx} />
       </div>
       <ul
         ref={listRef}
-        className="hourly-scroll flex flex-col gap-4 overflow-y-scroll px-6 pb-6"
+        className="hourly-scroll flex flex-col gap-4 overflow-y-scroll px-4 pb-6 lg:px-6"
         role="list"
       >
         {hourlyData.map((item, idx) => (

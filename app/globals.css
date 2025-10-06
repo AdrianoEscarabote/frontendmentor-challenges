@@ -134,6 +134,19 @@
   --ring: #737373;
 }
 
+@media (max-width: 87.5rem) and (min-width: 70.5rem) {
+  .main-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 70.5rem) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

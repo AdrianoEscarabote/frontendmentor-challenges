@@ -86,7 +86,7 @@ export default function Home() {
         >
           <WeatherAlert />
           <Header />
-          <div className="mx-auto flex w-full max-w-[90rem] flex-col gap-8 px-5 pb-20 lg:flex-row xl:px-[7rem]">
+          <div className="main-container mx-auto flex w-full max-w-[90rem] flex-row gap-8 px-5 pb-20 xl:px-[7rem]">
             <div className="flex w-full flex-1 flex-col gap-4 md:gap-12">
               {weather ? <WeatherSummary /> : <WeatherSummarySkeleton />}
               <RainAlert />

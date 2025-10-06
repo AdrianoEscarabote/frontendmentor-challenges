@@ -151,7 +151,7 @@ const WeatherSummary = () => {
   return (
     <section
       id="weather-summary"
-      className="flex max-w-[50rem] flex-col gap-0 pt-4 sm:gap-8 sm:pt-0"
+      className="mx-auto flex w-full max-w-[50rem] flex-col gap-0 pt-4 sm:gap-8 sm:pt-0"
       role="region"
       aria-label="Weather summary"
     >
