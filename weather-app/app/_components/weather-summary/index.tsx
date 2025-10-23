@@ -1,0 +1,261 @@
+import Autoplay from 'embla-carousel-autoplay'
+import { Star } from 'lucide-react'
+import Image from 'next/image'
+
+import { Carousel, CarouselContent, CarouselItem } from '@/app/_components/ui/carousel'
+import { useFavoritesStore } from '@/app/_store/favorites'
+import { useWeatherStore } from '@/app/_store/weather'
+import { formatVisibility, pickAt, toFixedSafe } from '@/utils/formatters'
+import { weatherIconMap } from '@/utils/weatherIconMap'
+
+function getBackgroundVideo(code: number) {
+  if (!Number.isFinite(code)) return `/partly-cloudy.mp4`
+
+  if ([45, 48].includes(code)) return `/fog.mp4`
+
+  if ([95, 96, 99].includes(code)) return `/storm.mp4`
+
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return `/snow.mp4`
+
+  if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return `/rain.mp4`
+
+  if (code === 0) return `/sunny.mp4`
+
+  if ([1, 2].includes(code)) return `/partly-cloudy.mp4`
+
+  if (code === 3) return `/cloudy.mp4`
+
+  return `/partly-cloudy.mp4`
+}
+
+const WeatherSummary = () => {
+  const cityName = useWeatherStore((state) => state.cityName)
+  const weather = useWeatherStore((state) => state.weather)
+  const units = useWeatherStore((s) => s.units)
+
+  const { toggleFavorite, isFavorite } = useFavoritesStore()
+  const lat = weather?.latitude
+  const lon = weather?.longitude
+  const favId = typeof lat === 'number' && typeof lon === 'number' ? `${lat},${lon}` : null
+  const favActive = favId ? isFavorite(favId) : false
+
+  if (!weather) return null
+
+  const weatherCode = weather.current_weather.weathercode
+  const icon = weatherIconMap[weatherCode] || 'icon-error.svg'
+  const currentTime = weather.current_weather.time
+
+  function toHourIso(iso: string) {
+    return iso.slice(0, 13) + ':00'
+  }
+
+  function getHourIndex(times: string[], currentIso: string) {
+    const curHour = toHourIso(currentIso)
+
+    const exact = times.indexOf(curHour)
+    if (exact !== -1) return exact
+
+    let last = 0
+    for (let i = 0; i < times.length; i++) {
+      if (times[i] <= curHour) last = i
+      else break
+    }
+    return last
+  }
+
+  const hourIdx = getHourIndex(weather.hourly.time, currentTime)
+
+  const tempC = weather.current_weather.temperature
+  const tempDisplayNum =
+    typeof tempC === 'number'
+      ? units.temperature === 'fahrenheit'
+        ? (tempC * 9) / 5 + 32
+        : tempC
+      : undefined
+
+  const windKmh = weather.current_weather.windspeed
+  const windDisplayNum =
+    typeof windKmh === 'number' ? (units.wind === 'mph' ? windKmh * 0.621371 : windKmh) : undefined
+
+  const precipMm = pickAt(weather.hourly.precipitation, hourIdx)
+  const precipDisplay =
+    units.precipitation === 'inch'
+      ? `${toFixedSafe(typeof precipMm === 'number' ? precipMm / 25.4 : undefined, 2)} in`
+      : `${toFixedSafe(precipMm, 1)} mm`
+
+  const feelsLikeC = pickAt(weather.hourly.apparent_temperature, hourIdx)
+  const feelsLike =
+    typeof feelsLikeC === 'number'
+      ? units.temperature === 'fahrenheit'
+        ? (feelsLikeC * 9) / 5 + 32
+        : feelsLikeC
+      : undefined
+  const humidityVal = pickAt(weather.hourly.relative_humidity_2m, hourIdx)
+  const uvVal = pickAt(weather.hourly.uv_index, hourIdx)
+  const visibilityVal = pickAt(weather.hourly.visibility, hourIdx) as number | undefined
+  const pressureVal = pickAt(weather.hourly.pressure_msl, hourIdx)
+  const cloudVal = pickAt(weather.hourly.cloudcover, hourIdx)
+
+  const cardData = [
+    {
+      label: 'Feels Like',
+      value: `${toFixedSafe(feelsLike, 0)}°`,
+      aria: `Feels like: ${toFixedSafe(feelsLike, 0)} degrees`,
+    },
+    {
+      label: 'Humidity',
+      value: `${toFixedSafe(humidityVal, 0)}%`,
+      aria: `Humidity: ${toFixedSafe(humidityVal, 0)} percent`,
+    },
+    {
+      label: 'Wind',
+      value: `${toFixedSafe(windDisplayNum, 0)} ${units.wind.replace('kmh', 'km/h')}`,
+      aria: `Wind: ${toFixedSafe(windDisplayNum, 0)} ${units.wind.replace('kmh', 'km/h')}`,
+    },
+    {
+      label: 'Precipitation',
+      value: precipDisplay,
+      aria: `Precipitation: ${precipDisplay}`,
+    },
+    {
+      label: 'UV Index',
+      value: `${toFixedSafe(uvVal, 0)}`,
+      aria: `UV Index: ${toFixedSafe(uvVal, 0)}`,
+    },
+    {
+      label: 'Visibility',
+      value: formatVisibility(visibilityVal, units),
+      aria: `Visibility: ${formatVisibility(visibilityVal, units)}`,
+    },
+    {
+      label: 'Air Pressure',
+      value: `${toFixedSafe(pressureVal, 0)} hPa`,
+      aria: `Air Pressure: ${toFixedSafe(pressureVal, 0)} hPa`,
+    },
+    {
+      label: 'Cloud Cover',
+      value: `${toFixedSafe(cloudVal, 0)}%`,
+      aria: `Cloud Cover: ${toFixedSafe(cloudVal, 0)} percent`,
+    },
+  ]
+
+  const dateStr = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  })
+
+  const videoSrc = getBackgroundVideo(weatherCode)
+
+  return (
+    <section
+      id="weather-summary"
+      className="mx-auto flex w-full max-w-[50rem] flex-col gap-0 pt-4 sm:gap-8 sm:pt-0"
+      role="region"
+      aria-label="Weather summary"
+    >
+      <div
+        className="relative overflow-hidden rounded-[1.25rem] bg-[url('/images/bg-today-small.svg')] bg-cover bg-center px-6 py-20 lg:bg-[url('/images/bg-today-large.svg')]"
+        role="region"
+        aria-label={`Current weather for ${cityName}`}
+      >
+        <video
+          key={videoSrc}
+          aria-hidden
+          tabIndex={-1}
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-105 object-cover blur-[8px]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
+
+        <div className="relative z-10 flex flex-col items-center justify-between gap-4 md:flex-row lg:gap-0">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-neutral-0 text-preset-4" aria-label={`City: ${cityName}`}>
+              {cityName}
+            </h2>
+            <p className="text-preset-6 text-neutral-200" aria-label={`Date: ${dateStr}`}>
+              {dateStr}
+            </p>
+          </div>
+          <div
+            className="flex items-center gap-2"
+            aria-label={`Temperature: ${toFixedSafe(tempDisplayNum, 0)} degrees`}
+          >
+            <Image
+              src={`/images/${icon}`}
+              aria-label="Weather condition icon"
+              alt="weather icon"
+              width={120}
+              height={120}
+            />
+            <span
+              className="text-neutral-0 text-preset-1"
+              aria-live="polite"
+              aria-label={`Temperature: ${toFixedSafe(tempDisplayNum, 0)} degrees`}
+            >
+              {toFixedSafe(tempDisplayNum, 0)}°
+            </span>
+          </div>
+        </div>
+
+        {favId && cityName && (
+          <button
+            type="button"
+            onClick={() => toggleFavorite({ name: cityName, latitude: lat!, longitude: lon! })}
+            className={`absolute top-3 right-3 cursor-pointer rounded-md border px-2 py-2 backdrop-blur-sm transition-colors ${favActive ? 'border-yellow-400/40 bg-yellow-400/10 text-yellow-300' : 'border-white/20 bg-black/20 text-white/90 hover:bg-white/10'}`}
+            aria-pressed={favActive}
+            aria-label={favActive ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            <Star className={`h-[1.125rem] w-[1.125rem] ${favActive ? 'fill-current' : ''}`} />
+          </button>
+        )}
+      </div>
+
+      <Carousel
+        className="w-full"
+        opts={{ align: 'start', containScroll: 'trimSnaps' }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+          }),
+        ]}
+      >
+        <CarouselContent
+          className="m-0 flex gap-4 py-6 md:gap-6 md:py-0 dark:bg-neutral-900"
+          role="region"
+          aria-label="Weather details"
+        >
+          {cardData.map((card) => (
+            <CarouselItem
+              key={card.label}
+              className="bg-card border-border flex w-auto max-w-none shrink-0 basis-[calc((100%-theme(space.4))/2)] flex-col items-start gap-6 rounded-[0.75rem] border p-5 md:basis-[calc((100%-theme(space.6)*3)/4)] dark:border-neutral-600 dark:bg-neutral-800"
+              role="group"
+              aria-label={card.label}
+            >
+              <p className="text-preset-6 text-neutral-200 dark:text-neutral-200">{card.label}</p>
+              <p
+                className="dark:text-neutral-0 text-preset-3 text-neutral-200"
+                aria-live="polite"
+                aria-label={card.aria}
+              >
+                {card.value}
+              </p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </section>
+  )
+}
+
+export default WeatherSummary

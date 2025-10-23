@@ -1,0 +1,268 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-0: var(--neutral-0);
+
+  --color-orange-500: var(--orange-500);
+
+  --color-blue-500: var(--blue-500);
+  --color-blue-700: var(--blue-700);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #f5f7fa;
+  --card: #3751a4;
+  --border: #e5e7eb;
+
+  --foreground: #23272f;
+  --primary: #23272f;
+  --secondary: #4b5563;
+  --muted: #7b8494;
+
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #22c55e;
+  --warning: #f59e42;
+  --destructive: #ef4444;
+
+  --neutral-900: #181825;
+  --neutral-800: #23272f;
+  --neutral-700: #2e3350;
+  --neutral-600: #4b5563;
+  --neutral-300: #d1d5db;
+  --neutral-200: #e5e7eb;
+  --neutral-0: #ffffff;
+
+  --orange-500: hsl(28, 100%, 52%);
+
+  --blue-500: hsl(233, 67%, 56%);
+  --blue-700: hsl(248, 70%, 36%);
+
+  --radius: 0.625rem;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary-foreground: #fafafa;
+  --secondary-foreground: #171717;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #171717;
+  --destructive: #e7000b;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #a1a1a1;
+}
+
+.dark {
+  --neutral-900: hsl(243, 96%, 9%);
+  --neutral-800: hsl(243, 27%, 20%);
+  --neutral-700: hsl(243, 23%, 24%);
+  --neutral-600: hsl(243, 23%, 30%);
+  --neutral-300: hsl(240, 6%, 70%);
+  --neutral-200: hsl(250, 6%, 84%);
+  --neutral-0: hsl(0, 0%, 100%);
+
+  --orange-500: hsl(28, 100%, 52%);
+
+  --blue-500: hsl(233, 67%, 56%);
+  --blue-700: hsl(248, 70%, 36%);
+
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --primary-foreground: #171717;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a1a1a1;
+  --accent: #262626;
+  --accent-foreground: #fafafa;
+  --destructive: #ff6467;
+  --border: #ffffff1a;
+  --input: #ffffff26;
+  --ring: #737373;
+}
+
+@media (max-width: 87.5rem) and (min-width: 70.5rem) {
+  .main-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 70.5rem) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.text-preset-1 {
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -2px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.text-preset-2 {
+  font-size: 52px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: bold;
+}
+
+.text-preset-3 {
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+}
+
+.text-preset-4 {
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+}
+
+.text-preset-5 {
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+
+.text-preset-5-medium {
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.text-preset-6 {
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.text-preset-7 {
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.text-preset-8 {
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-700);
+  border-radius: 0.25rem;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.hourly-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-700);
+  border-radius: 8px;
+  border: 1px solid var(--color-neutral-600) !important;
+}
+
+.hourly-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hourly-scroll {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--color-neutral-700) transparent; /* Firefox */
+}
+
+.hourly-scroll::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
